@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 const routes_admin: Routes = [
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', loadChildren: '../admin/dashboard/dashboard.module#DashboardModule' },
+      // { path: '', loadChildren: () => DashboardModule },
+    ]
   }
 ];
 
