@@ -6,17 +6,31 @@ import { FooterWebComponent } from './footer-web/footer-web.component';
 import { FeaturesWebComponent } from './features-web/features-web.component';
 import { ServicesWebComponent } from './services-web/services-web.component';
 import { ContactWebComponent } from './contact-web/contact-web.component';
+import { HomeSliderComponent } from './home-slider/home-slider.component';
+import { WebResponsiveComponent } from './web-responsive/web-responsive.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
+import { CommonModule } from '@angular/common';
 
 const WEB_COMPONENT = [
   HeaderWebComponent,
-  FooterWebComponent
+  FooterWebComponent,
+  FeaturesWebComponent, 
+  ServicesWebComponent, 
+  ContactWebComponent, 
+  HomeSliderComponent, 
+  WebResponsiveComponent
 ];
 
 @NgModule({
   imports: [
-    LayoutRoutingModule
+    CommonModule, // Exports all the basic Angular directives and pipes, such as NgIf, NgForOf, DecimalPipe, 
+    LayoutRoutingModule,
+    NgbModule,
   ],
-  declarations: [LayoutComponent, WEB_COMPONENT, FeaturesWebComponent, ServicesWebComponent, ContactWebComponent],
-  // schemas:[]
+  exports: [WEB_COMPONENT],
+  declarations: [LayoutComponent, WEB_COMPONENT],
+  entryComponents:[WEB_COMPONENT]
+  // schemas: [NO_ERRORS_SCHEMA]
 })
 export class LayoutModule { }
