@@ -1,0 +1,19 @@
+.navbar .navbar-brand {
+
+}
+
+.navbar .nav-item > a {
+    color: #999999;
+}
+
+.navbar .nav-item > a:hover {
+    color: #ffffff;
+}
+
+@media screen and (max-width:992px)
+{
+     .push-right .sidebar{
+        left: 235px !important;
+        margin-left: 0px !important;
+    }
+}

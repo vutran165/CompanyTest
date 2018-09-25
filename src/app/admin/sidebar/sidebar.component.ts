@@ -58,7 +58,7 @@ export class SidebarComponent {
     if (element === this.showMenu) {
       this.showMenu = '0';
     } else {
-      this.showMenu = element
+      this.showMenu = element;
     }
   }
 
