@@ -1,4 +1,4 @@
-<nav class="sidebar">
+<nav class="sidebar" [ngClass]="{'sidebarPushRight': isActive}">
   <div class="list-group">
     <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <span>

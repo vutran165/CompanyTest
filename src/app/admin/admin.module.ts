@@ -5,6 +5,7 @@ import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
 
 const ADMIN_COMPONENT = [
   AdminComponent,
@@ -13,6 +14,7 @@ const ADMIN_COMPONENT = [
 ];
 @NgModule({
   imports: [
+    CommonModule,
     AdminRoutingModule,
     FontAwesomeModule,
     NgbDropdownModule.forRoot()

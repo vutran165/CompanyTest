@@ -57,3 +57,23 @@
   height: auto;
 }
 
+@media screen and (max-width: 992px) {
+    .sidebar {
+      top: 56px;
+      left: 0px;
+    }
+  }
+  @media print {
+    .sidebar {
+      display: none !important;
+    }
+  }
+
+
+@media screen and (max-width:992px)
+{
+     .push-right .sidebar{
+        left: 235px!important;
+        margin-left: 0!important;
+    }
+}
