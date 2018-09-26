@@ -1,0 +1,23 @@
+@media screen and (max-width: 992px) {
+    .sidebar {
+      top: 56px;
+      left: 0px;
+    }
+
+    body.push-right .sidebar{
+        left: 235px !important;
+    }
+}
+  
+@media print {
+    .sidebar {
+      display: none !important;
+    }
+} 
+
+@media screen and (min-width: 992px)
+{
+    #profile {
+        display: none;
+    }
+}

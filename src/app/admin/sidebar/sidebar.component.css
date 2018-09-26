@@ -62,18 +62,21 @@
       top: 56px;
       left: 0px;
     }
+
+    body.push-right .sidebar{
+        left: 235px !important;
+    }
   }
+  
   @media print {
     .sidebar {
       display: none !important;
     }
   }
 
-
-@media screen and (max-width:992px)
+  @media screen and (min-width: 992px)
 {
-     .push-right .sidebar{
-        left: 235px!important;
-        margin-left: 0!important;
+    #profile {
+        display: none;
     }
 }

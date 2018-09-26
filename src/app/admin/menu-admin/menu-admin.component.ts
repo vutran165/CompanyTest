@@ -38,6 +38,7 @@ export class MenuAdminComponent implements OnInit {
 
   toggleSidebar() {
     const dom: any = document.querySelector('body');
+    // const dom: any = document.getElementsByClassName('sidebar');
     dom.classList.toggle(this.pushRightClass);
   }
 

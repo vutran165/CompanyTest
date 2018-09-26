@@ -1,5 +1,5 @@
 .navbar .navbar-brand {
-
+    color: #ffffff;
 }
 
 .navbar .nav-item > a {
@@ -8,4 +8,13 @@
 
 .navbar .nav-item > a:hover {
     color: #ffffff;
+}
+
+.navbar a {
+    margin-left: 50px;
+}
+
+.navbar ul {
+    
+    margin-left: 1100px ;
 }
