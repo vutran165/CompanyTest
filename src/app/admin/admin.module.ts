@@ -6,6 +6,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 const ADMIN_COMPONENT = [
   AdminComponent,
@@ -17,9 +18,10 @@ const ADMIN_COMPONENT = [
     CommonModule,
     AdminRoutingModule,
     FontAwesomeModule,
-    NgbDropdownModule.forRoot()
+    NgbDropdownModule
   ],
   exports: [
+    RouterModule,
     FontAwesomeModule
   ],
   declarations: [ADMIN_COMPONENT]

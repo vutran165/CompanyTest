@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
-import { DashboardModule } from './dashboard/dashboard.module';
 
 const routes_admin: Routes = [
   {
@@ -10,6 +9,10 @@ const routes_admin: Routes = [
     children: [
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: '../admin/dashboard/dashboard.module#DashboardModule' },
+      { path: 'feature', loadChildren: '../admin/features/features.module#FeaturesModule' },
+      { path: 'service', loadChildren: '../admin/services/services.module#ServicesModule' },
+      { path: 'solution', loadChildren: '../admin/solution/solution.module#SolutionModule' },
+      { path: 'contact', loadChildren: '../admin/contact/contact.module#ContactModule' },
       // { path: '', loadChildren: () => DashboardModule },
     ]
   }

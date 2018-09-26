@@ -1,26 +1,26 @@
 <nav class="sidebar" [ngClass]="{'sidebarPushRight': isActive}">
   <div class="list-group">
-    <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <a routerLink="dashboard" [routerLinkActive]="['active']" class="list-group-item">
       <span>
         <fa-icon [icon]="faHome"></fa-icon> &nbsp;&nbsp;Dashboard
       </span>
     </a>
-    <a [routerLink]="['/feature']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <a routerLink="feature" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <span>
         <fa-icon [icon]="faTachometerAlt"></fa-icon> &nbsp;&nbsp;Feature
       </span>
     </a>
-    <a [routerLink]="['/service']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <a [routerLink]="['service']" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <span>
         <fa-icon [icon]="faWrench"></fa-icon> &nbsp;&nbsp;Service
       </span>
     </a>
-    <a [routerLink]="['/solution']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <a [routerLink]="['solution']" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <span>
         <fa-icon [icon]="faLayerGroup"></fa-icon> &nbsp;&nbsp;Solution
       </span>
     </a>
-    <a [routerLink]="['/contact']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <a [routerLink]="['contact']" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <span>
         <fa-icon [icon]="faFileContract"></fa-icon> &nbsp;&nbsp;Contact
       </span>

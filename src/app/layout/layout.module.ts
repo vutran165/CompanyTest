@@ -7,7 +7,6 @@ import { FeaturesWebComponent } from './features-web/features-web.component';
 import { ServicesWebComponent } from './services-web/services-web.component';
 import { ContactWebComponent } from './contact-web/contact-web.component';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
-import { WebResponsiveComponent } from './web-responsive/web-responsive.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 
@@ -18,7 +17,7 @@ const WEB_COMPONENT = [
   ServicesWebComponent, 
   ContactWebComponent, 
   HomeSliderComponent, 
-  WebResponsiveComponent
+  
 ];
 
 @NgModule({
