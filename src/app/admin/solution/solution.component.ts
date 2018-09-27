@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  faLayerGroup
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-solution',
@@ -7,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolutionComponent implements OnInit {
 
+
+  faLayerGroup = faLayerGroup;
   constructor() { }
 
   ngOnInit() {

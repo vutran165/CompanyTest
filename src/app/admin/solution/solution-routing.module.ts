@@ -4,9 +4,9 @@ import { SolutionComponent } from './solution.component';
 
 const routes: Routes = [
   {
-    path:'/solution', component: SolutionComponent
+    path: '', component: SolutionComponent
   }
-]
+];
 
 @NgModule({
   imports: [

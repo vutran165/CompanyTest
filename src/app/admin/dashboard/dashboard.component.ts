@@ -10,11 +10,7 @@ export class DashboardComponent implements OnInit {
 
   faHome = faHome;
 
-  constructor() { };
-
-  //  var test = function () {
-  //   console.log("done");
-  // }
+  constructor() { }
 
   test(): any {
     return  1;
