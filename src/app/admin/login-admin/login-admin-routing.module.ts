@@ -4,9 +4,9 @@ import { LoginAdminComponent } from './login-admin.component';
 
 const routes: Routes = [
   {
-    path: '/feature', component: LoginAdminComponent
+    path: '', component: LoginAdminComponent
   }
-]
+];
 
 
 
