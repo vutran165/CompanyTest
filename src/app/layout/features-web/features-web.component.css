@@ -1,6 +1,11 @@
  /*---------------------------------------
       FEATURE              
   -----------------------------------------*/
+  section {
+    position: relative;
+    padding: 100px 0;
+  }
+
 
   .feature-thumb {
     border: 1px solid #f0f0f0;
