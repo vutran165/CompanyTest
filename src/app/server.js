@@ -10,10 +10,6 @@ const app = express();
 app.use(express.static(__dirname + '/dist'));
 
 // Start the app by listening on the default Heroku port
-// const port = process.env.PORT || 8888;
-// app.set('port', port);
-// const server = http.createServer(app);
-// server.listen(port, () => console.log('Server is running!!!'));
 app.listen(process.env.PORT || 8888);
 
 app.get('/*', function (req, res) {
