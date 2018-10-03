@@ -6,6 +6,8 @@
     "/*.css": "/",
     "/*.map": "/",
     "/*.ico": "/",
+    "/assets/*": "/assets/",
     "/**": "index.html"
   }
 }
+
