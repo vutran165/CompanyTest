@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const http = require('http');
 
 const app = express();
 
@@ -9,9 +10,13 @@ const app = express();
 app.use(express.static(__dirname + '/dist/company-app-bachtuvu'));
 
 // Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8888);
+const port = process.env.PORT || 8888;
+app.set('port', port);
+const server = http.createServer(app);
+server.listen(port, ()=>console.log('Server is running!!!'))
+// app.listen(process.env.PORT || 8888);
 
-app.get('/*', function (req, res) {
+server.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/company-app-bachtuvu/index.html'))
 })
 
