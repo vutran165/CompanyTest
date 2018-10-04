@@ -10,9 +10,8 @@
     "e2e": "ng e2e"
   },
   "postinstall": "ng build --aot --target=production",
-  
-  "heroku-prebuild": "",
-  "heroku-postbuild": "babel-node tools/build.js",
+  "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
+
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
