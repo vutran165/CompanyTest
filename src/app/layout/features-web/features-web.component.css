@@ -1,6 +1,15 @@
  /*---------------------------------------
       FEATURE              
   -----------------------------------------*/
+
+  h2 {
+    padding-bottom: 10px;
+    font-weight: bold;
+    line-height: inherit;
+    text-align: center;
+  }
+
+
   section {
     position: relative;
     padding: 100px 0;
