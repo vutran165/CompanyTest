@@ -13,12 +13,14 @@ import { SolutionWebComponent } from './solution-web/solution-web.component';
 
 
 const WEB_COMPONENT = [
+    LayoutComponent,
     HeaderWebComponent,
     FooterWebComponent,
     FeaturesWebComponent,
     ServicesWebComponent,
     ContactWebComponent,
     HomeSliderComponent,
+    SolutionWebComponent
 ];
 
 @NgModule({
@@ -28,9 +30,7 @@ const WEB_COMPONENT = [
         NgbModule,
     ],
     exports: [WEB_COMPONENT],
-    declarations: [LayoutComponent, WEB_COMPONENT, SolutionWebComponent],
+    declarations: [WEB_COMPONENT],
     entryComponents: [WEB_COMPONENT],
-    // bootstrap: [LayoutComponent],
-    // schemas: [NO_ERRORS_SCHEMA]
 })
 export class LayoutModule { }
