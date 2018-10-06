@@ -70,7 +70,7 @@ var ContactWebComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " /*---------------------------------------\r\n      FEATURE              \r\n  -----------------------------------------*/\r\n  section {\r\n    position: relative;\r\n    padding: 100px 0;\r\n  }\r\n  .feature-thumb {\r\n    border: 1px solid #f0f0f0;\r\n    padding: 5em 3em;\r\n  }\r\n  .feature-thumb span {\r\n    background: #3f51b5;\r\n    border-radius: 50px;\r\n    color: #ffffff;\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    display: inline-block;\r\n    width: 60px;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    text-align: center;\r\n    margin-bottom: 5px;\r\n  }\r\n  .feature-thumb h3 {\r\n    margin: 10px 0;\r\n  }\r\n"
+module.exports = " /*---------------------------------------\r\n      FEATURE              \r\n  -----------------------------------------*/\r\n\r\n  h2 {\r\n    padding-bottom: 10px;\r\n    font-weight: bold;\r\n    line-height: inherit;\r\n    text-align: center;\r\n  }\r\n\r\n  section {\r\n    position: relative;\r\n    padding: 100px 0;\r\n  }\r\n\r\n  .feature-thumb {\r\n    border: 1px solid #f0f0f0;\r\n    padding: 5em 3em;\r\n  }\r\n\r\n  .feature-thumb span {\r\n    background: #3f51b5;\r\n    border-radius: 50px;\r\n    color: #ffffff;\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    display: inline-block;\r\n    width: 60px;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    text-align: center;\r\n    margin-bottom: 5px;\r\n  }\r\n\r\n  .feature-thumb h3 {\r\n    margin: 10px 0;\r\n  }\r\n"
 
 /***/ }),
 
@@ -389,7 +389,7 @@ module.exports = "\r\n@import url('https://fonts.googleapis.com/css?family=Muli:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header-web></app-header-web>\r\n<app-home-slider></app-home-slider>\r\n<app-features-web></app-features-web>\r\n<app-services-web></app-services-web>\r\n<app-contact-web></app-contact-web>\r\n<app-footer-web></app-footer-web>\r\n<!-- <app-web-responsive></app-web-responsive> -->"
+module.exports = "<app-header-web></app-header-web>\r\n<app-home-slider></app-home-slider>\r\n<app-features-web></app-features-web>\r\n<app-services-web></app-services-web>\r\n<app-solution-web></app-solution-web>\r\n<app-contact-web></app-contact-web>\r\n<app-footer-web></app-footer-web>\r\n"
 
 /***/ }),
 
@@ -455,6 +455,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_slider_home_slider_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home-slider/home-slider.component */ "./src/app/layout/home-slider/home-slider.component.ts");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _solution_web_solution_web_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./solution-web/solution-web.component */ "./src/app/layout/solution-web/solution-web.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -472,13 +473,16 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var WEB_COMPONENT = [
+    _layout_component__WEBPACK_IMPORTED_MODULE_1__["LayoutComponent"],
     _header_web_header_web_component__WEBPACK_IMPORTED_MODULE_3__["HeaderWebComponent"],
     _footer_web_footer_web_component__WEBPACK_IMPORTED_MODULE_4__["FooterWebComponent"],
     _features_web_features_web_component__WEBPACK_IMPORTED_MODULE_5__["FeaturesWebComponent"],
     _services_web_services_web_component__WEBPACK_IMPORTED_MODULE_6__["ServicesWebComponent"],
     _contact_web_contact_web_component__WEBPACK_IMPORTED_MODULE_7__["ContactWebComponent"],
     _home_slider_home_slider_component__WEBPACK_IMPORTED_MODULE_8__["HomeSliderComponent"],
+    _solution_web_solution_web_component__WEBPACK_IMPORTED_MODULE_11__["SolutionWebComponent"]
 ];
 var LayoutModule = /** @class */ (function () {
     function LayoutModule() {
@@ -491,7 +495,7 @@ var LayoutModule = /** @class */ (function () {
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"],
             ],
             exports: [WEB_COMPONENT],
-            declarations: [_layout_component__WEBPACK_IMPORTED_MODULE_1__["LayoutComponent"], WEB_COMPONENT],
+            declarations: [WEB_COMPONENT],
             entryComponents: [WEB_COMPONENT],
         })
     ], LayoutModule);
@@ -559,6 +563,69 @@ var ServicesWebComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], ServicesWebComponent);
     return ServicesWebComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layout/solution-web/solution-web.component.css":
+/*!****************************************************************!*\
+  !*** ./src/app/layout/solution-web/solution-web.component.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = " /*---------------------------------------\r\n      SOLUTION              \r\n  -----------------------------------------*/\r\n\r\n  h2 {\r\n    padding-bottom: 10px;\r\n    font-weight: bold;\r\n    line-height: inherit;\r\n    text-align: center;\r\n  }\r\n\r\n  section {\r\n    position: relative;\r\n    padding: 100px 0;\r\n  }\r\n\r\n  .feature-thumb {\r\n    border: 1px solid #f0f0f0;\r\n    padding: 5em 3em;\r\n  }\r\n\r\n  .feature-thumb span {\r\n    background: #3f51b5;\r\n    border-radius: 50px;\r\n    color: #ffffff;\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    display: inline-block;\r\n    width: 60px;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    text-align: center;\r\n    margin-bottom: 5px;\r\n  }\r\n\r\n  .feature-thumb h3 {\r\n    margin: 10px 0;\r\n  }\r\n"
+
+/***/ }),
+
+/***/ "./src/app/layout/solution-web/solution-web.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/layout/solution-web/solution-web.component.html ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = " <!-- solution -->\n <section id=\"feature\">\n  <div class=\"container\">\n       <div class=\"row\">\n            <div class=\"col-md-4 col-sm-4\">\n                 <div class=\"feature-thumb\">\n                      <span>01</span>\n                      <h3>Trending Courses</h3>\n                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>\n                 </div>\n            </div>\n\n            <div class=\"col-md-4 col-sm-4\">\n                 <div class=\"feature-thumb\">\n                      <span>02</span>\n                      <h3>Books & Library</h3>\n                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>\n                 </div>\n            </div>\n\n            <div class=\"col-md-4 col-sm-4\">\n                 <div class=\"feature-thumb\">\n                      <span>03</span>\n                      <h3>Certified Teachers</h3>\n                      <p>templatemo delivers a wide variety of HTML5 templates for you at absolutely no charge. Please tell your friends.</p>\n                 </div>\n            </div>\n       </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/layout/solution-web/solution-web.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/layout/solution-web/solution-web.component.ts ***!
+  \***************************************************************/
+/*! exports provided: SolutionWebComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SolutionWebComponent", function() { return SolutionWebComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SolutionWebComponent = /** @class */ (function () {
+    function SolutionWebComponent() {
+    }
+    SolutionWebComponent.prototype.ngOnInit = function () {
+    };
+    SolutionWebComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-solution-web',
+            template: __webpack_require__(/*! ./solution-web.component.html */ "./src/app/layout/solution-web/solution-web.component.html"),
+            styles: [__webpack_require__(/*! ./solution-web.component.css */ "./src/app/layout/solution-web/solution-web.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SolutionWebComponent);
+    return SolutionWebComponent;
 }());
 
 
