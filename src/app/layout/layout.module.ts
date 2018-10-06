@@ -9,6 +9,8 @@ import { ContactWebComponent } from './contact-web/contact-web.component';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { SolutionWebComponent } from './solution-web/solution-web.component';
+
 
 const WEB_COMPONENT = [
     HeaderWebComponent,
@@ -26,7 +28,7 @@ const WEB_COMPONENT = [
         NgbModule,
     ],
     exports: [WEB_COMPONENT],
-    declarations: [LayoutComponent, WEB_COMPONENT],
+    declarations: [LayoutComponent, WEB_COMPONENT, SolutionWebComponent],
     entryComponents: [WEB_COMPONENT],
     // bootstrap: [LayoutComponent],
     // schemas: [NO_ERRORS_SCHEMA]
