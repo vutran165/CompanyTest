@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-footer-web',
   templateUrl: './footer-web.component.html',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterWebComponent implements OnInit {
 
+
+  faArrowUp = faArrowUp;
   constructor() { }
 
   ngOnInit() {

@@ -90,4 +90,29 @@
     margin-top: 20px;
   }
 
+.scrollup {
+  display: none;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+}
 
+.float-right > a {
+  font-size: 30px;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  
+}
+
+.float-right >a:hover {
+  cursor:pointer;
+  transition: 0.5s;
+  background: #b2b2b2;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s; 		
+}

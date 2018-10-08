@@ -10,6 +10,8 @@ import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { SolutionWebComponent } from './solution-web/solution-web.component';
+import { AboutWebComponent } from './about-web/about-web.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 const WEB_COMPONENT = [
@@ -20,7 +22,8 @@ const WEB_COMPONENT = [
     ServicesWebComponent,
     ContactWebComponent,
     HomeSliderComponent,
-    SolutionWebComponent
+    SolutionWebComponent,
+    AboutWebComponent
 ];
 
 @NgModule({
@@ -28,6 +31,7 @@ const WEB_COMPONENT = [
         CommonModule, // Exports all the basic Angular directives and pipes, such as NgIf, NgForOf, DecimalPipe,
         LayoutRoutingModule,
         NgbModule,
+        FontAwesomeModule
     ],
     exports: [WEB_COMPONENT],
     declarations: [WEB_COMPONENT],
