@@ -33,10 +33,11 @@ export class ServiceRestService {
   }
 
   addService(service): Observable<any> {
-    return this.http.post(endpoint, service, httpOptions).pipe(
-      tap((service) => this.log(`added hero w/ id=${service.id}`)),
-      
-    )
+    return this.http.post(endpoint + 'service/', service).pipe(
+      map((res: Response) => res.json())
+      );
   }
+
+
 
 }
