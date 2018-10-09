@@ -16,7 +16,7 @@
   }
 
 
-  .feature-thumb {
+  /* .feature-thumb {
     border: 1px solid #f0f0f0;
     padding: 5em 3em;
   }
@@ -37,4 +37,51 @@
 
   .feature-thumb h3 {
     margin: 10px 0;
+  } */
+
+  /*Services*/
+  .site-padding{
+    padding:70px 0;
   }
+
+.title h3{
+	text-align:center;
+}
+
+.title h3 span{
+	color:#00bcd4;
+}
+
+.title{
+	margin-bottom:50px;
+}
+
+#features{
+	background:#f5fcfd;
+}
+
+.feature-icon i{
+	font-size:50px;
+	color:#a1a1a1;
+}
+
+.feature-text h4{
+	font-size:16px;
+	text-transform:uppercase;
+}
+
+.feature-text p{
+	margin:5px 0;
+}
+
+.feature-text a{
+	font-size:13px;
+	color:#00bcd4;
+	text-transform:uppercase;
+	font-weight:500;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.single-feature{
+	margin-bottom:30px;
+}
