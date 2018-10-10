@@ -10,36 +10,37 @@
 var map = {
 	"../admin/contact/contact.module": [
 		"./src/app/admin/contact/contact.module.ts",
-		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~7759e7ef",
+		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~87ab232b",
 		"admin-contact-contact-module"
 	],
 	"../admin/dashboard/dashboard.module": [
 		"./src/app/admin/dashboard/dashboard.module.ts",
-		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~7759e7ef",
+		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~87ab232b",
 		"admin-dashboard-dashboard-module"
 	],
 	"../admin/features/features.module": [
 		"./src/app/admin/features/features.module.ts",
-		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~7759e7ef",
+		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~87ab232b",
 		"admin-features-features-module"
 	],
 	"../admin/services/services.module": [
 		"./src/app/admin/services/services.module.ts",
-		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~7759e7ef",
+		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~87ab232b",
 		"admin-services-services-module"
 	],
 	"../admin/solution/solution.module": [
 		"./src/app/admin/solution/solution.module.ts",
-		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~7759e7ef",
+		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~87ab232b",
 		"admin-solution-solution-module"
 	],
 	"./admin/admin.module": [
 		"./src/app/admin/admin.module.ts",
-		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~7759e7ef",
+		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~87ab232b",
 		"admin-admin-module"
 	],
 	"./layout/layout.module": [
 		"./src/app/layout/layout.module.ts",
+		"default~admin-admin-module~admin-contact-contact-module~admin-dashboard-dashboard-module~admin-featu~87ab232b",
 		"layout-layout-module"
 	]
 };

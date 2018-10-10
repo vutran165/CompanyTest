@@ -1,5 +1,68 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["layout-layout-module"],{
 
+/***/ "./src/app/layout/about-web/about-web.component.css":
+/*!**********************************************************!*\
+  !*** ./src/app/layout/about-web/about-web.component.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "section {\r\n    position: relative;\r\n    padding: 100px 0;\r\n  }\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/layout/about-web/about-web.component.html":
+/*!***********************************************************!*\
+  !*** ./src/app/layout/about-web/about-web.component.html ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"about\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-6 col-sm-12\">\n        <h2>ABOUT US</h2>\n        <img src=\"assets/images/courses-image1.jpg\" alt=\"\" class=\"img-fluid\" />\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat\n          libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque\n          libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque\n          libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque</p>\n      </div>\n      <div class=\"col-md-6 col-sm-12\">\n        <h2>Template built with Twitter Bootstrap</h2>\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat\n          libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque\n          libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque\n          libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque\n          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat\n            libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque\n            libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque\n            libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque\n          </p>\n          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat libero, pulvinar\n            tincidunt leo consectetur eget.\n            Curabitur lacinia pellentesque libero, pulvinar tincidunt leo consectetur eget.\n            Curabitur lacinia pellentesque libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia\n            pellentesque </p>\n      </div>\n    </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/layout/about-web/about-web.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/layout/about-web/about-web.component.ts ***!
+  \*********************************************************/
+/*! exports provided: AboutWebComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutWebComponent", function() { return AboutWebComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AboutWebComponent = /** @class */ (function () {
+    function AboutWebComponent() {
+    }
+    AboutWebComponent.prototype.ngOnInit = function () {
+    };
+    AboutWebComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-about-web',
+            template: __webpack_require__(/*! ./about-web.component.html */ "./src/app/layout/about-web/about-web.component.html"),
+            styles: [__webpack_require__(/*! ./about-web.component.css */ "./src/app/layout/about-web/about-web.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AboutWebComponent);
+    return AboutWebComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/layout/contact-web/contact-web.component.css":
 /*!**************************************************************!*\
   !*** ./src/app/layout/contact-web/contact-web.component.css ***!
@@ -70,7 +133,7 @@ var ContactWebComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " /*---------------------------------------\r\n      FEATURE              \r\n  -----------------------------------------*/\r\n\r\n  h2 {\r\n    padding-bottom: 10px;\r\n    font-weight: bold;\r\n    line-height: inherit;\r\n    text-align: center;\r\n  }\r\n\r\n  section {\r\n    position: relative;\r\n    padding: 100px 0;\r\n  }\r\n\r\n  .feature-thumb {\r\n    border: 1px solid #f0f0f0;\r\n    padding: 5em 3em;\r\n  }\r\n\r\n  .feature-thumb span {\r\n    background: #3f51b5;\r\n    border-radius: 50px;\r\n    color: #ffffff;\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    display: inline-block;\r\n    width: 60px;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    text-align: center;\r\n    margin-bottom: 5px;\r\n  }\r\n\r\n  .feature-thumb h3 {\r\n    margin: 10px 0;\r\n  }\r\n"
+module.exports = " /*---------------------------------------\r\n      FEATURE              \r\n  -----------------------------------------*/\r\n\r\n  h2 {\r\n    padding-bottom: 10px;\r\n    font-weight: bold;\r\n    line-height: inherit;\r\n    text-align: center;\r\n  }\r\n\r\n  section {\r\n    position: relative;\r\n    padding: 100px 0;\r\n  }\r\n\r\n  /* .feature-thumb {\r\n    border: 1px solid #f0f0f0;\r\n    padding: 5em 3em;\r\n  }\r\n\r\n  .feature-thumb span {\r\n    background: #3f51b5;\r\n    border-radius: 50px;\r\n    color: #ffffff;\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    display: inline-block;\r\n    width: 60px;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    text-align: center;\r\n    margin-bottom: 5px;\r\n  }\r\n\r\n  .feature-thumb h3 {\r\n    margin: 10px 0;\r\n  } */\r\n\r\n  /*Services*/\r\n\r\n  .site-padding{\r\n    padding:70px 0;\r\n  }\r\n\r\n  .title h3{\r\n\ttext-align:center;\r\n}\r\n\r\n  .title h3 span{\r\n\tcolor:#00bcd4;\r\n}\r\n\r\n  .title{\r\n\tmargin-bottom:50px;\r\n}\r\n\r\n  #features{\r\n\tbackground:#f5fcfd;\r\n}\r\n\r\n  .feature-icon i{\r\n\tfont-size:50px;\r\n\tcolor:#a1a1a1;\r\n}\r\n\r\n  .feature-text h4{\r\n\tfont-size:16px;\r\n\ttext-transform:uppercase;\r\n}\r\n\r\n  .feature-text p{\r\n\tmargin:5px 0;\r\n}\r\n\r\n  .feature-text a{\r\n\tfont-size:13px;\r\n\tcolor:#00bcd4;\r\n\ttext-transform:uppercase;\r\n\tfont-weight:500;\r\n\tfont-family: 'Montserrat', sans-serif;\r\n}\r\n\r\n  .single-feature{\r\n\tmargin-bottom:30px;\r\n}\r\n"
 
 /***/ }),
 
@@ -81,7 +144,7 @@ module.exports = " /*---------------------------------------\r\n      FEATURE   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <!-- FEATURE -->\r\n <section id=\"feature\">\r\n  <div class=\"container\">\r\n       <div class=\"row\">\r\n            <div class=\"col-md-4 col-sm-4\">\r\n                 <div class=\"feature-thumb\">\r\n                      <span>01</span>\r\n                      <h3>Trending Courses</h3>\r\n                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>\r\n                 </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4 col-sm-4\">\r\n                 <div class=\"feature-thumb\">\r\n                      <span>02</span>\r\n                      <h3>Books & Library</h3>\r\n                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>\r\n                 </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4 col-sm-4\">\r\n                 <div class=\"feature-thumb\">\r\n                      <span>03</span>\r\n                      <h3>Certified Teachers</h3>\r\n                      <p>templatemo delivers a wide variety of HTML5 templates for you at absolutely no charge. Please tell your friends.</p>\r\n                 </div>\r\n            </div>\r\n       </div>\r\n  </div>\r\n</section>"
+module.exports = "<!-- FEATURE -->\r\n<!-- <section id=\"feature\">\r\n  <div class=\"container\">\r\n       <div class=\"row\">\r\n            <div class=\"col-md-4 col-sm-4\">\r\n                 <div class=\"feature-thumb\">\r\n                      <span>01</span>\r\n                      <h3>Trending Courses</h3>\r\n                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>\r\n                 </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4 col-sm-4\">\r\n                 <div class=\"feature-thumb\">\r\n                      <span>02</span>\r\n                      <h3>Books & Library</h3>\r\n                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>\r\n                 </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4 col-sm-4\">\r\n                 <div class=\"feature-thumb\">\r\n                      <span>03</span>\r\n                      <h3>Certified Teachers</h3>\r\n                      <p>templatemo delivers a wide variety of HTML5 templates for you at absolutely no charge. Please tell your friends.</p>\r\n                 </div>\r\n            </div>\r\n       </div>\r\n  </div>\r\n</section> -->\r\n\r\n<section id=\"features\" class=\"site-padding\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-12\">\r\n        <h3>Our <span>Services</span></h3>\r\n      </div>\r\n    </div>\r\n  </div>\r\n<!-- single feature -->\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-4\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-2\">\r\n            <div class=\"feature-icon\">\r\n              <i class=\"fa fa-bitbucket\"></i>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-md-10\">\r\n            <div class=\"feature-text\">\r\n              <h4>Lorem ipsum dolor sit amet</h4>\r\n              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\r\n                dolore magna aliqua. Ut enim ad minim veniam</p>\r\n              <a href=\"#\">Read More>></a>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- single feature -->\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-4\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-2\">\r\n            <div class=\"feature-icon\">\r\n              <i class=\"fa fa-bitbucket\"></i>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-md-10\">\r\n            <div class=\"feature-text\">\r\n              <h4>Lorem ipsum dolor sit amet</h4>\r\n              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\r\n                dolore magna aliqua. Ut enim ad minim veniam</p>\r\n              <a href=\"#\">Read More>></a>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- single feature -->\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-4\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-2\">\r\n            <div class=\"feature-icon\">\r\n              <i class=\"fa fa-bitbucket\"></i>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-md-10\">\r\n            <div class=\"feature-text\">\r\n              <h4>Lorem ipsum dolor sit amet</h4>\r\n              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\r\n                dolore magna aliqua. Ut enim ad minim veniam</p>\r\n              <a href=\"#\">Read More>></a>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- single feature -->\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-4\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-2\">\r\n            <div class=\"feature-icon\">\r\n              <i class=\"fa fa-bitbucket\"></i>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-md-10\">\r\n            <div class=\"feature-text\">\r\n              <h4>Lorem ipsum dolor sit amet</h4>\r\n              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\r\n                dolore magna aliqua. Ut enim ad minim veniam</p>\r\n              <a href=\"#\">Read More>></a>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- single feature -->\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-4\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-2\">\r\n            <div class=\"feature-icon\">\r\n              <i class=\"fa fa-bitbucket\"></i>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-md-10\">\r\n            <div class=\"feature-text\">\r\n              <h4>Lorem ipsum dolor sit amet</h4>\r\n              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\r\n                dolore magna aliqua. Ut enim ad minim veniam</p>\r\n              <a href=\"#\">Read More>></a>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- single feature -->\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-4\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-2\">\r\n            <div class=\"feature-icon\">\r\n              <i class=\"fa fa-bitbucket\"></i>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-md-10\">\r\n            <div class=\"feature-text\">\r\n              <h4>Lorem ipsum dolor sit amet</h4>\r\n              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\r\n                dolore magna aliqua. Ut enim ad minim veniam</p>\r\n              <a href=\"#\">Read More>></a>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
 
 /***/ }),
 
@@ -133,7 +196,7 @@ var FeaturesWebComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n  /*---------------------------------------\r\n     FOOTER              \r\n  -----------------------------------------*/\r\n\r\n  footer {\r\n    background: #252020;\r\n    padding: 120px 0;\r\n  }\r\n\r\n  footer .section-title {\r\n    padding-bottom: 10px;\r\n  }\r\n\r\n  footer h2 {\r\n    font-size: 20px;\r\n  }\r\n\r\n  footer a,\r\n  footer p {\r\n    color: #909090;\r\n  }\r\n\r\n  footer strong {\r\n    color: #d9d9d9;\r\n  }\r\n\r\n  footer address p {\r\n    margin-bottom: 0;\r\n  }\r\n\r\n  footer .social-icon {\r\n    margin-top: 25px;\r\n  }\r\n\r\n  .footer-info {\r\n    margin-right: 2em;\r\n  }\r\n\r\n  .footer-info h2 {\r\n    color: #ffffff;\r\n    padding: 0;\r\n  }\r\n\r\n  .footer_menu h2 {\r\n    margin-top: 2em;\r\n  }\r\n\r\n  .footer_menu ul {\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n\r\n  .footer_menu li {\r\n    display: inline-block;\r\n    list-style: none;\r\n    margin: 5px 10px 5px 0;\r\n  }\r\n\r\n  .newsletter-form .form-control {\r\n    background: transparent;\r\n    border-radius: 0;\r\n    box-shadow: none;\r\n    border: 0;\r\n    border-bottom: 1px solid #303030;\r\n    height: 50px;\r\n    margin: 5px 0;\r\n  }\r\n\r\n  .newsletter-form input[type=\"submit\"] {\r\n    background: transparent;\r\n    border: 1px solid #f9f9f9;\r\n    border-radius: 50px;\r\n    color: #ffffff;\r\n    display: block;\r\n    margin-top: 20px;\r\n    outline: none;\r\n    width: 50%;\r\n  }\r\n\r\n  .newsletter-form input[type=\"submit\"]:hover {\r\n    background: #29ca8e;\r\n    border-color: transparent;\r\n  }\r\n\r\n  .newsletter-form .form-group span {\r\n    color: #909090;\r\n    display: block;\r\n    font-size: 12px;\r\n    margin-top: 20px;\r\n  }\r\n\r\n\r\n"
+module.exports = "\r\n  /*---------------------------------------\r\n     FOOTER              \r\n  -----------------------------------------*/\r\n\r\n  footer {\r\n    background: #252020;\r\n    padding: 120px 0;\r\n  }\r\n\r\n  footer .section-title {\r\n    padding-bottom: 10px;\r\n  }\r\n\r\n  footer h2 {\r\n    font-size: 20px;\r\n  }\r\n\r\n  footer a,\r\n  footer p {\r\n    color: #909090;\r\n  }\r\n\r\n  footer strong {\r\n    color: #d9d9d9;\r\n  }\r\n\r\n  footer address p {\r\n    margin-bottom: 0;\r\n  }\r\n\r\n  footer .social-icon {\r\n    margin-top: 25px;\r\n  }\r\n\r\n  .footer-info {\r\n    margin-right: 2em;\r\n  }\r\n\r\n  .footer-info h2 {\r\n    color: #ffffff;\r\n    padding: 0;\r\n  }\r\n\r\n  .footer_menu h2 {\r\n    margin-top: 2em;\r\n  }\r\n\r\n  .footer_menu ul {\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n\r\n  .footer_menu li {\r\n    display: inline-block;\r\n    list-style: none;\r\n    margin: 5px 10px 5px 0;\r\n  }\r\n\r\n  .newsletter-form .form-control {\r\n    background: transparent;\r\n    border-radius: 0;\r\n    box-shadow: none;\r\n    border: 0;\r\n    border-bottom: 1px solid #303030;\r\n    height: 50px;\r\n    margin: 5px 0;\r\n  }\r\n\r\n  .newsletter-form input[type=\"submit\"] {\r\n    background: transparent;\r\n    border: 1px solid #f9f9f9;\r\n    border-radius: 50px;\r\n    color: #ffffff;\r\n    display: block;\r\n    margin-top: 20px;\r\n    outline: none;\r\n    width: 50%;\r\n  }\r\n\r\n  .newsletter-form input[type=\"submit\"]:hover {\r\n    background: #29ca8e;\r\n    border-color: transparent;\r\n  }\r\n\r\n  .newsletter-form .form-group span {\r\n    color: #909090;\r\n    display: block;\r\n    font-size: 12px;\r\n    margin-top: 20px;\r\n  }\r\n\r\n  .scrollup {\r\n  display: none;\r\n  width: 100%;\r\n  margin: 0 auto;\r\n  position: fixed;\r\n  bottom: 20px;\r\n  right: 10px;\r\n}\r\n\r\n  .float-right > a {\r\n  font-size: 30px;\r\n  position: absolute;\r\n  width: 45px;\r\n  height: 45px;\r\n  text-align: center;\r\n  \r\n}\r\n\r\n  .float-right >a:hover {\r\n  cursor:pointer;\r\n  transition: 0.5s;\r\n  background: #b2b2b2;\r\n\t-moz-transition: 0.5s;\r\n\t-webkit-transition: 0.5s;\r\n\t-o-transition: 0.5s; \t\t\r\n}"
 
 /***/ }),
 
@@ -144,7 +207,7 @@ module.exports = "\r\n  /*---------------------------------------\r\n     FOOTER
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <!-- FOOTER -->\r\n <footer id=\"footer\">\r\n  <div class=\"container\">\r\n       <div class=\"row\">\r\n\r\n            <div class=\"col-md-4 col-sm-6\">\r\n                 <div class=\"footer-info\">\r\n                      <div class=\"section-title\">\r\n                           <h2>Headquarter</h2>\r\n                      </div>\r\n                      <address>\r\n                           <p>1800 dapibus a tortor pretium,<br> Integer nisl dui, ABC 12000</p>\r\n                      </address>\r\n\r\n                      <ul class=\"social-icon\">\r\n                           <li><a href=\"#\" class=\"fa fa-facebook-square\" attr=\"facebook icon\"></a></li>\r\n                           <li><a href=\"#\" class=\"fa fa-twitter\"></a></li>\r\n                           <li><a href=\"#\" class=\"fa fa-instagram\"></a></li>\r\n                      </ul>\r\n\r\n                      <div class=\"copyright-text\"> \r\n                           <p>Copyright &copy; 2018 Company Name</p>\r\n                           <p>Design: <a rel=\"nofollow\" href=\"http://templatemo.com\" title=\"html5 templates\" target=\"_parent\">Template Mo</a></p>\r\n                      </div>\r\n                 </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4 col-sm-6\">\r\n                 <div class=\"footer-info\">\r\n                      <div class=\"section-title\">\r\n                           <h2>Contact Info</h2>\r\n                      </div>\r\n                      <address>\r\n                           <p>+65 2244 1100, +66 1800 1100</p>\r\n                           <p><a href=\"mailto:youremail.com\">hello@youremail.co</a></p>\r\n                      </address>\r\n\r\n                      <div class=\"footer_menu\">\r\n                           <h2>Quick Links</h2>\r\n                           <ul>\r\n                                <li><a href=\"#\">Career</a></li>\r\n                                <li><a href=\"#\">Investor</a></li>\r\n                                <li><a href=\"#\">Terms & Conditions</a></li>\r\n                                <li><a href=\"#\">Refund Policy</a></li>\r\n                           </ul>\r\n                      </div>\r\n                 </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4 col-sm-12\">\r\n                 <div class=\"footer-info newsletter-form\">\r\n                      <div class=\"section-title\">\r\n                           <h2>Newsletter Signup</h2>\r\n                      </div>\r\n                      <div>\r\n                           <div class=\"form-group\">\r\n                                <form action=\"#\" method=\"get\">\r\n                                     <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email\" name=\"email\" id=\"email\" required=\"\">\r\n                                     <input type=\"submit\" class=\"form-control\" name=\"submit\" id=\"form-submit\" value=\"Send me\">\r\n                                </form>\r\n                                <span><sup>*</sup> Please note - we do not spam your email.</span>\r\n                           </div>\r\n                      </div>\r\n                 </div>\r\n            </div>\r\n            \r\n       </div>\r\n  </div>\r\n</footer>"
+module.exports = "<!-- FOOTER -->\r\n<footer id=\"footer\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n\r\n      <div class=\"col-md-4 col-sm-6\">\r\n        <div class=\"footer-info\">\r\n          <div class=\"section-title\">\r\n            <h2>Headquarter</h2>\r\n          </div>\r\n          <address>\r\n            <p>1800 dapibus a tortor pretium,<br> Integer nisl dui, ABC 12000</p>\r\n          </address>\r\n\r\n          <ul class=\"social-icon\">\r\n            <li><a href=\"#\" class=\"fa fa-facebook-square\" attr=\"facebook icon\"></a></li>\r\n            <li><a href=\"#\" class=\"fa fa-twitter\"></a></li>\r\n            <li><a href=\"#\" class=\"fa fa-instagram\"></a></li>\r\n          </ul>\r\n\r\n          <div class=\"copyright-text\">\r\n            <p>Copyright &copy; 2018 Company Name</p>\r\n            <p>Design: <a rel=\"nofollow\" href=\"http://templatemo.com\" title=\"html5 templates\" target=\"_parent\">Template\r\n                Mo</a></p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-md-4 col-sm-6\">\r\n        <div class=\"footer-info\">\r\n          <div class=\"section-title\">\r\n            <h2>Contact Info</h2>\r\n          </div>\r\n          <address>\r\n            <p>+65 2244 1100, +66 1800 1100</p>\r\n            <p><a href=\"mailto:youremail.com\">hello@youremail.co</a></p>\r\n          </address>\r\n\r\n          <div class=\"footer_menu\">\r\n            <h2>Quick Links</h2>\r\n            <ul>\r\n              <li><a href=\"#\">Career</a></li>\r\n              <li><a href=\"#\">Investor</a></li>\r\n              <li><a href=\"#\">Terms & Conditions</a></li>\r\n              <li><a href=\"#\">Refund Policy</a></li>\r\n            </ul>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-md-4 col-sm-12\">\r\n        <div class=\"footer-info newsletter-form\">\r\n          <div class=\"section-title\">\r\n            <h2>Newsletter Signup</h2>\r\n          </div>\r\n          <div>\r\n            <div class=\"form-group\">\r\n              <form action=\"#\" method=\"get\">\r\n                <input type=\"email\" class=\"form-control\" placeholder=\"Enter your email\" name=\"email\" id=\"email\"\r\n                  required=\"\">\r\n                <input type=\"submit\" class=\"form-control\" name=\"submit\" id=\"form-submit\" value=\"Send me\">\r\n              </form>\r\n              <span><sup>*</sup> Please note - we do not spam your email.</span>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"float-right\">\r\n      <a href=\"#home\">\r\n        <fa-icon [icon]=\"faArrowUp\"></fa-icon>\r\n      </a>\r\n    </div>\r\n  </div>\r\n</footer>"
 
 /***/ }),
 
@@ -159,6 +222,7 @@ module.exports = " <!-- FOOTER -->\r\n <footer id=\"footer\">\r\n  <div class=\"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterWebComponent", function() { return FooterWebComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -169,8 +233,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var FooterWebComponent = /** @class */ (function () {
     function FooterWebComponent() {
+        this.faArrowUp = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faArrowUp"];
     }
     FooterWebComponent.prototype.ngOnInit = function () {
     };
@@ -207,7 +273,7 @@ module.exports = "\r\n  .custom-navbar {\r\n    background: #ffffff;\r\n    bord
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<section class=\"navbar custom-navbar navbar-fixed-top\" role=\"navigation\">\r\n  <div class=\"container\">\r\n\r\n    <div class=\"navbar-header\">\r\n      <button class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\r\n        <span class=\"icon icon-bar\"></span>\r\n        <span class=\"icon icon-bar\"></span>\r\n        <span class=\"icon icon-bar\"></span>\r\n      </button>\r\n\r\n\r\n      <a href=\"#\" class=\"navbar-brand\">Company</a>\r\n    </div>\r\n\r\n    <ul class=\"nav justify-content-center\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link active\" href=\"#\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">About</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Feature</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Service</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Solution</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Contact Us</a>\r\n      </li>\r\n    </ul>\r\n\r\n  </div>\r\n</section> \r\n\r\n"
+module.exports = "\r\n<section class=\"navbar custom-navbar navbar-fixed-top\" role=\"navigation\">\r\n  <div class=\"container\">\r\n\r\n    <div class=\"navbar-header\">\r\n      <button class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\r\n        <span class=\"icon icon-bar\"></span>\r\n        <span class=\"icon icon-bar\"></span>\r\n        <span class=\"icon icon-bar\"></span>\r\n      </button>\r\n\r\n\r\n      <a href=\"#\" class=\"navbar-brand\">Company</a>\r\n    </div>\r\n\r\n    <ul class=\"nav justify-content-center\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link active\" href=\"#\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">About</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Service</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Solution</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Project</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Contact Us</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</section> \r\n\r\n"
 
 /***/ }),
 
@@ -389,7 +455,7 @@ module.exports = "\r\n@import url('https://fonts.googleapis.com/css?family=Muli:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header-web></app-header-web>\r\n<app-home-slider></app-home-slider>\r\n<app-features-web></app-features-web>\r\n<app-services-web></app-services-web>\r\n<app-solution-web></app-solution-web>\r\n<app-contact-web></app-contact-web>\r\n<app-footer-web></app-footer-web>\r\n"
+module.exports = "<app-header-web></app-header-web>\r\n<app-home-slider></app-home-slider>\r\n<app-about-web></app-about-web>\r\n<app-features-web></app-features-web>\r\n<app-services-web></app-services-web>\r\n<app-solution-web></app-solution-web>\r\n<app-contact-web></app-contact-web>\r\n<app-footer-web></app-footer-web>\r\n"
 
 /***/ }),
 
@@ -456,12 +522,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _solution_web_solution_web_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./solution-web/solution-web.component */ "./src/app/layout/solution-web/solution-web.component.ts");
+/* harmony import */ var _about_web_about_web_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./about-web/about-web.component */ "./src/app/layout/about-web/about-web.component.ts");
+/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "./node_modules/@fortawesome/angular-fontawesome/fesm5/angular-fontawesome.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -482,7 +552,8 @@ var WEB_COMPONENT = [
     _services_web_services_web_component__WEBPACK_IMPORTED_MODULE_6__["ServicesWebComponent"],
     _contact_web_contact_web_component__WEBPACK_IMPORTED_MODULE_7__["ContactWebComponent"],
     _home_slider_home_slider_component__WEBPACK_IMPORTED_MODULE_8__["HomeSliderComponent"],
-    _solution_web_solution_web_component__WEBPACK_IMPORTED_MODULE_11__["SolutionWebComponent"]
+    _solution_web_solution_web_component__WEBPACK_IMPORTED_MODULE_11__["SolutionWebComponent"],
+    _about_web_about_web_component__WEBPACK_IMPORTED_MODULE_12__["AboutWebComponent"]
 ];
 var LayoutModule = /** @class */ (function () {
     function LayoutModule() {
@@ -493,6 +564,7 @@ var LayoutModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_10__["CommonModule"],
                 _layout_routing_module__WEBPACK_IMPORTED_MODULE_2__["LayoutRoutingModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"],
+                _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_13__["FontAwesomeModule"]
             ],
             exports: [WEB_COMPONENT],
             declarations: [WEB_COMPONENT],
