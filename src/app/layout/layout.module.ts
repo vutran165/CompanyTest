@@ -7,11 +7,12 @@ import { FeaturesWebComponent } from './features-web/features-web.component';
 import { ServicesWebComponent } from './services-web/services-web.component';
 import { ContactWebComponent } from './contact-web/contact-web.component';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { SolutionWebComponent } from './solution-web/solution-web.component';
 import { AboutWebComponent } from './about-web/about-web.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DetailFeaturesWebComponent } from './features-web/detail-features-web/detail-features-web.component';
 
 
 const WEB_COMPONENT = [
@@ -23,7 +24,8 @@ const WEB_COMPONENT = [
     ContactWebComponent,
     HomeSliderComponent,
     SolutionWebComponent,
-    AboutWebComponent
+    AboutWebComponent,
+    DetailFeaturesWebComponent
 ];
 
 @NgModule({
@@ -33,6 +35,7 @@ const WEB_COMPONENT = [
         NgbModule,
         FontAwesomeModule
     ],
+    providers: [NgbActiveModal],
     exports: [WEB_COMPONENT],
     declarations: [WEB_COMPONENT],
     entryComponents: [WEB_COMPONENT],
