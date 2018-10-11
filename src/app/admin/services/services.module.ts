@@ -8,6 +8,7 @@ import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { DetailComponent } from './detail/detail.component';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ServiceRestService } from './service-rest.service';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FontAwesomeModule,
     NgbModule
   ],
-  providers: [NgbActiveModal],
+  providers: [NgbActiveModal, ServiceRestService],
   entryComponents: [CreateComponent, EditComponent, DeleteComponent, DetailComponent],
   declarations: [ServicesComponent, CreateComponent, EditComponent, DeleteComponent, DetailComponent]
 })

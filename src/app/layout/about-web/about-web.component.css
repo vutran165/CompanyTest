@@ -3,3 +3,7 @@ section {
     padding: 100px 0;
   }
 
+#about  h2 {
+  text-align: center;
+  padding: 8px;
+}

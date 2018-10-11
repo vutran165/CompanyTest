@@ -29,11 +29,17 @@
    padding: 8px 0;
 }
 
-.site-padding > button {
-    background: #f5fcfd;
-    /* border: none; */
-    border-radius: 8px;
-    text-align: center;
+.site-padding button.readmore {
+  border: none ;
+  border-radius: 8px;
+  background-color: #a1a1a1;
+  color: black;
+  padding: 5px 5px;
+}
+
+.site-padding .readmore:hover {
+  cursor: pointer;
+  background-color: #29ca8e;
 }
 
 .title h3 span{
