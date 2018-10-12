@@ -299,7 +299,8 @@ var httpOptions = {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Methods': 'GET',
         'Access-Control-Allow-Origin': '*'
-    })
+    }),
+    withCredentials: true
 };
 var ServiceRestService = /** @class */ (function () {
     function ServiceRestService(http) {
@@ -444,10 +445,12 @@ var httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]({
         'Content-Type': 'application/json',
         'Access-Control-Allow-Methods': 'GET, POST, DELETE, UPDATE',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Authorization'
     }),
     withCredentials: true
 };
+var responseType = 'json';
 var ServicesComponent = /** @class */ (function () {
     function ServicesComponent(modalService, service, http) {
         this.modalService = modalService;
