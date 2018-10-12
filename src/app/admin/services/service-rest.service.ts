@@ -10,7 +10,8 @@ const httpOptions = {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Methods': 'GET',
     'Access-Control-Allow-Origin': '*'
-  })
+  }),
+  withCredentials : true
 };
 
 @Injectable(
@@ -28,7 +29,7 @@ export class ServiceRestService {
 
   public getServices() {
     // const req = this.http.get(endpoint + '/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22').pipe(map(this.extractData));
-    const req = this.http.get(endpoint + '/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22', httpOptions);
+    const req = this.http.get('https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=b6907d289e10d714a6e88b30761fae22');
     console.log(req);
     req.subscribe((response) => console.log(response));
     return req;
