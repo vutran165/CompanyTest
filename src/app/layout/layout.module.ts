@@ -13,6 +13,8 @@ import { SolutionWebComponent } from './solution-web/solution-web.component';
 import { AboutWebComponent } from './about-web/about-web.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DetailFeaturesWebComponent } from './features-web/detail-features-web/detail-features-web.component';
+import { FormsModule } from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
 
 
 const WEB_COMPONENT = [
@@ -33,7 +35,9 @@ const WEB_COMPONENT = [
         CommonModule, // Exports all the basic Angular directives and pipes, such as NgIf, NgForOf, DecimalPipe,
         LayoutRoutingModule,
         NgbModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        FormsModule,
+
     ],
     providers: [NgbActiveModal],
     exports: [WEB_COMPONENT],

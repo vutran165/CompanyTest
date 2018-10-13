@@ -23,7 +23,10 @@
 
       <div class="col-md-6 col-sm-12">
         <div class="contact-image">
-          <img src="assets/images/contact-image.jpg" class="img-fluid" alt="Smiling Two Girls">
+          <!-- <img src="assets/images/contact-image.jpg" class="img-fluid" alt="Smiling Two Girls"> -->
+          <agm-map [latitude]="lat" [longitude]="lng" class="img-fluid">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
         </div>
       </div>
 

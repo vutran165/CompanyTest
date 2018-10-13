@@ -54,4 +54,7 @@ section {
     color: #ffffff;
   }
   
-
+/* google map angular */
+  agm-map {
+    height: 300px;
+  }
