@@ -70,7 +70,7 @@ var AboutWebComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "section {\r\n  position: relative;\r\n  padding: 100px 0;\r\n}\r\n\r\n\r\n#contact {\r\n    background: #3f51b5;\r\n    padding: 60px 0;\r\n  }\r\n\r\n\r\n#contact h2 {\r\n    color: #ffffff;\r\n  }\r\n\r\n\r\n#contact .section-title {\r\n    padding-bottom: 20px;\r\n  }\r\n\r\n\r\n#contact h2 > small,\r\n  #contact p,\r\n  #contact a {\r\n    color: #f9f9f9;\r\n  }\r\n\r\n\r\n#contact-form {\r\n    padding: 1em 0;\r\n  }\r\n\r\n\r\n#contact-form .col-md-12,\r\n  #contact-form .col-md-4 {\r\n    padding-left: 0;\r\n  }\r\n\r\n\r\n#contact-form .form-control {\r\n    border: 0;\r\n    border-radius: 5px;\r\n    box-shadow: none;\r\n    margin: 10px 0;\r\n  }\r\n\r\n\r\n#contact-form input {\r\n    height: 50px;\r\n  }\r\n\r\n\r\n#contact-form input[type='submit'] {\r\n    border-radius: 50px;\r\n    border: 1px solid transparent;\r\n  }\r\n\r\n\r\n#contact-form input[type='submit']:hover {\r\n    background: transparent;\r\n    border-color: #ffffff;\r\n    color: #ffffff;\r\n  }\r\n  \r\n\r\n"
+module.exports = "section {\r\n  position: relative;\r\n  padding: 100px 0;\r\n}\r\n\r\n\r\n#contact {\r\n    background: #3f51b5;\r\n    padding: 60px 0;\r\n  }\r\n\r\n\r\n#contact h2 {\r\n    color: #ffffff;\r\n  }\r\n\r\n\r\n#contact .section-title {\r\n    padding-bottom: 20px;\r\n  }\r\n\r\n\r\n#contact h2 > small,\r\n  #contact p,\r\n  #contact a {\r\n    color: #f9f9f9;\r\n  }\r\n\r\n\r\n#contact-form {\r\n    padding: 1em 0;\r\n  }\r\n\r\n\r\n#contact-form .col-md-12,\r\n  #contact-form .col-md-4 {\r\n    padding-left: 0;\r\n  }\r\n\r\n\r\n#contact-form .form-control {\r\n    border: 0;\r\n    border-radius: 5px;\r\n    box-shadow: none;\r\n    margin: 10px 0;\r\n  }\r\n\r\n\r\n#contact-form input {\r\n    height: 50px;\r\n  }\r\n\r\n\r\n#contact-form input[type='submit'] {\r\n    border-radius: 50px;\r\n    border: 1px solid transparent;\r\n  }\r\n\r\n\r\n#contact-form input[type='submit']:hover {\r\n    background: transparent;\r\n    border-color: #ffffff;\r\n    color: #ffffff;\r\n  }\r\n\r\n\r\n#contact #contact-form input .custom-contact{\r\n  margin-left: 100%;\r\n}\r\n\r\n\r\n/* google map angular */\r\n\r\n\r\nagm-map {\r\n    height: 300px;\r\n  }"
 
 /***/ }),
 
@@ -81,7 +81,7 @@ module.exports = "section {\r\n  position: relative;\r\n  padding: 100px 0;\r\n}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- CONTACT -->\r\n<section id=\"contact\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n\r\n      <div class=\"col-md-6 col-sm-12\">\r\n        <form id=\"contact-form\" role=\"form\" action=\"\" method=\"post\">\r\n          <div class=\"section-title\">\r\n            <h2>Contact us <small>we love conversations. let us talk!</small></h2>\r\n          </div>\r\n          <div class=\"col-md-12 col-sm-12\">\r\n            <input type=\"text\" class=\"form-control\" placeholder=\"Enter full name\" name=\"name\" required=\"\">\r\n\r\n            <input type=\"email\" class=\"form-control\" placeholder=\"Enter email address\" name=\"email\" required=\"\">\r\n\r\n            <textarea class=\"form-control\" rows=\"6\" placeholder=\"Tell us about your message\" name=\"message\" required=\"\"></textarea>\r\n          </div>\r\n          <div class=\"col-md-4 col-sm-12\">\r\n            <input type=\"submit\" class=\"form-control\" name=\"send message\" value=\"Send Message\">\r\n          </div>\r\n        </form>\r\n      </div>\r\n\r\n      <div class=\"col-md-6 col-sm-12\">\r\n        <div class=\"contact-image\">\r\n          <img src=\"assets/images/contact-image.jpg\" class=\"img-fluid\" alt=\"Smiling Two Girls\">\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n</section>"
+module.exports = "<!-- CONTACT -->\r\n<section id=\"contact\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n\r\n      <div class=\"col-md-6 col-sm-12\">\r\n        <form id=\"contact-form\" role=\"form\" action=\"\" method=\"post\">\r\n          <div class=\"section-title\">\r\n            <h2>Contact us <small>we love conversations. let us talk!</small></h2>\r\n          </div>\r\n          <div class=\"col-md-12 col-sm-12\">\r\n            <input type=\"text\" class=\"form-control\" placeholder=\"Enter full name\" name=\"name\" required=\"\">\r\n\r\n            <input type=\"email\" class=\"form-control\" placeholder=\"Enter email address\" name=\"email\" required=\"\">\r\n\r\n            <textarea class=\"form-control\" rows=\"6\" placeholder=\"Tell us about your message\" name=\"message\" required=\"\"></textarea>\r\n          </div>\r\n          <div class=\"col-md-4 col-sm-12 custom-contact\">\r\n            <input type=\"submit\" class=\"form-control\" name=\"send message\" value=\"Send Message\">\r\n          </div>\r\n        </form>\r\n      </div>\r\n\r\n      <div class=\"col-md-6 col-sm-12\">\r\n        <div class=\"contact-image\">\r\n          <img src=\"assets/images/contact-image.jpg\" class=\"img-fluid\" alt=\"Smiling Two Girls\">\r\n          <!-- <agm-map [latitude]=\"lat\" [longitude]=\"lng\" class=\"img-fluid\">\r\n            <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\r\n          </agm-map> -->\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
 
 /***/ }),
 
@@ -120,6 +120,69 @@ var ContactWebComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], ContactWebComponent);
     return ContactWebComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layout/customer-web/customer-web.component.css":
+/*!****************************************************************!*\
+  !*** ./src/app/layout/customer-web/customer-web.component.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/layout/customer-web/customer-web.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/layout/customer-web/customer-web.component.html ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section class=\"sec-our-customers\">\n  <div class=\"container content-sm\">\n    <div class=\"row\">\n      <div class=\"col-md-12 text-center\">\n        <h2>OUR CUSTOMERS</h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.hotschedules.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-01.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.ert.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-02.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.lexisnexis.com\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-03.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://kibocommerce.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-04.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.autotrader.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-05.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.coxautoinc.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-06.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.sandata.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-07.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.revegy.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-08.png\">\n        </a>\n      </div>\n    </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/layout/customer-web/customer-web.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/layout/customer-web/customer-web.component.ts ***!
+  \***************************************************************/
+/*! exports provided: CustomerWebComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerWebComponent", function() { return CustomerWebComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CustomerWebComponent = /** @class */ (function () {
+    function CustomerWebComponent() {
+    }
+    CustomerWebComponent.prototype.ngOnInit = function () {
+    };
+    CustomerWebComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-customer-web',
+            template: __webpack_require__(/*! ./customer-web.component.html */ "./src/app/layout/customer-web/customer-web.component.html"),
+            styles: [__webpack_require__(/*! ./customer-web.component.css */ "./src/app/layout/customer-web/customer-web.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CustomerWebComponent);
+    return CustomerWebComponent;
 }());
 
 
@@ -530,7 +593,7 @@ module.exports = "\r\n@import url('https://fonts.googleapis.com/css?family=Muli:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header-web></app-header-web>\r\n<app-home-slider></app-home-slider>\r\n<app-about-web></app-about-web>\r\n<app-features-web></app-features-web>\r\n<app-services-web></app-services-web>\r\n<app-solution-web></app-solution-web>\r\n<app-contact-web></app-contact-web>\r\n<app-footer-web></app-footer-web>\r\n"
+module.exports = "<app-header-web></app-header-web>\r\n<app-home-slider></app-home-slider>\r\n<app-about-web></app-about-web>\r\n<app-features-web></app-features-web>\r\n<app-project-web></app-project-web>\r\n<app-customer-web></app-customer-web>\r\n<app-partner-web></app-partner-web>\r\n<app-contact-web></app-contact-web>\r\n<app-footer-web></app-footer-web>\r\n"
 
 /***/ }),
 
@@ -557,6 +620,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var LayoutComponent = /** @class */ (function () {
     function LayoutComponent() {
+        this.lat = 51.678418;
+        this.lng = 7.809007;
     }
     LayoutComponent.prototype.ngOnInit = function () {
     };
@@ -596,16 +661,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_slider_home_slider_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home-slider/home-slider.component */ "./src/app/layout/home-slider/home-slider.component.ts");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _solution_web_solution_web_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./solution-web/solution-web.component */ "./src/app/layout/solution-web/solution-web.component.ts");
-/* harmony import */ var _about_web_about_web_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./about-web/about-web.component */ "./src/app/layout/about-web/about-web.component.ts");
-/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "./node_modules/@fortawesome/angular-fontawesome/fesm5/angular-fontawesome.js");
-/* harmony import */ var _features_web_detail_features_web_detail_features_web_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./features-web/detail-features-web/detail-features-web.component */ "./src/app/layout/features-web/detail-features-web/detail-features-web.component.ts");
+/* harmony import */ var _about_web_about_web_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./about-web/about-web.component */ "./src/app/layout/about-web/about-web.component.ts");
+/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "./node_modules/@fortawesome/angular-fontawesome/fesm5/angular-fontawesome.js");
+/* harmony import */ var _features_web_detail_features_web_detail_features_web_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./features-web/detail-features-web/detail-features-web.component */ "./src/app/layout/features-web/detail-features-web/detail-features-web.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _project_web_project_web_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./project-web/project-web.component */ "./src/app/layout/project-web/project-web.component.ts");
+/* harmony import */ var _customer_web_customer_web_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./customer-web/customer-web.component */ "./src/app/layout/customer-web/customer-web.component.ts");
+/* harmony import */ var _partner_web_partner_web_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./partner-web/partner-web.component */ "./src/app/layout/partner-web/partner-web.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -629,9 +700,11 @@ var WEB_COMPONENT = [
     _services_web_services_web_component__WEBPACK_IMPORTED_MODULE_6__["ServicesWebComponent"],
     _contact_web_contact_web_component__WEBPACK_IMPORTED_MODULE_7__["ContactWebComponent"],
     _home_slider_home_slider_component__WEBPACK_IMPORTED_MODULE_8__["HomeSliderComponent"],
-    _solution_web_solution_web_component__WEBPACK_IMPORTED_MODULE_11__["SolutionWebComponent"],
-    _about_web_about_web_component__WEBPACK_IMPORTED_MODULE_12__["AboutWebComponent"],
-    _features_web_detail_features_web_detail_features_web_component__WEBPACK_IMPORTED_MODULE_14__["DetailFeaturesWebComponent"]
+    _about_web_about_web_component__WEBPACK_IMPORTED_MODULE_11__["AboutWebComponent"],
+    _features_web_detail_features_web_detail_features_web_component__WEBPACK_IMPORTED_MODULE_13__["DetailFeaturesWebComponent"],
+    _project_web_project_web_component__WEBPACK_IMPORTED_MODULE_15__["ProjectWebComponent"],
+    _customer_web_customer_web_component__WEBPACK_IMPORTED_MODULE_16__["CustomerWebComponent"],
+    _partner_web_partner_web_component__WEBPACK_IMPORTED_MODULE_17__["PartnerWebComponent"]
 ];
 var LayoutModule = /** @class */ (function () {
     function LayoutModule() {
@@ -642,7 +715,8 @@ var LayoutModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_10__["CommonModule"],
                 _layout_routing_module__WEBPACK_IMPORTED_MODULE_2__["LayoutRoutingModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"],
-                _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_13__["FontAwesomeModule"]
+                _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_12__["FontAwesomeModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_14__["FormsModule"],
             ],
             providers: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbActiveModal"]],
             exports: [WEB_COMPONENT],
@@ -651,6 +725,139 @@ var LayoutModule = /** @class */ (function () {
         })
     ], LayoutModule);
     return LayoutModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layout/partner-web/partner-web.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/layout/partner-web/partner-web.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/layout/partner-web/partner-web.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/layout/partner-web/partner-web.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section class=\"sec-proud-partners\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12 text-center\">\n        <hr>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-12 text-center\">\n        <h2>PROUD PARTNERS</h2>\n      </div>\n    </div>\n    <div class=\"row row-flex row-flex-wrap\">\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\n        <a href=\"https://www.izenda.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/Izenda-logo.png\">\n        </a>\n      </div>\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\n        <a href=\"https://www.qasymphony.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/QASymphony-logo.png\">\n        </a>\n      </div>\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\n        <a href=\"https://www.microsoft.com\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/Microsoft-logo.png\">\n        </a>\n      </div>\n    </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/layout/partner-web/partner-web.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/layout/partner-web/partner-web.component.ts ***!
+  \*************************************************************/
+/*! exports provided: PartnerWebComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PartnerWebComponent", function() { return PartnerWebComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PartnerWebComponent = /** @class */ (function () {
+    function PartnerWebComponent() {
+    }
+    PartnerWebComponent.prototype.ngOnInit = function () {
+    };
+    PartnerWebComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-partner-web',
+            template: __webpack_require__(/*! ./partner-web.component.html */ "./src/app/layout/partner-web/partner-web.component.html"),
+            styles: [__webpack_require__(/*! ./partner-web.component.css */ "./src/app/layout/partner-web/partner-web.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PartnerWebComponent);
+    return PartnerWebComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layout/project-web/project-web.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/layout/project-web/project-web.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#project img {\r\n    height: 100px;\r\n    width: 100px;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/layout/project-web/project-web.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/layout/project-web/project-web.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"project\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n        <div class=\"section-headline text-center\">\n          <h2>Our Portfolio</h2>\n        </div>\n      </div>\n    </div>\n    <div class=\"row\">\n\n      <ngb-carousel *ngIf=\"images\">\n        <div class=\"col-md-4 col-sm-4\">\n          <div class=\"item\">\n            <div class=\"caption\">\n              <div class=\"container\">\n                <ng-template ngbSlide class=\"item\">\n                  <img [src]=\"images[0]\" alt=\"Random first slide\" class=\"w-100\">\n                  <div class=\"carousel-caption\">\n                    <h3>10 seconds between slides...</h3>\n                    <p>This carousel uses customized default values.</p>\n                  </div>\n                </ng-template>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"col-md-4 col-sm-4\">\n          <div class=\"item\">\n            <div class=\"caption\">\n              <div class=\"container\">\n                <ng-template ngbSlide class=\"item\">\n                  <img [src]=\"images[1]\" alt=\"Random first slide\" class=\"w-100\">\n                  <div class=\"carousel-caption\">\n                    <h3>No mouse events...</h3>\n                    <p>This carousel doesn't pause or resume on mouse events</p>\n                  </div>\n                </ng-template>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"col-md-4 col-sm-4\">\n          <div class=\"item\">\n            <div class=\"caption\">\n              <div class=\"container\">\n                <ng-template ngbSlide class=\"item\">\n                  <img [src]=\"images[2]\" alt=\"Random first slide\" class=\"w-100\">\n                  <div class=\"carousel-caption\">\n                    <h3>No keyboard...</h3>\n                    <p>This carousel uses customized default values.</p>\n                  </div>\n                </ng-template>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"col-md-4 col-sm-4\">\n          <div class=\"item\">\n            <div class=\"caption\">\n              <div class=\"container\">\n                <ng-template ngbSlide class=\"item\">\n                  <img [src]=\"images[3]\" alt=\"Random first slide\" class=\"w-100\">\n                  <div class=\"carousel-caption\">\n                    <h3>And no wrap after last slide.</h3>\n                    <p>This carousel uses customized default values.</p>\n                  </div>\n                </ng-template>\n              </div>\n            </div>\n          </div>\n        </div>\n\n\n\n\n\n\n\n      </ngb-carousel>\n    </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/layout/project-web/project-web.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/layout/project-web/project-web.component.ts ***!
+  \*************************************************************/
+/*! exports provided: ProjectWebComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectWebComponent", function() { return ProjectWebComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ProjectWebComponent = /** @class */ (function () {
+    function ProjectWebComponent(config) {
+        this.images = [1, 2, 3, 4].map(function () { return "https://picsum.photos/900/500?random&t=" + Math.random(); });
+        config.interval = 10000;
+        config.wrap = false;
+        config.keyboard = false;
+        config.pauseOnHover = false;
+    }
+    ProjectWebComponent.prototype.ngOnInit = function () {
+    };
+    ProjectWebComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-project-web',
+            template: __webpack_require__(/*! ./project-web.component.html */ "./src/app/layout/project-web/project-web.component.html"),
+            styles: [__webpack_require__(/*! ./project-web.component.css */ "./src/app/layout/project-web/project-web.component.css")]
+        }),
+        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbCarouselConfig"]])
+    ], ProjectWebComponent);
+    return ProjectWebComponent;
 }());
 
 
@@ -717,69 +924,6 @@ var ServicesWebComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]])
     ], ServicesWebComponent);
     return ServicesWebComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/layout/solution-web/solution-web.component.css":
-/*!****************************************************************!*\
-  !*** ./src/app/layout/solution-web/solution-web.component.css ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = " /*---------------------------------------\r\n      SOLUTION              \r\n  -----------------------------------------*/\r\n\r\n  h2 {\r\n    padding-bottom: 10px;\r\n    font-weight: bold;\r\n    line-height: inherit;\r\n    text-align: center;\r\n  }\r\n\r\n  section {\r\n    position: relative;\r\n    padding: 100px 0;\r\n  }\r\n\r\n  .feature-thumb {\r\n    border: 1px solid #f0f0f0;\r\n    padding: 5em 3em;\r\n  }\r\n\r\n  .feature-thumb span {\r\n    background: #3f51b5;\r\n    border-radius: 50px;\r\n    color: #ffffff;\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    display: inline-block;\r\n    width: 60px;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    text-align: center;\r\n    margin-bottom: 5px;\r\n  }\r\n\r\n  .feature-thumb h3 {\r\n    margin: 10px 0;\r\n  }\r\n"
-
-/***/ }),
-
-/***/ "./src/app/layout/solution-web/solution-web.component.html":
-/*!*****************************************************************!*\
-  !*** ./src/app/layout/solution-web/solution-web.component.html ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = " <!-- solution -->\r\n <section id=\"feature\">\r\n  <div class=\"container\">\r\n       <div class=\"row\">\r\n            <div class=\"col-md-4 col-sm-4\">\r\n                 <div class=\"feature-thumb\">\r\n                      <span>01</span>\r\n                      <h3>Trending Courses</h3>\r\n                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>\r\n                 </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4 col-sm-4\">\r\n                 <div class=\"feature-thumb\">\r\n                      <span>02</span>\r\n                      <h3>Books & Library</h3>\r\n                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>\r\n                 </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4 col-sm-4\">\r\n                 <div class=\"feature-thumb\">\r\n                      <span>03</span>\r\n                      <h3>Certified Teachers</h3>\r\n                      <p>templatemo delivers a wide variety of HTML5 templates for you at absolutely no charge. Please tell your friends.</p>\r\n                 </div>\r\n            </div>\r\n       </div>\r\n  </div>\r\n</section>"
-
-/***/ }),
-
-/***/ "./src/app/layout/solution-web/solution-web.component.ts":
-/*!***************************************************************!*\
-  !*** ./src/app/layout/solution-web/solution-web.component.ts ***!
-  \***************************************************************/
-/*! exports provided: SolutionWebComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SolutionWebComponent", function() { return SolutionWebComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var SolutionWebComponent = /** @class */ (function () {
-    function SolutionWebComponent() {
-    }
-    SolutionWebComponent.prototype.ngOnInit = function () {
-    };
-    SolutionWebComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-solution-web',
-            template: __webpack_require__(/*! ./solution-web.component.html */ "./src/app/layout/solution-web/solution-web.component.html"),
-            styles: [__webpack_require__(/*! ./solution-web.component.css */ "./src/app/layout/solution-web/solution-web.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], SolutionWebComponent);
-    return SolutionWebComponent;
 }());
 
 

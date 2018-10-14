@@ -54,6 +54,10 @@ section {
     color: #ffffff;
   }
   
+#contact #contact-form input .custom-contact{
+  margin-left: 100%;
+}
+
 /* google map angular */
   agm-map {
     height: 300px;
