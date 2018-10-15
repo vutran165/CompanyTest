@@ -1,5 +1,261 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["layout-layout-module"],{
 
+/***/ "./node_modules/ngx-owl-carousel/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/ngx-owl-carousel/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var common_1 = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+var owl_carousel_component_1 = __webpack_require__(/*! ./src/owl-carousel.component */ "./node_modules/ngx-owl-carousel/src/owl-carousel.component.js");
+var owl_child_component_1 = __webpack_require__(/*! ./src/owl-child.component */ "./node_modules/ngx-owl-carousel/src/owl-child.component.js");
+__export(__webpack_require__(/*! ./src/owl-carousel.component */ "./node_modules/ngx-owl-carousel/src/owl-carousel.component.js"));
+var OwlModule = (function () {
+    function OwlModule() {
+    }
+    OwlModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                common_1.CommonModule
+            ],
+            declarations: [
+                owl_carousel_component_1.OwlCarousel, owl_child_component_1.OwlChild
+            ],
+            exports: [
+                owl_carousel_component_1.OwlCarousel
+            ]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], OwlModule);
+    return OwlModule;
+}());
+exports.OwlModule = OwlModule;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/ngx-owl-carousel/src/owl-carousel.component.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/ngx-owl-carousel/src/owl-carousel.component.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var owl_child_component_1 = __webpack_require__(/*! ./owl-child.component */ "./node_modules/ngx-owl-carousel/src/owl-child.component.js");
+var OwlCarousel = (function () {
+    function OwlCarousel(differs) {
+        this.differs = differs;
+        this.carouselClasses = '';
+        this.options = {};
+    }
+    Object.defineProperty(OwlCarousel.prototype, "items", {
+        set: function (coll) {
+            this._items = coll;
+            if (coll && !this.differ) {
+                this.differ = this.differs.find(coll).create(null);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    OwlCarousel.prototype.ngDoCheck = function () {
+        if (this.differ) {
+            var changes = this.differ.diff(this._items);
+            if (changes) {
+                var changed_1 = false;
+                var changedFn = function () {
+                    changed_1 = true;
+                };
+                changes.forEachAddedItem(changedFn);
+                changes.forEachMovedItem(changedFn);
+                changes.forEachRemovedItem(changedFn);
+                if (changed_1) {
+                    this.reInit();
+                }
+            }
+        }
+    };
+    OwlCarousel.prototype.reInit = function () {
+        var _this = this;
+        if (this.$owlChild.$owl) {
+            this.$owlChild.$owl.css('display', 'none');
+        }
+        setTimeout(function () {
+            _this.$owlChild.destroyOwl();
+            if (_this.$owlChild.$owl) {
+                var itemLength = _this._items && _this._items.length;
+                if (itemLength && itemLength <= _this.$owlChild.currentSlideIndex) {
+                    _this.$owlChild.currentSlideIndex = itemLength;
+                }
+                _this.$owlChild.$owl.css('display', 'block');
+            }
+            _this.$owlChild.initOwl();
+        }, 0);
+    };
+    OwlCarousel.prototype.refresh = function () {
+        this.trigger('refresh.owl.carousel');
+    };
+    OwlCarousel.prototype.next = function (options) {
+        this.trigger('next.owl.carousel', options);
+    };
+    OwlCarousel.prototype.previous = function (options) {
+        this.trigger('prev.owl.carousel', options);
+    };
+    OwlCarousel.prototype.to = function (options) {
+        this.trigger('to.owl.carousel', options);
+    };
+    OwlCarousel.prototype.trigger = function (action, options) {
+        this.$owlChild.trigger(action, options);
+    };
+    __decorate([
+        core_1.ViewChild('owl'), 
+        __metadata('design:type', owl_child_component_1.OwlChild)
+    ], OwlCarousel.prototype, "$owlChild", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], OwlCarousel.prototype, "carouselClasses", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], OwlCarousel.prototype, "options", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array), 
+        __metadata('design:paramtypes', [Array])
+    ], OwlCarousel.prototype, "items", null);
+    OwlCarousel = __decorate([
+        core_1.Component({
+            selector: 'owl-carousel',
+            template: '<owl-carousel-child #owl [ngClass]="carouselClasses" [options]="options" >' +
+                '<ng-content></ng-content></owl-carousel-child>',
+        }), 
+        __metadata('design:paramtypes', [core_1.IterableDiffers])
+    ], OwlCarousel);
+    return OwlCarousel;
+}());
+exports.OwlCarousel = OwlCarousel;
+//# sourceMappingURL=owl-carousel.component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/ngx-owl-carousel/src/owl-child.component.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/ngx-owl-carousel/src/owl-child.component.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var OwlChild = (function () {
+    function OwlChild(el) {
+        this.el = el;
+        this.owlClass = true;
+        this.options = {};
+        if (typeof $ === 'undefined' && typeof jQuery !== 'undefined') {
+            $ = jQuery;
+        }
+    }
+    OwlChild.prototype.ngOnInit = function () {
+        if ((typeof window !== 'undefined') && $ && typeof $.fn.owlCarousel === 'function') {
+            this.$owl = $(this.el.nativeElement);
+        }
+    };
+    OwlChild.prototype.ngAfterViewInit = function () {
+        this.initOwl();
+    };
+    OwlChild.prototype.initOwl = function () {
+        var _this = this;
+        if (this.$owl) {
+            var options = {};
+            Object.assign(options, this.options);
+            if (this.currentSlideIndex) {
+                options.startPosition = this.currentSlideIndex;
+            }
+            this.$owl.owlCarousel(options);
+            this.$owl.on('changed.owl.carousel', function (event) {
+                _this.currentSlideIndex = event.item.index;
+            });
+        }
+    };
+    OwlChild.prototype.trigger = function (action, options) {
+        if (this.$owl) {
+            this.$owl.trigger(action, options);
+        }
+    };
+    OwlChild.prototype.ngOnDestroy = function () {
+        this.destroyOwl();
+        delete this.$owl;
+    };
+    OwlChild.prototype.destroyOwl = function () {
+        if (this.$owl) {
+            this.$owl.trigger('destroy.owl.carousel')
+                .removeClass('owl-loaded owl-hidden')
+                .find('.owl-stage:empty, .owl-item:empty')
+                .remove();
+        }
+    };
+    __decorate([
+        core_1.HostBinding('class.owl-carousel'), 
+        __metadata('design:type', Object)
+    ], OwlChild.prototype, "owlClass", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], OwlChild.prototype, "options", void 0);
+    OwlChild = __decorate([
+        core_1.Component({
+            selector: 'owl-carousel-child',
+            template: '<ng-content></ng-content>'
+        }), 
+        __metadata('design:paramtypes', [core_1.ElementRef])
+    ], OwlChild);
+    return OwlChild;
+}());
+exports.OwlChild = OwlChild;
+//# sourceMappingURL=owl-child.component.js.map
+
+/***/ }),
+
 /***/ "./src/app/layout/about-web/about-web.component.css":
 /*!**********************************************************!*\
   !*** ./src/app/layout/about-web/about-web.component.css ***!
@@ -144,7 +400,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"sec-our-customers\">\n  <div class=\"container content-sm\">\n    <div class=\"row\">\n      <div class=\"col-md-12 text-center\">\n        <h2>OUR CUSTOMERS</h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.hotschedules.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-01.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.ert.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-02.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.lexisnexis.com\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-03.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://kibocommerce.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-04.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.autotrader.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-05.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.coxautoinc.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-06.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.sandata.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-07.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.revegy.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-08.png\">\n        </a>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"sec-our-customers\">\r\n  <div class=\"container content-sm\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 text-center\">\r\n        <h2>OUR CUSTOMERS</h2>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.hotschedules.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-01.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.ert.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-02.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.lexisnexis.com\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-03.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://kibocommerce.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-04.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.autotrader.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-05.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.coxautoinc.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-06.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.sandata.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-07.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.revegy.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-08.png\">\r\n        </a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
 
 /***/ }),
 
@@ -668,12 +924,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _project_web_project_web_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./project-web/project-web.component */ "./src/app/layout/project-web/project-web.component.ts");
 /* harmony import */ var _customer_web_customer_web_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./customer-web/customer-web.component */ "./src/app/layout/customer-web/customer-web.component.ts");
 /* harmony import */ var _partner_web_partner_web_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./partner-web/partner-web.component */ "./src/app/layout/partner-web/partner-web.component.ts");
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_18__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -717,6 +976,7 @@ var LayoutModule = /** @class */ (function () {
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"],
                 _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_12__["FontAwesomeModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_14__["FormsModule"],
+                ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_18__["OwlModule"]
             ],
             providers: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbActiveModal"]],
             exports: [WEB_COMPONENT],
@@ -749,7 +1009,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"sec-proud-partners\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12 text-center\">\n        <hr>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-12 text-center\">\n        <h2>PROUD PARTNERS</h2>\n      </div>\n    </div>\n    <div class=\"row row-flex row-flex-wrap\">\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\n        <a href=\"https://www.izenda.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/Izenda-logo.png\">\n        </a>\n      </div>\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\n        <a href=\"https://www.qasymphony.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/QASymphony-logo.png\">\n        </a>\n      </div>\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\n        <a href=\"https://www.microsoft.com\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/Microsoft-logo.png\">\n        </a>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"sec-proud-partners\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 text-center\">\r\n        <hr>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 text-center\">\r\n        <h2>PROUD PARTNERS</h2>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-flex row-flex-wrap\">\r\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\r\n        <a href=\"https://www.izenda.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/Izenda-logo.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\r\n        <a href=\"https://www.qasymphony.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/QASymphony-logo.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\r\n        <a href=\"https://www.microsoft.com\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/Microsoft-logo.png\">\r\n        </a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
 
 /***/ }),
 
@@ -812,7 +1072,7 @@ module.exports = "#project img {\r\n    height: 100px;\r\n    width: 100px;\r\n}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"project\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n        <div class=\"section-headline text-center\">\n          <h2>Our Portfolio</h2>\n        </div>\n      </div>\n    </div>\n    <div class=\"row\">\n\n      <ngb-carousel *ngIf=\"images\">\n        <div class=\"col-md-4 col-sm-4\">\n          <div class=\"item\">\n            <div class=\"caption\">\n              <div class=\"container\">\n                <ng-template ngbSlide class=\"item\">\n                  <img [src]=\"images[0]\" alt=\"Random first slide\" class=\"w-100\">\n                  <div class=\"carousel-caption\">\n                    <h3>10 seconds between slides...</h3>\n                    <p>This carousel uses customized default values.</p>\n                  </div>\n                </ng-template>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"col-md-4 col-sm-4\">\n          <div class=\"item\">\n            <div class=\"caption\">\n              <div class=\"container\">\n                <ng-template ngbSlide class=\"item\">\n                  <img [src]=\"images[1]\" alt=\"Random first slide\" class=\"w-100\">\n                  <div class=\"carousel-caption\">\n                    <h3>No mouse events...</h3>\n                    <p>This carousel doesn't pause or resume on mouse events</p>\n                  </div>\n                </ng-template>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"col-md-4 col-sm-4\">\n          <div class=\"item\">\n            <div class=\"caption\">\n              <div class=\"container\">\n                <ng-template ngbSlide class=\"item\">\n                  <img [src]=\"images[2]\" alt=\"Random first slide\" class=\"w-100\">\n                  <div class=\"carousel-caption\">\n                    <h3>No keyboard...</h3>\n                    <p>This carousel uses customized default values.</p>\n                  </div>\n                </ng-template>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"col-md-4 col-sm-4\">\n          <div class=\"item\">\n            <div class=\"caption\">\n              <div class=\"container\">\n                <ng-template ngbSlide class=\"item\">\n                  <img [src]=\"images[3]\" alt=\"Random first slide\" class=\"w-100\">\n                  <div class=\"carousel-caption\">\n                    <h3>And no wrap after last slide.</h3>\n                    <p>This carousel uses customized default values.</p>\n                  </div>\n                </ng-template>\n              </div>\n            </div>\n          </div>\n        </div>\n\n\n\n\n\n\n\n      </ngb-carousel>\n    </div>\n  </div>\n</section>"
+module.exports = "<section id=\"project\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n        <div class=\"section-headline text-center\">\r\n          <h2>Our Portfolio</h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-sm-4\">\r\n        <owl-carousel [options]=\"{items: 3, dots: false, navigation: false}\" [items]=\"images\" [carouselClasses]=\"['owl-theme', 'row', 'sliding']\">\r\n          <div class=\"item\" *ngFor=\"let image of images;let i = index\">\r\n            <div class=\"thumbnail-image\" [ngStyle]=\"{'background': 'url('assets/images/author-image1.jpg')'}\"></div>\r\n          </div>\r\n        </owl-carousel>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
 
 /***/ }),
 
@@ -827,7 +1087,8 @@ module.exports = "<section id=\"project\">\n  <div class=\"container\">\n    <di
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectWebComponent", function() { return ProjectWebComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -840,22 +1101,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var ProjectWebComponent = /** @class */ (function () {
-    function ProjectWebComponent(config) {
-        this.images = [1, 2, 3, 4].map(function () { return "https://picsum.photos/900/500?random&t=" + Math.random(); });
-        config.interval = 10000;
-        config.wrap = false;
-        config.keyboard = false;
-        config.pauseOnHover = false;
+    // mySlideImages = [1, 2, 3].map((i) => `https://picsum.photos/640/480?image=${i}`);
+    // myCarouselImages = [1, 2, 3, 4, 5, 6].map((i) => `https://picsum.photos/640/480?image=${i}`);
+    // mySlideOptions = { items: 1, dots: true, nav: false };
+    // myCarouselOptions = { items: 3, dots: true, nav: true };
+    function ProjectWebComponent() {
     }
+    ProjectWebComponent.prototype.fun = function () {
+        this.owlElement.next([200]);
+    };
     ProjectWebComponent.prototype.ngOnInit = function () {
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('owlElement'),
+        __metadata("design:type", ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1__["OwlCarousel"])
+    ], ProjectWebComponent.prototype, "owlElement", void 0);
     ProjectWebComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-project-web',
             template: __webpack_require__(/*! ./project-web.component.html */ "./src/app/layout/project-web/project-web.component.html"),
             styles: [__webpack_require__(/*! ./project-web.component.css */ "./src/app/layout/project-web/project-web.component.css")]
         }),
-        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbCarouselConfig"]])
+        __metadata("design:paramtypes", [])
     ], ProjectWebComponent);
     return ProjectWebComponent;
 }());

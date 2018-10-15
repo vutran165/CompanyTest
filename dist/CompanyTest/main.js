@@ -219,7 +219,7 @@ var AppModule = /** @class */ (function () {
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModule"].forRoot(),
                 _agm_core__WEBPACK_IMPORTED_MODULE_6__["AgmCoreModule"].forRoot({
                     apiKey: ''
-                })
+                }),
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -293,7 +293,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\JACKYTRAN\Desktop\CompanyTest\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\TRANTUANVU\Desktop\CompanyTest\src\main.ts */"./src/main.ts");
 
 
 /***/ })

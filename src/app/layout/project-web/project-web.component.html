@@ -8,10 +8,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 col-sm-4">
-        <owl-carousel [options]="{items: 3, dots: false, navigation: false}" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-          <div class="item" *ngFor="let image of images;let i = index">
-            <div class="thumbnail-image" [ngStyle]="{'background': 'url('assets/images/author-image1.jpg')'}"></div>
+      <div class="col-md-12 col-sm-12">
+        <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding', 'owl-carousel']">
+          <div class="item" *ngFor="let image of myCarouselImages;let i = index">
+              <img src={{image}}/>
+            <!-- <div class="thumbnail-image" >
+              <img src={{image}}/>
+            </div> -->
           </div>
         </owl-carousel>
       </div>
