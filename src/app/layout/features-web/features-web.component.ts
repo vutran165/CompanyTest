@@ -13,7 +13,7 @@ export class FeaturesWebComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
 
   readmore() {
-    const modalRef = this.modalService.open(DetailFeaturesWebComponent, { size: 'lg' })
+    const modalRef = this.modalService.open(DetailFeaturesWebComponent, { size: 'lg' });
     modalRef.componentInstance.name = 'Done';
   }
 

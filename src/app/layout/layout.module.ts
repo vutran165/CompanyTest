@@ -13,11 +13,12 @@ import { AboutWebComponent } from './about-web/about-web.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DetailFeaturesWebComponent } from './features-web/detail-features-web/detail-features-web.component';
 import { FormsModule } from '@angular/forms';
-import { AgmCoreModule } from '@agm/core';
 import { ProjectWebComponent } from './project-web/project-web.component';
 import { CustomerWebComponent } from './customer-web/customer-web.component';
 import { PartnerWebComponent } from './partner-web/partner-web.component';
 import { OwlModule } from 'ngx-owl-carousel';
+import { DetailProjectWebComponent } from './project-web/detail-project-web/detail-project-web.component';
+
 
 
 const WEB_COMPONENT = [
@@ -31,6 +32,7 @@ const WEB_COMPONENT = [
     AboutWebComponent,
     DetailFeaturesWebComponent,
     ProjectWebComponent,
+    DetailProjectWebComponent,
     CustomerWebComponent,
     PartnerWebComponent
 ];

@@ -926,12 +926,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _partner_web_partner_web_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./partner-web/partner-web.component */ "./src/app/layout/partner-web/partner-web.component.ts");
 /* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
 /* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _projectWeb_detail_project_web_detail_project_web_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./projectWeb/detail-project-web/detail-project-web.component */ "./src/app/layout/projectWeb/detail-project-web/detail-project-web.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -962,6 +964,7 @@ var WEB_COMPONENT = [
     _about_web_about_web_component__WEBPACK_IMPORTED_MODULE_11__["AboutWebComponent"],
     _features_web_detail_features_web_detail_features_web_component__WEBPACK_IMPORTED_MODULE_13__["DetailFeaturesWebComponent"],
     _project_web_project_web_component__WEBPACK_IMPORTED_MODULE_15__["ProjectWebComponent"],
+    _projectWeb_detail_project_web_detail_project_web_component__WEBPACK_IMPORTED_MODULE_19__["DetailProjectWebComponent"],
     _customer_web_customer_web_component__WEBPACK_IMPORTED_MODULE_16__["CustomerWebComponent"],
     _partner_web_partner_web_component__WEBPACK_IMPORTED_MODULE_17__["PartnerWebComponent"]
 ];
@@ -1054,6 +1057,72 @@ var PartnerWebComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/layout/project-web/detail-project-web/detail-project-web.component.css":
+/*!****************************************************************************************!*\
+  !*** ./src/app/layout/project-web/detail-project-web/detail-project-web.component.css ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/layout/project-web/detail-project-web/detail-project-web.component.html":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/layout/project-web/detail-project-web/detail-project-web.component.html ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"modal-detail\">\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <p>Hello, detail form!</p>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/layout/project-web/detail-project-web/detail-project-web.component.ts":
+/*!***************************************************************************************!*\
+  !*** ./src/app/layout/project-web/detail-project-web/detail-project-web.component.ts ***!
+  \***************************************************************************************/
+/*! exports provided: DetailProjectWebComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailProjectWebComponent", function() { return DetailProjectWebComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DetailProjectWebComponent = /** @class */ (function () {
+    function DetailProjectWebComponent(activeModal) {
+        this.activeModal = activeModal;
+    }
+    DetailProjectWebComponent.prototype.ngOnInit = function () {
+    };
+    DetailProjectWebComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-detail-project-web',
+            template: __webpack_require__(/*! ./detail-project-web.component.html */ "./src/app/layout/project-web/detail-project-web/detail-project-web.component.html"),
+            styles: [__webpack_require__(/*! ./detail-project-web.component.css */ "./src/app/layout/project-web/detail-project-web/detail-project-web.component.css")]
+        }),
+        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbActiveModal"]])
+    ], DetailProjectWebComponent);
+    return DetailProjectWebComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/layout/project-web/project-web.component.css":
 /*!**************************************************************!*\
   !*** ./src/app/layout/project-web/project-web.component.css ***!
@@ -1061,7 +1130,7 @@ var PartnerWebComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#project img {\r\n    height: 100px;\r\n    width: 100px;\r\n}"
+module.exports = "section {\r\n    padding: 100px 0;\r\n}\r\n\r\n/* #project .owl-stage .owl-item {\r\n    height: 214px;\r\n    width: 214px;\r\n} */\r\n\r\n.add-actions {\r\n    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;\r\n  bottom: 30px;\r\n  display: block;\r\n  height: 100%;\r\n  left: 0;\r\n  opacity: 0;\r\n  overflow: hidden;\r\n  padding: 10px 15px;\r\n  position: absolute;\r\n  transition: all 0.4s ease 0s;\r\n  width: 100%;\r\n}\r\n\r\n.add-actions a:hover {\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n}\r\n\r\n.awesome-img {\r\n    display: block;\r\n    width: 100%;\r\n    height: 100%;\r\n    position: relative;\r\n  }\r\n\r\n.awesome-img > a::after {\r\n    background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;\r\n    content: \"\";\r\n    height: 100%;\r\n    left: 0;\r\n    position: absolute;\r\n    top: 0;\r\n    width: 100%;\r\n    opacity: 0;\r\n    transition: 0.4s;\r\n  }\r\n\r\n.single-awesome-project {\r\n    overflow: hidden;\r\n    margin-bottom: 30px;\r\n  }\r\n\r\n.single-awesome-project:hover .awesome-img>a::after {\r\n    opacity: 1;\r\n  }\r\n\r\n.single-awesome-project:hover .add-actions {\r\n    opacity: 1;\r\n    bottom: 0;\r\n  }\r\n\r\n.project-dec {\r\n    display: block;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.project-dec a {\r\n    display: block;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.project-dec h4 {\r\n    margin-bottom: 5px;\r\n  }\r\n\r\n.project-dec h4:hover {\r\n    color: #fff;\r\n  }\r\n\r\n.project-dec h4 {\r\n    color: #ddd;\r\n    font-size: 24px;\r\n    margin-top: -45px;\r\n    padding-top: 50%;\r\n    text-decoration: none;\r\n    text-transform: uppercase;\r\n    font-weight: 800;\r\n  }\r\n\r\n.project-dec span {\r\n    color: #ddd;\r\n    font-size: 13px;\r\n  }"
 
 /***/ }),
 
@@ -1072,7 +1141,7 @@ module.exports = "#project img {\r\n    height: 100px;\r\n    width: 100px;\r\n}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"project\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n        <div class=\"section-headline text-center\">\r\n          <h2>Our Portfolio</h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-sm-4\">\r\n        <owl-carousel [options]=\"{items: 3, dots: false, navigation: false}\" [items]=\"images\" [carouselClasses]=\"['owl-theme', 'row', 'sliding']\">\r\n          <div class=\"item\" *ngFor=\"let image of images;let i = index\">\r\n            <div class=\"thumbnail-image\" [ngStyle]=\"{'background': 'url('assets/images/author-image1.jpg')'}\"></div>\r\n          </div>\r\n        </owl-carousel>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
+module.exports = "<section id=\"project\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n        <div class=\"section-headline text-center\">\r\n          <h2>Our Portfolio</h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 col-sm-12\">\r\n        <owl-carousel [options]=\"myCarouselOptions\" [items]=\"images\" [carouselClasses]=\"['owl-theme', 'owl-carousel']\">\r\n          <div class=\"item\" *ngFor=\"let image of myCarouselImages;let i = index\">\r\n            <div class=\"single-awesome-project\">\r\n              <div class=\"awesome-img\">\r\n                <a href=\"#\"><img src={{image}} /></a>\r\n\r\n                <div class=\"add-actions text-center\">\r\n                  <div class=\"project-dec\">\r\n                    <a class=\"venobox\" data-gall=\"myGallery\" (click)=\"projectDetail()\">\r\n                      <h4>Business City</h4>\r\n                      <span>Web Development</span>\r\n                    </a>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n        </owl-carousel>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
 
 /***/ }),
 
@@ -1087,8 +1156,8 @@ module.exports = "<section id=\"project\">\r\n  <div class=\"container\">\r\n   
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectWebComponent", function() { return ProjectWebComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
-/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _detail_project_web_detail_project_web_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./detail-project-web/detail-project-web.component */ "./src/app/layout/project-web/detail-project-web/detail-project-web.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1100,31 +1169,109 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var ProjectWebComponent = /** @class */ (function () {
-    // mySlideImages = [1, 2, 3].map((i) => `https://picsum.photos/640/480?image=${i}`);
-    // myCarouselImages = [1, 2, 3, 4, 5, 6].map((i) => `https://picsum.photos/640/480?image=${i}`);
-    // mySlideOptions = { items: 1, dots: true, nav: false };
-    // myCarouselOptions = { items: 3, dots: true, nav: true };
-    function ProjectWebComponent() {
+    function ProjectWebComponent(modalService) {
+        this.modalService = modalService;
+        this.myCarouselImages = [1, 2, 3, 4, 5, 6].map(function (i) { return "https://picsum.photos/640/480?image=" + i; });
+        this.myCarouselOptions = {
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 4
+                }
+            },
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true
+        };
     }
-    ProjectWebComponent.prototype.fun = function () {
-        this.owlElement.next([200]);
+    ProjectWebComponent.prototype.projectDetail = function () {
+        var modalRef = this.modalService.open(_detail_project_web_detail_project_web_component__WEBPACK_IMPORTED_MODULE_2__["DetailProjectWebComponent"], { size: 'lg' });
+        modalRef.componentInstance.name = 'Done';
     };
     ProjectWebComponent.prototype.ngOnInit = function () {
     };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('owlElement'),
-        __metadata("design:type", ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1__["OwlCarousel"])
-    ], ProjectWebComponent.prototype, "owlElement", void 0);
     ProjectWebComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-project-web',
             template: __webpack_require__(/*! ./project-web.component.html */ "./src/app/layout/project-web/project-web.component.html"),
             styles: [__webpack_require__(/*! ./project-web.component.css */ "./src/app/layout/project-web/project-web.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]])
     ], ProjectWebComponent);
     return ProjectWebComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layout/projectWeb/detail-project-web/detail-project-web.component.css":
+/*!***************************************************************************************!*\
+  !*** ./src/app/layout/projectWeb/detail-project-web/detail-project-web.component.css ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/layout/projectWeb/detail-project-web/detail-project-web.component.html":
+/*!****************************************************************************************!*\
+  !*** ./src/app/layout/projectWeb/detail-project-web/detail-project-web.component.html ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  detail-project-web works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/layout/projectWeb/detail-project-web/detail-project-web.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/layout/projectWeb/detail-project-web/detail-project-web.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: DetailProjectWebComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailProjectWebComponent", function() { return DetailProjectWebComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DetailProjectWebComponent = /** @class */ (function () {
+    function DetailProjectWebComponent() {
+    }
+    DetailProjectWebComponent.prototype.ngOnInit = function () {
+    };
+    DetailProjectWebComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-detail-project-web',
+            template: __webpack_require__(/*! ./detail-project-web.component.html */ "./src/app/layout/projectWeb/detail-project-web/detail-project-web.component.html"),
+            styles: [__webpack_require__(/*! ./detail-project-web.component.css */ "./src/app/layout/projectWeb/detail-project-web/detail-project-web.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], DetailProjectWebComponent);
+    return DetailProjectWebComponent;
 }());
 
 

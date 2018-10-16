@@ -9,12 +9,23 @@
     </div>
     <div class="row">
       <div class="col-md-12 col-sm-12">
-        <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding', 'owl-carousel']">
+        <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'owl-carousel']">
           <div class="item" *ngFor="let image of myCarouselImages;let i = index">
-              <img src={{image}}/>
-            <!-- <div class="thumbnail-image" >
-              <img src={{image}}/>
-            </div> -->
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src={{image}} /></a>
+
+                <div class="add-actions text-center">
+                  <div class="project-dec">
+                    <a class="venobox" data-gall="myGallery" (click)="projectDetail()">
+                      <h4>Business City</h4>
+                      <span>Web Development</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </owl-carousel>
       </div>
