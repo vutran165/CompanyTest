@@ -1108,7 +1108,7 @@ var DetailProjectWebComponent = /** @class */ (function () {
         this.onSaid = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     DetailProjectWebComponent.prototype.listen = function () {
-        this.onSaid.emit(this.activeModal.close.toString());
+        this.onSaid.emit();
     };
     DetailProjectWebComponent.prototype.ngOnInit = function () {
         console.log(this.activeModal);
@@ -1185,7 +1185,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var ProjectWebComponent = /** @class */ (function () {
     function ProjectWebComponent(modalService) {
         this.modalService = modalService;
-        this.triggerCondition = false;
+        this.triggerCondition = '1';
         this.myCarouselImages = [1, 2, 3, 4, 5, 6].map(function (i) { return "https://picsum.photos/640/480?image=" + i; });
         this.myCarouselOptions = {
             loop: true,
@@ -1207,21 +1207,37 @@ var ProjectWebComponent = /** @class */ (function () {
             autoplayHoverPause: true
         };
     }
-    // @ViewChild(DetailProjectWebComponent) detail: DetailProjectWebComponent;
     ProjectWebComponent.prototype.fun = function (value) {
-        if (this.triggerCondition === value) {
+        if (this.triggerCondition !== value) {
             this.owlElement.trigger('stop.owl.autoplay');
-            return value;
         }
         else {
             this.owlElement.trigger('play.owl.autoplay');
-            return value;
+        }
+    };
+    ProjectWebComponent.prototype.getDismissReason = function (reason) {
+        if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ModalDismissReasons"].ESC) {
+            return 'by pressing ESC';
+        }
+        else if (reason === _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ModalDismissReasons"].BACKDROP_CLICK) {
+            return 'by clicking on a backdrop';
+        }
+        else {
+            return "with: " + reason;
         }
     };
     ProjectWebComponent.prototype.projectDetail = function () {
-        var modalRef = this.modalService.open(_detail_project_web_detail_project_web_component__WEBPACK_IMPORTED_MODULE_3__["DetailProjectWebComponent"], { size: 'lg' });
-        this.triggerCondition = true;
-        console.log(this.triggerCondition);
+        var _this = this;
+        this.fun('0');
+        this.modalService.open(_detail_project_web_detail_project_web_component__WEBPACK_IMPORTED_MODULE_3__["DetailProjectWebComponent"], { size: 'lg' }).result.then(function (result) {
+            _this.closeResult = "Closed with: " + result;
+            // result return 1;
+            _this.fun(result);
+        }, function (reason) {
+            _this.closeResult = "Dismissed " + _this.getDismissReason(reason);
+            // reason return 1;
+            _this.fun(reason);
+        });
     };
     ProjectWebComponent.prototype.ngOnInit = function () {
         this.fun(this.triggerCondition);
