@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild, Output, ViewChildren } from '@angular/core';
 import { OwlCarousel } from 'ngx-owl-carousel';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { DetailProjectWebComponent } from './detail-project-web/detail-project-web.component';
 import { EventEmitter } from 'events';
-import { viewAttached } from '@angular/core/src/render3/instructions';
-
 
 @Component({
   selector: 'app-project-web',
@@ -14,24 +12,27 @@ import { viewAttached } from '@angular/core/src/render3/instructions';
 
 export class ProjectWebComponent implements OnInit {
 
-  private triggerCondition = false;
-
-  // tslint:disable-next-line:no-output-on-prefix
-
+  private triggerCondition = '1';
+  closeResult: string;
 
   // add trigger with viewchild in component....
   @ViewChild('owlElement') owlElement: OwlCarousel;
-  // @ViewChild(DetailProjectWebComponent) detail: DetailProjectWebComponent;
 
-
-
-  fun(value: boolean) {
-    if (this.triggerCondition === value) {
+  fun(value: string): void {
+    if (this.triggerCondition !== value) {
       this.owlElement.trigger('stop.owl.autoplay');
-      return value;
     } else {
       this.owlElement.trigger('play.owl.autoplay');
-      return value;
+    }
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
     }
   }
 
@@ -40,9 +41,16 @@ export class ProjectWebComponent implements OnInit {
   }
 
   projectDetail() {
-    const modalRef = this.modalService.open(DetailProjectWebComponent, { size: 'lg' });
-    this.triggerCondition = true;
-    console.log(this.triggerCondition);
+    this.fun('0');
+    this.modalService.open(DetailProjectWebComponent, { size: 'lg' }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+      // result return 1;
+      this.fun(result);
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      // reason return 1;
+      this.fun(reason);
+    });
   }
 
   myCarouselImages = [1, 2, 3, 4, 5, 6].map((i) => `https://picsum.photos/640/480?image=${i}`);

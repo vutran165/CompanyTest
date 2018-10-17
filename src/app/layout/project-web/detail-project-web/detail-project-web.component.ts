@@ -8,11 +8,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DetailProjectWebComponent implements OnInit {
 
-  @Output() onSaid = new EventEmitter<string>();
+  @Output() onSaid = new EventEmitter<Object>();
 
 
   listen() {
-    this.onSaid.emit(this.activeModal.close.toString());
+    this.onSaid.emit();
   }
 
   constructor(private activeModal: NgbActiveModal) { }

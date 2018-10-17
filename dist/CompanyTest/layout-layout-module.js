@@ -400,7 +400,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"sec-our-customers\">\n  <div class=\"container content-sm\">\n    <div class=\"row\">\n      <div class=\"col-md-12 text-center\">\n        <h2>OUR CUSTOMERS</h2>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.hotschedules.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-01.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.ert.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-02.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.lexisnexis.com\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-03.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://kibocommerce.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-04.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.autotrader.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-05.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.coxautoinc.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-06.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.sandata.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-07.png\">\n        </a>\n      </div>\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\n        <a href=\"https://www.revegy.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-08.png\">\n        </a>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"sec-our-customers\">\r\n  <div class=\"container content-sm\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 text-center\">\r\n        <h2>OUR CUSTOMERS</h2>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.hotschedules.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-01.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.ert.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-02.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.lexisnexis.com\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-03.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://kibocommerce.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-04.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.autotrader.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-05.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.coxautoinc.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-06.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.sandata.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-07.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-3 col-sm-6 col-xs-6 text-center margin-bottom-60\">\r\n        <a href=\"https://www.revegy.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/our-customer-08.png\">\r\n        </a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
 
 /***/ }),
 
@@ -1012,7 +1012,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"sec-proud-partners\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12 text-center\">\n        <hr>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-12 text-center\">\n        <h2>PROUD PARTNERS</h2>\n      </div>\n    </div>\n    <div class=\"row row-flex row-flex-wrap\">\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\n        <a href=\"https://www.izenda.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/Izenda-logo.png\">\n        </a>\n      </div>\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\n        <a href=\"https://www.qasymphony.com/\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/QASymphony-logo.png\">\n        </a>\n      </div>\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\n        <a href=\"https://www.microsoft.com\" target=\"_blank\">\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/Microsoft-logo.png\">\n        </a>\n      </div>\n    </div>\n  </div>\n</section>"
+module.exports = "<section class=\"sec-proud-partners\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 text-center\">\r\n        <hr>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 text-center\">\r\n        <h2>PROUD PARTNERS</h2>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-flex row-flex-wrap\">\r\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\r\n        <a href=\"https://www.izenda.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/Izenda-logo.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\r\n        <a href=\"https://www.qasymphony.com/\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/QASymphony-logo.png\">\r\n        </a>\r\n      </div>\r\n      <div class=\"col-md-4 col-sm-6 col-xs-6 flex-col text-center margin-bottom-60\">\r\n        <a href=\"https://www.microsoft.com\" target=\"_blank\">\r\n          <img src=\"https://www.kms-technology.com/wp-content/uploads/2018/02/Microsoft-logo.png\">\r\n        </a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
 
 /***/ }),
 
@@ -1075,7 +1075,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-detail\">\r\n  <div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>Hello, detail form!</p>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"modal-detail\">\r\n  <div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('1')\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>Hello, detail form!</p>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('1')\">Close</button>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1105,9 +1105,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var DetailProjectWebComponent = /** @class */ (function () {
     function DetailProjectWebComponent(activeModal) {
         this.activeModal = activeModal;
+        this.onSaid = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
-    DetailProjectWebComponent.prototype.ngOnInit = function () {
+    DetailProjectWebComponent.prototype.listen = function () {
+        this.onSaid.emit(this.activeModal.close.toString());
     };
+    DetailProjectWebComponent.prototype.ngOnInit = function () {
+        console.log(this.activeModal);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], DetailProjectWebComponent.prototype, "onSaid", void 0);
     DetailProjectWebComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-detail-project-web',
@@ -1141,7 +1150,7 @@ module.exports = "section {\r\n    padding: 100px 0;\r\n}\r\n\r\n/* #project .ow
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"project\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n        <div class=\"section-headline text-center\">\r\n          <h2>Our Portfolio</h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 col-sm-12\">\r\n        <owl-carousel [options]=\"myCarouselOptions\" [items]=\"images\" [carouselClasses]=\"['owl-theme', 'owl-carousel']\">\r\n          <div class=\"item\" *ngFor=\"let image of myCarouselImages;let i = index\">\r\n            <div class=\"single-awesome-project\">\r\n              <div class=\"awesome-img\">\r\n                <a href=\"#\"><img src={{image}} /></a>\r\n\r\n                <div class=\"add-actions text-center\">\r\n                  <div class=\"project-dec\">\r\n                    <a class=\"venobox\" data-gall=\"myGallery\" (click)=\"projectDetail()\">\r\n                      <h4>Business City</h4>\r\n                      <span>Web Development</span>\r\n                    </a>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n        </owl-carousel>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
+module.exports = "<section id=\"project\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n        <div class=\"section-headline text-center\">\r\n          <h2>Our Portfolio</h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 col-sm-12\">\r\n        <owl-carousel #owlElement [options]=\"myCarouselOptions\" [items]=\"images\" [carouselClasses]=\"['owl-theme', 'owl-carousel']\">\r\n          <div class=\"item\" *ngFor=\"let image of myCarouselImages;let i = index\">\r\n            <div class=\"single-awesome-project\">\r\n              <div class=\"awesome-img\">\r\n                <a href=\"#\"><img src={{image}} /></a>\r\n\r\n                <div class=\"add-actions text-center\">\r\n                  <div class=\"project-dec\">\r\n                    <a class=\"venobox\" data-gall=\"myGallery\" (click)=\"projectDetail()\">\r\n                      <h4>Business City</h4>\r\n                      <span>Web Development</span>\r\n                    </a>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n        </owl-carousel>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>"
 
 /***/ }),
 
@@ -1156,8 +1165,10 @@ module.exports = "<section id=\"project\">\r\n  <div class=\"container\">\r\n   
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectWebComponent", function() { return ProjectWebComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
-/* harmony import */ var _detail_project_web_detail_project_web_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./detail-project-web/detail-project-web.component */ "./src/app/layout/project-web/detail-project-web/detail-project-web.component.ts");
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _detail_project_web_detail_project_web_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./detail-project-web/detail-project-web.component */ "./src/app/layout/project-web/detail-project-web/detail-project-web.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1170,9 +1181,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var ProjectWebComponent = /** @class */ (function () {
     function ProjectWebComponent(modalService) {
         this.modalService = modalService;
+        this.triggerCondition = false;
         this.myCarouselImages = [1, 2, 3, 4, 5, 6].map(function (i) { return "https://picsum.photos/640/480?image=" + i; });
         this.myCarouselOptions = {
             loop: true,
@@ -1190,23 +1203,43 @@ var ProjectWebComponent = /** @class */ (function () {
                 }
             },
             autoplay: true,
-            autoplayTimeout: 5000,
+            autoplayTimeout: 1000,
             autoplayHoverPause: true
         };
     }
+    // @ViewChild(DetailProjectWebComponent) detail: DetailProjectWebComponent;
+    ProjectWebComponent.prototype.fun = function (value) {
+        if (this.triggerCondition === value) {
+            this.owlElement.trigger('stop.owl.autoplay');
+            return value;
+        }
+        else {
+            this.owlElement.trigger('play.owl.autoplay');
+            return value;
+        }
+    };
     ProjectWebComponent.prototype.projectDetail = function () {
-        var modalRef = this.modalService.open(_detail_project_web_detail_project_web_component__WEBPACK_IMPORTED_MODULE_2__["DetailProjectWebComponent"], { size: 'lg' });
-        modalRef.componentInstance.name = 'Done';
+        var modalRef = this.modalService.open(_detail_project_web_detail_project_web_component__WEBPACK_IMPORTED_MODULE_3__["DetailProjectWebComponent"], { size: 'lg' });
+        this.triggerCondition = true;
+        console.log(this.triggerCondition);
     };
     ProjectWebComponent.prototype.ngOnInit = function () {
+        this.fun(this.triggerCondition);
+        this.onSaid();
     };
+    ProjectWebComponent.prototype.onSaid = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('owlElement'),
+        __metadata("design:type", ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_1__["OwlCarousel"])
+    ], ProjectWebComponent.prototype, "owlElement", void 0);
     ProjectWebComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-project-web',
             template: __webpack_require__(/*! ./project-web.component.html */ "./src/app/layout/project-web/project-web.component.html"),
-            styles: [__webpack_require__(/*! ./project-web.component.css */ "./src/app/layout/project-web/project-web.component.css")]
+            styles: [__webpack_require__(/*! ./project-web.component.css */ "./src/app/layout/project-web/project-web.component.css")],
         }),
-        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"]])
+        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"]])
     ], ProjectWebComponent);
     return ProjectWebComponent;
 }());

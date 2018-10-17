@@ -662,10 +662,10 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\JACKYTRAN\Desktop\CompanyTest\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-__webpack_require__(/*! C:\Users\JACKYTRAN\Desktop\CompanyTest\src\styles.css */"./src/styles.css");
-__webpack_require__(/*! C:\Users\JACKYTRAN\Desktop\CompanyTest\node_modules\owl.carousel\dist\assets\owl.carousel.min.css */"./node_modules/owl.carousel/dist/assets/owl.carousel.min.css");
-module.exports = __webpack_require__(/*! C:\Users\JACKYTRAN\Desktop\CompanyTest\node_modules\owl.carousel\dist\assets\owl.theme.default.min.css */"./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css");
+__webpack_require__(/*! C:\Users\TRANTUANVU\Desktop\CompanyTest\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! C:\Users\TRANTUANVU\Desktop\CompanyTest\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\Users\TRANTUANVU\Desktop\CompanyTest\node_modules\owl.carousel\dist\assets\owl.carousel.min.css */"./node_modules/owl.carousel/dist/assets/owl.carousel.min.css");
+module.exports = __webpack_require__(/*! C:\Users\TRANTUANVU\Desktop\CompanyTest\node_modules\owl.carousel\dist\assets\owl.theme.default.min.css */"./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css");
 
 
 /***/ })
