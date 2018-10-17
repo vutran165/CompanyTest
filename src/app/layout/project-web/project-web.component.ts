@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, Output, ViewChildren } from '@angular/cor
 import { OwlCarousel } from 'ngx-owl-carousel';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { DetailProjectWebComponent } from './detail-project-web/detail-project-web.component';
-import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-project-web',
@@ -77,11 +76,6 @@ export class ProjectWebComponent implements OnInit {
 
   ngOnInit() {
     this.fun(this.triggerCondition);
-    this.onSaid();
-  }
-
-  onSaid() {
-
   }
 
 }
