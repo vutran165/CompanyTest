@@ -4,8 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AgmCoreModule } from '@agm/core';
-import { OwlModule } from 'ngx-owl-carousel';
 
 
 @NgModule({
@@ -17,9 +15,6 @@ import { OwlModule } from 'ngx-owl-carousel';
     AppRoutingModule,
     HttpClientModule,
     NgbModule.forRoot(),
-    AgmCoreModule.forRoot({
-      apiKey: ''
-    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

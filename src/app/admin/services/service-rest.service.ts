@@ -4,16 +4,16 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { ServiceEntity } from './service';
 
-const endpoint = 'https://samples.openweathermap.org/data/2.5';
+const endpoint = 'http://localhost:8585';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Methods': 'GET',
-    'Access-Control-Allow-Origin': '*'
+    'Access-Control-Allow-Methods': 'GET, POST, DELETE, UPDATE',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Authorization'
   }),
-  withCredentials : true
+  withCredentials: true
 };
-
 @Injectable(
 
 )
@@ -22,19 +22,22 @@ export class ServiceRestService {
 
   constructor(private http: HttpClient) { }
 
+  data: any;
+
   private extractData(res: Response) {
     const body = res;
     return body || {};
   }
 
-  public getServices() {
-    // const req = this.http.get(endpoint + '/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22').pipe(map(this.extractData));
-    const req = this.http.get('https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=b6907d289e10d714a6e88b30761fae22');
-    console.log(req);
-    req.subscribe((response) => console.log(response));
-    return req;
-    // return this.http.get(endpoint + '/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22');
-
+  public getData() {
+    return this.http.get(endpoint + '/service', httpOptions).subscribe(data => {
+      data = this.data;
+      console.log(data);
+    }, err => {
+      console.log(err.message);
+    }, () => {
+      console.log('completed');
+    });
   }
 
   public getServiceById(id): Observable<any> {

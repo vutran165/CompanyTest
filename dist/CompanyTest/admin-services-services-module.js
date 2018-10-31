@@ -18,7 +18,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, {{name}}!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>\n"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, {{name}}!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -88,7 +88,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, delete form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, delete form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
 
 /***/ }),
 
@@ -154,7 +154,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, detail form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, detail form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
 
 /***/ }),
 
@@ -220,7 +220,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <p>Hello, edit form!</p>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n  </div>\n  "
+module.exports = "<div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>Hello, edit form!</p>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -293,12 +293,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var endpoint = 'https://samples.openweathermap.org/data/2.5';
+var endpoint = 'http://localhost:8585';
 var httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Methods': 'GET',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Methods': 'GET, POST, DELETE, UPDATE',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Authorization'
     }),
     withCredentials: true
 };
@@ -310,13 +311,16 @@ var ServiceRestService = /** @class */ (function () {
         var body = res;
         return body || {};
     };
-    ServiceRestService.prototype.getServices = function () {
-        // const req = this.http.get(endpoint + '/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22').pipe(map(this.extractData));
-        var req = this.http.get('https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=b6907d289e10d714a6e88b30761fae22');
-        console.log(req);
-        req.subscribe(function (response) { return console.log(response); });
-        return req;
-        // return this.http.get(endpoint + '/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22');
+    ServiceRestService.prototype.getData = function () {
+        var _this = this;
+        return this.http.get(endpoint + '/service').subscribe(function (data) {
+            data = _this.data;
+            console.log(data);
+        }, function (err) {
+            console.log(err.message);
+        }, function () {
+            console.log('completed');
+        });
     };
     ServiceRestService.prototype.getServiceById = function (id) {
         return this.http.get(endpoint + 'service/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(this.extractData));
@@ -400,7 +404,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\n  <div class=\"card\">\n    <div class=\"card-header\">\n      <div class=\"col\">\n        <h3>\n          <span>\n            <fa-icon [icon]=\"faWrench\"></fa-icon> &nbsp;&nbsp;Service\n          </span>\n        </h3>\n\n      </div>\n      <div class=\"col text-right\">\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"add()\">\n          <fa-icon [icon]=\"faPlus\"></fa-icon>\n        </button>\n      </div>\n    </div>\n\n    <div class=\"card-body table-responsive\">\n      <table class=\"table table-bordered\">\n        <thead>\n          <tr>\n            <th scope=\"col\">#</th>\n            <th scope=\"col\">First</th>\n            <th scope=\"col\">Last</th>\n            <th scope=\"col\">Handle</th>\n            <th scope=\"col\">Action</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <th scope=\"row\">1</th>\n            <td>Mark</td>\n            <td>Otto</td>\n            <td>@mdo</td>\n            <td>\n                <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"edit()\">\n                  <fa-icon [icon]=\"faPenSquare\"></fa-icon>\n                </button>\n                <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"delete()\">\n                  <fa-icon [icon]=\"faTrash\"></fa-icon>\n                </button>\n              </td>\n          </tr>\n          <tr>\n            <th scope=\"row\">2</th>\n            <td>Jacob</td>\n            <td>Thornton</td>\n            <td>@fat</td>\n            <td>\n                <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"edit()\">\n                  <fa-icon [icon]=\"faPenSquare\"></fa-icon>\n                </button>\n                <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"delete()\">\n                  <fa-icon [icon]=\"faTrash\"></fa-icon>\n                </button>\n              </td>\n          </tr>\n          \n          <tr>\n              <th scope=\"row\">2</th>\n              <td>Jacob</td>\n              <td>Thornton</td>\n              <td>@fat</td>\n              <td>\n                  <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"edit()\">\n                    <fa-icon [icon]=\"faPenSquare\"></fa-icon>\n                  </button>\n                  <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"delete()\">\n                    <fa-icon [icon]=\"faTrash\"></fa-icon>\n                  </button>\n                </td>\n            </tr>\n\n        </tbody>\n      </table>\n\n    </div>\n\n    <div class=\"card-footer\">\n      <nav aria-label=\"Page navigation\">\n        <ul class=\"pagination justify-content-center\">\n          <li class=\"page-item disabled\">\n            <a class=\"page-link\" href=\"#\" aria-label=\"Previous\">\n              <span aria-hidden=\"true\">&laquo;</span>\n              <span class=\"sr-only\">Previous</span>\n            </a>\n          </li>\n          <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a></li>\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">5</a></li>\n          <li class=\"page-item\">\n            <a class=\"page-link\" href=\"#\" aria-label=\"Next\">\n              <span aria-hidden=\"true\">&raquo;</span>\n              <span class=\"sr-only\">Next</span>\n            </a>\n          </li>\n        </ul>\n      </nav>\n    </div>\n\n\n  </div>\n</div>"
+module.exports = "<div class=\"content\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\">\r\n      <div class=\"col\">\r\n        <h3>\r\n          <span>\r\n            <fa-icon [icon]=\"faWrench\"></fa-icon> &nbsp;&nbsp;Service\r\n          </span>\r\n        </h3>\r\n\r\n      </div>\r\n      <div class=\"col text-right\">\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"add()\">\r\n          <fa-icon [icon]=\"faPlus\"></fa-icon>\r\n        </button>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"card-body table-responsive\">\r\n      <table class=\"table table-bordered\">\r\n        <thead>\r\n          <tr>\r\n            <th scope=\"col\">#</th>\r\n            <th scope=\"col\">First</th>\r\n            <th scope=\"col\">Last</th>\r\n            <th scope=\"col\">Handle</th>\r\n            <th scope=\"col\">Action</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr>\r\n            <th scope=\"row\">1</th>\r\n            <td>Mark</td>\r\n            <td>Otto</td>\r\n            <td>@mdo</td>\r\n            <td>\r\n                <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"edit()\">\r\n                  <fa-icon [icon]=\"faPenSquare\"></fa-icon>\r\n                </button>\r\n                <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"delete()\">\r\n                  <fa-icon [icon]=\"faTrash\"></fa-icon>\r\n                </button>\r\n              </td>\r\n          </tr>\r\n          <tr>\r\n            <th scope=\"row\">2</th>\r\n            <td>Jacob</td>\r\n            <td>Thornton</td>\r\n            <td>@fat</td>\r\n            <td>\r\n                <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"edit()\">\r\n                  <fa-icon [icon]=\"faPenSquare\"></fa-icon>\r\n                </button>\r\n                <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"delete()\">\r\n                  <fa-icon [icon]=\"faTrash\"></fa-icon>\r\n                </button>\r\n              </td>\r\n          </tr>\r\n          \r\n          <tr>\r\n              <th scope=\"row\">2</th>\r\n              <td>Jacob</td>\r\n              <td>Thornton</td>\r\n              <td>@fat</td>\r\n              <td>\r\n                  <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"edit()\">\r\n                    <fa-icon [icon]=\"faPenSquare\"></fa-icon>\r\n                  </button>\r\n                  <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"delete()\">\r\n                    <fa-icon [icon]=\"faTrash\"></fa-icon>\r\n                  </button>\r\n                </td>\r\n            </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n\r\n    </div>\r\n\r\n    <div class=\"card-footer\">\r\n      <nav aria-label=\"Page navigation\">\r\n        <ul class=\"pagination justify-content-center\">\r\n          <li class=\"page-item disabled\">\r\n            <a class=\"page-link\" href=\"#\" aria-label=\"Previous\">\r\n              <span aria-hidden=\"true\">&laquo;</span>\r\n              <span class=\"sr-only\">Previous</span>\r\n            </a>\r\n          </li>\r\n          <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">5</a></li>\r\n          <li class=\"page-item\">\r\n            <a class=\"page-link\" href=\"#\" aria-label=\"Next\">\r\n              <span aria-hidden=\"true\">&raquo;</span>\r\n              <span class=\"sr-only\">Next</span>\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </nav>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -441,16 +445,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var endpoint = 'https://samples.openweathermap.org/data/2.5';
 var url = 'https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=b6907d289e10d714a6e88b30761fae22';
+var _URL = 'https://fantasy.premierleague.com/drf/bootstrap-static';
 var httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]({
         'Content-Type': 'application/json',
         'Access-Control-Allow-Methods': 'GET, POST, DELETE, UPDATE',
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'http://localhost:8585',
         'Access-Control-Allow-Headers': 'Authorization'
     }),
     withCredentials: true
 };
-var responseType = 'json';
 var ServicesComponent = /** @class */ (function () {
     function ServicesComponent(modalService, service, http) {
         this.modalService = modalService;
@@ -476,11 +480,7 @@ var ServicesComponent = /** @class */ (function () {
         this.inItData();
     };
     ServicesComponent.prototype.inItData = function () {
-        // const data = this.service.getServices();
-        var data = this.http.get(url, httpOptions);
-        data.subscribe(function (response) { return console.log(response); });
-        console.log(data);
-        return data;
+        return this.service.getData();
     };
     ServicesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

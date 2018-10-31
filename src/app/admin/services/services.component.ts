@@ -13,17 +13,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const endpoint = 'https://samples.openweathermap.org/data/2.5';
 const url = 'https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=b6907d289e10d714a6e88b30761fae22';
+const _URL = 'https://fantasy.premierleague.com/drf/bootstrap-static';
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     'Access-Control-Allow-Methods': 'GET, POST, DELETE, UPDATE',
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'http://localhost:8585',
     'Access-Control-Allow-Headers': 'Authorization'
   }),
   withCredentials: true
 };
-
-const responseType = 'json';
 
 
 @Component({
@@ -33,16 +33,13 @@ const responseType = 'json';
 })
 export class ServicesComponent implements OnInit {
 
-
-
   constructor(private modalService: NgbModal, private service: ServiceRestService, private http: HttpClient) { }
 
   faWrench = faWrench;
   faPlus = faPlus;
   faPenSquare = faPenSquare;
   faTrash = faTrash;
-
-
+  data: any;
 
   add() {
     const modalRef = this.modalService.open(CreateComponent, { size: 'lg' });
@@ -58,17 +55,12 @@ export class ServicesComponent implements OnInit {
   }
 
   ngOnInit() {
-
     console.log('done');
     this.inItData();
   }
 
-  inItData(): Observable<any> {
-    // const data = this.service.getServices();
-    const data = this.http.get(url, httpOptions);
-    data.subscribe((response) => console.log(response));
-    console.log(data);
-    return data;
+  inItData() {
+    return this.service.getData();
   }
 
 }
