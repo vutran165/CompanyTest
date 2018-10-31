@@ -9,26 +9,28 @@ const app = express();
 app.use(express.static(__dirname + '/dist/CompanyTest'));
 
 //CORS middleware
-// app.use(function (req, res, next) {
-//     //enabling CORS
-//     // req.header("Access-Control-Allow-Origin", "localhost:8585");
-//     req.header("Access-Control-Request-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-//     req.header("Access-Control-Request-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
+app.use(function (req, res, next) {
+    //enabling CORS
+    // req.header("Access-Control-Request-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    // req.header("Access-Control-Request-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
 
 
-//     res.header("Access-Control-Allow-Origin", "http://localhost:8585/service");
-//     res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     res.header("Access-Control-Allow-Credentials", true)
-//     next();
-// })
+    res.header("Access-Control-Allow-Origin", "http://localhost:8585");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,POST,PUT");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Credentials", true)
+    next();
+})
 
 //using cors external module
-app.use(cors({
-   origin:'http://localhost:8585',
-   exposedHeaders:['Content-Length','X-Foo', 'X-Bar'],
-   credentials: true
-}));
+// app.use(cors({
+//     origin: 'http://localhost:8585',
+//     exposedHeaders: ['Content-Length', 'X-Foo', 'X-Bar'],
+//     methods: ['GET', 'PUT', 'POST', 'DELETE'],
+//     allowedHeaders: ['Content-Type', 'Authorization'],
+//     preflightContinue: false,
+//     credentials: true
+// }));
 
 // body parse
 app.use(bodyParse.urlencoded({ extended: true }));

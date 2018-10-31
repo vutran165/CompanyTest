@@ -8,8 +8,8 @@ const endpoint = 'http://localhost:8585';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Methods': 'GET, POST, DELETE, UPDATE',
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTION ,DELETE, UPDATE',
+    'Access-Control-Allow-Origin': 'http://localhost:8585',
     'Access-Control-Allow-Headers': 'Authorization'
   }),
   withCredentials: true
