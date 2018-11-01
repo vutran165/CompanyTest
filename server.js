@@ -2,21 +2,28 @@ const express = require('express');
 const path = require('path');
 const bodyParse = require('body-parser');
 const cors = require('cors');
+const request = require('request');
 
 const app = express();
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/CompanyTest'));
 
+
+//
+
+
 //CORS middleware
 app.use(function (req, res, next) {
     //enabling CORS
     // req.header("Access-Control-Request-Methods", "GET,HEAD,OPTIONS,POST,PUT");
     // req.header("Access-Control-Request-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
-
-
-    res.header("Access-Control-Allow-Origin", "http://localhost:8585");
-    res.header("Access-Control-Allow-Methods", "GET,HEAD,POST,PUT");
+	console.log(req);
+	console.log(req.headers);
+	// req.header
+	
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Credentials", true)
     next();

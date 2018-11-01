@@ -9,6 +9,7 @@ import { DeleteComponent } from './delete/delete.component';
 import { ServiceRestService } from './service-rest.service';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ServiceData } from './service';
 
 
 const endpoint = 'https://samples.openweathermap.org/data/2.5';
@@ -18,8 +19,8 @@ const _URL = 'https://fantasy.premierleague.com/drf/bootstrap-static';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Methods': 'GET, POST, DELETE, UPDATE',
-    'Access-Control-Allow-Origin': 'http://localhost:8585',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS ,DELETE, UPDATE',
+    'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Authorization'
   }),
   withCredentials: true
@@ -40,6 +41,7 @@ export class ServicesComponent implements OnInit {
   faPenSquare = faPenSquare;
   faTrash = faTrash;
   data: any;
+  serviceData = ServiceData[0];
 
   add() {
     const modalRef = this.modalService.open(CreateComponent, { size: 'lg' });
@@ -60,7 +62,9 @@ export class ServicesComponent implements OnInit {
   }
 
   inItData() {
+	console.log(this.serviceData);
+	this.service.addItem(this.serviceData);
     return this.service.getData();
   }
-
+  
 }

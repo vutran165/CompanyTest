@@ -1,20 +1,64 @@
-export class ServiceEntity {
-    public id_service: number;
-    public content: string;
-    public createDate: string;
-    public modifyDate: string;
-    public note: string;
+class ServiceEntity {
+    public id: String;
+    public content: String;
+    public create_date: String;
+    public imagePath: String;
+    public note: String;
+	public status: Boolean;
 
-    constructor(id_service: number, content: string,
-        createDate: string, modifyDate: string,
-        note: string) {
+    constructor(id: String, content: String,
+        create_date: String, imagePath: String,
+        note: String, status: Boolean) {
 
-        this.id_service = id_service;
+        this.id = id;
         this.content = content;
-        this.createDate = createDate;
-        this.modifyDate = modifyDate;
+        this.create_date = create_date;
+        this.imagePath = imagePath;
         this.note = note;
+		this.status = status;
 
     }
 }
 
+export const ServiceData : ServiceEntity[] = [ 
+    {
+        id: 'req.body.id',
+        content: 'req.body.content',
+        create_date: 'req.body.create_date',
+        imagePath: 'req.body.status',
+        note: 'req.body.imagePath',
+		status: true,
+    },
+    {
+        id: 'req.body.id5',
+        content: 'req.body.content',
+        create_date: 'req.body.create_date',
+        imagePath: 'req.body.status',
+        note: 'req.body.imagePath',
+		status: true,
+    },
+    {
+        id: 'req.body.id2',
+        content: 'req.body.content',
+        create_date: 'req.body.create_date',
+        imagePath: 'req.body.status',
+        note: 'req.body.imagePath',
+		status: true,
+    },
+    {
+        id: 'req.body.id3',
+        content: 'req.body.content',
+        create_date: 'req.body.create_date',
+        imagePath: 'req.body.status',
+        note: 'req.body.imagePath',
+		status: true,
+    },
+    {
+        id: 'req.body.id4',
+        content: 'req.body.content',
+        create_date: 'req.body.create_date',
+        imagePath: 'req.body.status',
+        note: 'req.body.imagePath',
+		status: true,
+    }
+]
