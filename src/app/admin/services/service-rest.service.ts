@@ -34,18 +34,18 @@ export class ServiceRestService {
   }
 
   public getData() {
-    return this.http.get(endpoint + '/service', httpOptions).subscribe(data => {
-      data = this.data;
-      console.log(data);
+    // return this.http.get(endpoint + '/service').pipe(map(this.extractData));
+    return this.http.get(endpoint + '/service').subscribe(res => {
+      console.log(res);
     }, err => {
       console.log(err.message);
     }, () => {
-      console.log('completed');
+      console.log('complete!!!!');
     });
   }
 
   public getServiceById(id): Observable<any> {
-    return this.http.get(endpoint + 'service/' + id).pipe(
+    return this.http.get(endpoint + '/service/' + id).pipe(
       map(this.extractData));
   }
 
@@ -54,17 +54,17 @@ export class ServiceRestService {
       map(this.extractData)
     );
   }
-  
+
   public addItem(service) {
-	  return this.http.post(endpoint + '/service', service).subscribe(res => {
-		  console.log(res);
-	  }, err => {
-		 console.log(err.message);
-	  }, () => {
-		  console.log("done!!!!");
-	  });
+    return this.http.post(endpoint + '/service', service).subscribe(res => {
+      console.log(res);
+    }, err => {
+      console.log(err.message);
+    }, () => {
+      console.log('done!!!');
+    });
   }
-	  
+
 
 
 
