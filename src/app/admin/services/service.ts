@@ -4,30 +4,28 @@ class ServiceEntity {
     public create_date: String;
     public imagePath: String;
     public note: String;
-	public status: Boolean;
+    public status: Boolean;
 
     constructor(id: String, content: String,
         create_date: String, imagePath: String,
         note: String, status: Boolean) {
-
         this.id = id;
         this.content = content;
         this.create_date = create_date;
         this.imagePath = imagePath;
         this.note = note;
-		this.status = status;
-
+        this.status = status;
     }
 }
 
-export const ServiceData : ServiceEntity[] = [ 
+export const ServiceData: ServiceEntity[] = [
     {
         id: 'req.body.id',
         content: 'req.body.content',
         create_date: 'req.body.create_date',
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
-		status: true,
+        status: true,
     },
     {
         id: 'req.body.id5',
@@ -35,7 +33,7 @@ export const ServiceData : ServiceEntity[] = [
         create_date: 'req.body.create_date',
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
-		status: true,
+        status: true,
     },
     {
         id: 'req.body.id2',
@@ -43,7 +41,7 @@ export const ServiceData : ServiceEntity[] = [
         create_date: 'req.body.create_date',
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
-		status: true,
+        status: true,
     },
     {
         id: 'req.body.id3',
@@ -51,7 +49,7 @@ export const ServiceData : ServiceEntity[] = [
         create_date: 'req.body.create_date',
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
-		status: true,
+        status: true,
     },
     {
         id: 'req.body.id4',
@@ -59,6 +57,6 @@ export const ServiceData : ServiceEntity[] = [
         create_date: 'req.body.create_date',
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
-		status: true,
+        status: true,
     }
-]
+];

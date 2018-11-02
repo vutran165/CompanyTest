@@ -10,27 +10,14 @@ import { ServiceRestService } from './service-rest.service';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ServiceData } from './service';
-
-
-const endpoint = 'https://samples.openweathermap.org/data/2.5';
-const url = 'https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=b6907d289e10d714a6e88b30761fae22';
-const _URL = 'https://fantasy.premierleague.com/drf/bootstrap-static';
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS ,DELETE, UPDATE',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Authorization'
-  }),
-  withCredentials: true
-};
+import { objTranfer } from 'src/app/shared/service-common/objTranfer';
 
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
-  styleUrls: ['./services.component.css']
+  styleUrls: ['./services.component.css'],
+  providers: [ServiceRestService]
 })
 export class ServicesComponent implements OnInit {
 
@@ -40,8 +27,10 @@ export class ServicesComponent implements OnInit {
   faPlus = faPlus;
   faPenSquare = faPenSquare;
   faTrash = faTrash;
-  data: any;
-  serviceData = ServiceData[0];
+  items: any;
+  pagingObj: any;
+  objTranfer: any;
+
 
   add() {
     const modalRef = this.modalService.open(CreateComponent, { size: 'lg' });
@@ -62,9 +51,11 @@ export class ServicesComponent implements OnInit {
   }
 
   inItData() {
-	console.log(this.serviceData);
-	this.service.addItem(this.serviceData);
-    return this.service.getData();
+    // console.log(this.service.getData());
+    this.service.getData().subscribe(data => {
+        data = this.objTranfer;
+    });
+    console.log(this.objTranfer);
+    return this.objTranfer;
   }
-  
 }

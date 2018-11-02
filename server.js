@@ -7,30 +7,9 @@ const app = express();
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/CompanyTest'));
 
-
-
 // body parse
 app.use(bodyParse.urlencoded({ extended: true }));
 app.use(bodyParse.json({ extended: true }));
-
-// handle 404
-app.use(function (req, res) {
-    res.status(404).send({
-        status: 404,
-        message: 'Not found',
-        type: 'client'
-    });
-})
-
-// handle 500
-app.use(function (req, res) {
-    res.status(500).send({
-        status: 500,
-        message: 'internal error',
-        type: 'internal'
-    })
-})
-
 
 // Start the app by listening on the default Heroku port
 var port = process.env.PORT || 8888;

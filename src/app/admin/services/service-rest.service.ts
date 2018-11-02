@@ -3,19 +3,10 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { ServiceData } from './service';
+import { pagingObject } from 'src/app/shared/service-common/pagingObject';
 
 
 const endpoint = 'http://localhost:8585';
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTION ,DELETE, UPDATE',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Authorization'
-  }),
-  withCredentials: true
-};
-
 
 @Injectable(
 
@@ -25,23 +16,28 @@ export class ServiceRestService {
 
   constructor(private http: HttpClient) { }
 
-  data: any;
+  items: any;
   service = ServiceData[0];
+  pagingObj: any;
 
   private extractData(res: Response) {
     const body = res;
     return body || {};
   }
 
-  public getData() {
-    // return this.http.get(endpoint + '/service').pipe(map(this.extractData));
-    return this.http.get(endpoint + '/service').subscribe(res => {
-      console.log(res);
-    }, err => {
-      console.log(err.message);
-    }, () => {
-      console.log('complete!!!!');
-    });
+  public getData(): Observable<any> {
+    return this.http.get(endpoint + '/service').pipe(map(this.extractData));
+    // .subscribe((res: Response) => {
+    //   console.log(res);
+    //   this.items = res['data'];
+    //   this.pagingObj = res['pageData'];
+    //   console.log(this.items);
+    //   console.log(this.pagingObj);
+    // }, err => {
+    //   console.log(err.message);
+    // }, () => {
+    //   console.log('complete!!!!');
+    // });
   }
 
   public getServiceById(id): Observable<any> {
