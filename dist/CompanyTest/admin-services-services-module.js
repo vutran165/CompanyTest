@@ -306,18 +306,17 @@ var ServiceRestService = /** @class */ (function () {
         return body || {};
     };
     ServiceRestService.prototype.getData = function () {
-        return this.http.get(endpoint + '/service').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(this.extractData));
-        // .subscribe((res: Response) => {
-        //   console.log(res);
-        //   this.items = res['data'];
-        //   this.pagingObj = res['pageData'];
-        //   console.log(this.items);
-        //   console.log(this.pagingObj);
-        // }, err => {
-        //   console.log(err.message);
-        // }, () => {
-        //   console.log('complete!!!!');
-        // });
+        var _this = this;
+        return this.http.get(endpoint + '/service').subscribe(function (res) {
+            console.log(res);
+            _this.objTranfer = res;
+            console.log(_this.objTranfer['data']);
+            console.log(_this.objTranfer['pagingObj']);
+        }, function (err) {
+            console.log(err.message);
+        }, function () {
+            console.log('completed!!!!');
+        });
     };
     ServiceRestService.prototype.getServiceById = function (id) {
         return this.http.get(endpoint + '/service/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(this.extractData));
@@ -477,7 +476,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\">\r\n      <div class=\"col\">\r\n        <h3>\r\n          <span>\r\n            <fa-icon [icon]=\"faWrench\"></fa-icon> &nbsp;&nbsp;Service\r\n          </span>\r\n        </h3>\r\n\r\n      </div>\r\n      <div class=\"col text-right\">\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"add()\">\r\n          <fa-icon [icon]=\"faPlus\"></fa-icon>\r\n        </button>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"card-body table-responsive\">\r\n      <table class=\"table table-bordered\">\r\n        <thead>\r\n          <tr>\r\n            <th scope=\"col\">#</th>\r\n            <th scope=\"col\">Content</th>\r\n            <th scope=\"col\">Create Date</th>\r\n            <th scope=\"col\">Status</th>\r\n            <th scope=\"col\">Action</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let item of objTranfer.data; let i = index\">\r\n            <th scope=\"row\">{{i+1}}</th>\r\n            <td>{{item.content}}</td>\r\n            <td>{{item.create_date}}</td>\r\n            <td>{{item.status}}</td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"edit()\">\r\n                <fa-icon [icon]=\"faPenSquare\"></fa-icon>\r\n              </button>\r\n              <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"delete()\">\r\n                <fa-icon [icon]=\"faTrash\"></fa-icon>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n\r\n    </div>\r\n\r\n    <div class=\"card-footer\">\r\n      <nav aria-label=\"Page navigation\">\r\n        <ul class=\"pagination justify-content-center\">\r\n          <li class=\"page-item disabled\">\r\n            <a class=\"page-link\" href=\"#\" aria-label=\"Previous\">\r\n              <span aria-hidden=\"true\">&laquo;</span>\r\n              <span class=\"sr-only\">Previous</span>\r\n            </a>\r\n          </li>\r\n          <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">5</a></li>\r\n          <li class=\"page-item\">\r\n            <a class=\"page-link\" href=\"#\" aria-label=\"Next\">\r\n              <span aria-hidden=\"true\">&raquo;</span>\r\n              <span class=\"sr-only\">Next</span>\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </nav>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"content\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\">\r\n      <div class=\"col\">\r\n        <h3>\r\n          <span>\r\n            <fa-icon [icon]=\"faWrench\"></fa-icon> &nbsp;&nbsp;Service\r\n          </span>\r\n        </h3>\r\n\r\n      </div>\r\n      <div class=\"col text-right\">\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"add()\">\r\n          <fa-icon [icon]=\"faPlus\"></fa-icon>\r\n        </button>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"card-body table-responsive\">\r\n      <table class=\"table table-bordered\">\r\n        <thead>\r\n          <tr>\r\n            <th scope=\"col\">#</th>\r\n            <th scope=\"col\">Content</th>\r\n            <th scope=\"col\">Create Date</th>\r\n            <th scope=\"col\">Status</th>\r\n            <th scope=\"col\">Action</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let item of data; let i = index\">\r\n            <th scope=\"row\">{{i+1}}</th>\r\n            <td>{{item.content}}</td>\r\n            <td>{{item.create_date}}</td>\r\n            <td>{{item.status}}</td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"edit()\">\r\n                <fa-icon [icon]=\"faPenSquare\"></fa-icon>\r\n              </button>\r\n              <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"delete()\">\r\n                <fa-icon [icon]=\"faTrash\"></fa-icon>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n\r\n    </div>\r\n\r\n    <div class=\"card-footer\">\r\n      <nav aria-label=\"Page navigation\">\r\n        <ul class=\"pagination justify-content-center\">\r\n          <li class=\"page-item disabled\">\r\n            <a class=\"page-link\" href=\"#\" aria-label=\"Previous\">\r\n              <span aria-hidden=\"true\">&laquo;</span>\r\n              <span class=\"sr-only\">Previous</span>\r\n            </a>\r\n          </li>\r\n          <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">5</a></li>\r\n          <li class=\"page-item\">\r\n            <a class=\"page-link\" href=\"#\" aria-label=\"Next\">\r\n              <span aria-hidden=\"true\">&raquo;</span>\r\n              <span class=\"sr-only\">Next</span>\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </nav>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -541,13 +540,9 @@ var ServicesComponent = /** @class */ (function () {
         this.inItData();
     };
     ServicesComponent.prototype.inItData = function () {
-        var _this = this;
-        // console.log(this.service.getData());
-        this.service.getData().subscribe(function (data) {
-            data = _this.objTranfer;
-        });
-        console.log(this.objTranfer);
-        return this.objTranfer;
+        this.items = this.service.getData();
+        console.log(this.items);
+        return this.items;
     };
     ServicesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

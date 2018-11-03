@@ -28,6 +28,7 @@ export class ServicesComponent implements OnInit {
   faPenSquare = faPenSquare;
   faTrash = faTrash;
   items: any;
+  data: any;
   pagingObj: any;
   objTranfer: any;
 
@@ -51,11 +52,8 @@ export class ServicesComponent implements OnInit {
   }
 
   inItData() {
-    // console.log(this.service.getData());
-    this.service.getData().subscribe(data => {
-        data = this.objTranfer;
-    });
-    console.log(this.objTranfer);
-    return this.objTranfer;
+    this.items = this.service.getData();
+    console.log(this.items);
+    return this.items;
   }
 }

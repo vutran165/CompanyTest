@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { ServiceData } from './service';
 import { pagingObject } from 'src/app/shared/service-common/pagingObject';
+import { objTranfer } from 'src/app/shared/service-common/objTranfer';
 
 
 const endpoint = 'http://localhost:8585';
@@ -18,26 +19,26 @@ export class ServiceRestService {
 
   items: any;
   service = ServiceData[0];
-  pagingObj: any;
+  pagingObj: pagingObject;
+  dto: objTranfer;
+  objTranfer: any;
 
   private extractData(res: Response) {
     const body = res;
     return body || {};
   }
 
-  public getData(): Observable<any> {
-    return this.http.get(endpoint + '/service').pipe(map(this.extractData));
-    // .subscribe((res: Response) => {
-    //   console.log(res);
-    //   this.items = res['data'];
-    //   this.pagingObj = res['pageData'];
-    //   console.log(this.items);
-    //   console.log(this.pagingObj);
-    // }, err => {
-    //   console.log(err.message);
-    // }, () => {
-    //   console.log('complete!!!!');
-    // });
+  public getData() {
+    return this.http.get(endpoint + '/service').subscribe(res => {
+      console.log(res);
+      this.objTranfer = res;
+      console.log(this.objTranfer['data']);
+      console.log(this.objTranfer['pagingObj']);
+    }, err => {
+      console.log(err.message);
+    }, () => {
+      console.log('completed!!!!');
+    });
   }
 
   public getServiceById(id): Observable<any> {
