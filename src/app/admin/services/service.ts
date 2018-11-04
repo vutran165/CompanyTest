@@ -1,20 +1,22 @@
-class ServiceEntity {
+export class ServiceEntity {
     public id: String;
     public content: String;
     public create_date: String;
     public imagePath: String;
     public note: String;
     public status: Boolean;
+    public title: String;
 
     constructor(id: String, content: String,
         create_date: String, imagePath: String,
-        note: String, status: Boolean) {
+        note: String, status: Boolean, title: String) {
         this.id = id;
         this.content = content;
         this.create_date = create_date;
         this.imagePath = imagePath;
         this.note = note;
         this.status = status;
+        this.title = title;
     }
 }
 
@@ -26,6 +28,7 @@ export const ServiceData: ServiceEntity[] = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
+        title: '1212121'
     },
     {
         id: 'req.body.id5',
@@ -34,6 +37,7 @@ export const ServiceData: ServiceEntity[] = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
+        title: '1212121'
     },
     {
         id: 'req.body.id2',
@@ -42,6 +46,7 @@ export const ServiceData: ServiceEntity[] = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
+        title: '1212121'
     },
     {
         id: 'req.body.id3',
@@ -50,6 +55,7 @@ export const ServiceData: ServiceEntity[] = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
+        title: '1212121'
     },
     {
         id: 'req.body.id4',
@@ -58,5 +64,6 @@ export const ServiceData: ServiceEntity[] = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
+        title: '1212121'
     }
 ];

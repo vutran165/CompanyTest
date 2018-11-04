@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
-import { ServiceData } from './service';
+import { ServiceData, ServiceEntity } from './service';
 import { pagingObject } from 'src/app/shared/service-common/pagingObject';
 import { objTranfer } from 'src/app/shared/service-common/objTranfer';
 
@@ -28,17 +28,8 @@ export class ServiceRestService {
     return body || {};
   }
 
-  public getData() {
-    return this.http.get(endpoint + '/service').subscribe(res => {
-      console.log(res);
-      this.objTranfer = res;
-      console.log(this.objTranfer['data']);
-      console.log(this.objTranfer['pagingObj']);
-    }, err => {
-      console.log(err.message);
-    }, () => {
-      console.log('completed!!!!');
-    });
+  public getData(): Observable<any> {
+    return this.http.get(endpoint + '/service');
   }
 
   public getServiceById(id): Observable<any> {
@@ -52,7 +43,7 @@ export class ServiceRestService {
     );
   }
 
-  public addItem(service) {
+  public addItem(service: ServiceEntity) {
     return this.http.post(endpoint + '/service', service).subscribe(res => {
       console.log(res);
     }, err => {
@@ -61,8 +52,4 @@ export class ServiceRestService {
       console.log('done!!!');
     });
   }
-
-
-
-
 }

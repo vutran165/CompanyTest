@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ServiceData } from './service';
 import { objTranfer } from 'src/app/shared/service-common/objTranfer';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -30,8 +31,6 @@ export class ServicesComponent implements OnInit {
   items: any;
   data: any;
   pagingObj: any;
-  objTranfer: any;
-
 
   add() {
     const modalRef = this.modalService.open(CreateComponent, { size: 'lg' });
@@ -52,8 +51,10 @@ export class ServicesComponent implements OnInit {
   }
 
   inItData() {
-    this.items = this.service.getData();
-    console.log(this.items);
-    return this.items;
+    return this.service.getData().pipe(map(res => {
+      this.items = res['data'];
+      this.pagingObj = res['pagingObj'];
+    })).subscribe(() => {
+    });
   }
 }

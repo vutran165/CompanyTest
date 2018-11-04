@@ -18,7 +18,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, {{name}}!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>\r\n"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <!-- <p>Hello, {{name}}!</p> -->\n  <div class=\"form-group\">\n    <label for=\"\">Title</label>\n    <input type=\"text\" name=\"\" id=\"\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModal)]=\"item[title]\">\n    <small id=\"helpId\" class=\"text-muted\"></small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"\">Content</label>\n    <textarea class=\"form-control\" name=\"content\" id=\"\" rows=\"3\" [(ngModal)]=\"item[content]\"></textarea>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"\">Note</label>\n    <input type=\"text\" name=\"\" id=\"\" class=\"form-control\" placeholder=\"...\" [(ngModal)]=\"item[note]\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"\">Status</label>\n    <div class=\"col-sm-3 col-md-3\">\n      <section class=\"form-control\" [(ngModal)]=\"item[status]\">\n        <option *ngFor=\"let option of options\" [(ngValue)]=\"option[value]\">{{option.label}}</option>\n      </section>\n    </div>\n  </div>\n\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"save()\">Save</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
 
 /***/ }),
 
@@ -34,6 +34,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateComponent", function() { return CreateComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _service_rest_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service-rest.service */ "./src/app/admin/services/service-rest.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -45,23 +46,24 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var CreateComponent = /** @class */ (function () {
-    function CreateComponent(activeModal) {
+    function CreateComponent(activeModal, service) {
         this.activeModal = activeModal;
+        this.service = service;
     }
+    CreateComponent.prototype.save = function () {
+        return this.service.addItem(this.item);
+    };
     CreateComponent.prototype.ngOnInit = function () {
     };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], CreateComponent.prototype, "name", void 0);
     CreateComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-create',
             template: __webpack_require__(/*! ./create.component.html */ "./src/app/admin/services/create/create.component.html"),
             styles: [__webpack_require__(/*! ./create.component.css */ "./src/app/admin/services/create/create.component.css")]
         }),
-        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbActiveModal"]])
+        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbActiveModal"], _service_rest_service__WEBPACK_IMPORTED_MODULE_2__["ServiceRestService"]])
     ], CreateComponent);
     return CreateComponent;
 }());
@@ -88,7 +90,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, delete form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, delete form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
 
 /***/ }),
 
@@ -154,7 +156,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, detail form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, detail form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
 
 /***/ }),
 
@@ -220,7 +222,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>Hello, edit form!</p>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n  </div>\r\n  "
+module.exports = "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <p>Hello, edit form!</p>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n  </div>\n  "
 
 /***/ }),
 
@@ -306,17 +308,7 @@ var ServiceRestService = /** @class */ (function () {
         return body || {};
     };
     ServiceRestService.prototype.getData = function () {
-        var _this = this;
-        return this.http.get(endpoint + '/service').subscribe(function (res) {
-            console.log(res);
-            _this.objTranfer = res;
-            console.log(_this.objTranfer['data']);
-            console.log(_this.objTranfer['pagingObj']);
-        }, function (err) {
-            console.log(err.message);
-        }, function () {
-            console.log('completed!!!!');
-        });
+        return this.http.get(endpoint + '/service');
     };
     ServiceRestService.prototype.getServiceById = function (id) {
         return this.http.get(endpoint + '/service/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(this.extractData));
@@ -348,23 +340,26 @@ var ServiceRestService = /** @class */ (function () {
 /*!*******************************************!*\
   !*** ./src/app/admin/services/service.ts ***!
   \*******************************************/
-/*! exports provided: ServiceData */
+/*! exports provided: ServiceEntity, ServiceData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServiceEntity", function() { return ServiceEntity; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServiceData", function() { return ServiceData; });
 var ServiceEntity = /** @class */ (function () {
-    function ServiceEntity(id, content, create_date, imagePath, note, status) {
+    function ServiceEntity(id, content, create_date, imagePath, note, status, title) {
         this.id = id;
         this.content = content;
         this.create_date = create_date;
         this.imagePath = imagePath;
         this.note = note;
         this.status = status;
+        this.title = title;
     }
     return ServiceEntity;
 }());
+
 var ServiceData = [
     {
         id: 'req.body.id',
@@ -373,6 +368,7 @@ var ServiceData = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
+        title: '1212121'
     },
     {
         id: 'req.body.id5',
@@ -381,6 +377,7 @@ var ServiceData = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
+        title: '1212121'
     },
     {
         id: 'req.body.id2',
@@ -389,6 +386,7 @@ var ServiceData = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
+        title: '1212121'
     },
     {
         id: 'req.body.id3',
@@ -397,6 +395,7 @@ var ServiceData = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
+        title: '1212121'
     },
     {
         id: 'req.body.id4',
@@ -405,6 +404,7 @@ var ServiceData = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
+        title: '1212121'
     }
 ];
 
@@ -476,7 +476,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\">\r\n      <div class=\"col\">\r\n        <h3>\r\n          <span>\r\n            <fa-icon [icon]=\"faWrench\"></fa-icon> &nbsp;&nbsp;Service\r\n          </span>\r\n        </h3>\r\n\r\n      </div>\r\n      <div class=\"col text-right\">\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"add()\">\r\n          <fa-icon [icon]=\"faPlus\"></fa-icon>\r\n        </button>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"card-body table-responsive\">\r\n      <table class=\"table table-bordered\">\r\n        <thead>\r\n          <tr>\r\n            <th scope=\"col\">#</th>\r\n            <th scope=\"col\">Content</th>\r\n            <th scope=\"col\">Create Date</th>\r\n            <th scope=\"col\">Status</th>\r\n            <th scope=\"col\">Action</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let item of data; let i = index\">\r\n            <th scope=\"row\">{{i+1}}</th>\r\n            <td>{{item.content}}</td>\r\n            <td>{{item.create_date}}</td>\r\n            <td>{{item.status}}</td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"edit()\">\r\n                <fa-icon [icon]=\"faPenSquare\"></fa-icon>\r\n              </button>\r\n              <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"delete()\">\r\n                <fa-icon [icon]=\"faTrash\"></fa-icon>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n\r\n    </div>\r\n\r\n    <div class=\"card-footer\">\r\n      <nav aria-label=\"Page navigation\">\r\n        <ul class=\"pagination justify-content-center\">\r\n          <li class=\"page-item disabled\">\r\n            <a class=\"page-link\" href=\"#\" aria-label=\"Previous\">\r\n              <span aria-hidden=\"true\">&laquo;</span>\r\n              <span class=\"sr-only\">Previous</span>\r\n            </a>\r\n          </li>\r\n          <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">5</a></li>\r\n          <li class=\"page-item\">\r\n            <a class=\"page-link\" href=\"#\" aria-label=\"Next\">\r\n              <span aria-hidden=\"true\">&raquo;</span>\r\n              <span class=\"sr-only\">Next</span>\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </nav>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"content\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\">\r\n      <div class=\"col\">\r\n        <h3>\r\n          <span>\r\n            <fa-icon [icon]=\"faWrench\"></fa-icon> &nbsp;&nbsp;Service\r\n          </span>\r\n        </h3>\r\n\r\n      </div>\r\n      <div class=\"col text-right\">\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"add()\">\r\n          <fa-icon [icon]=\"faPlus\"></fa-icon>\r\n        </button>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"card-body table-responsive\">\r\n      <table class=\"table table-bordered\">\r\n        <thead>\r\n          <tr>\r\n            <th scope=\"col\">#</th>\r\n            <th scope=\"col\">Content</th>\r\n            <th scope=\"col\">Create Date</th>\r\n            <th scope=\"col\">Status</th>\r\n            <th scope=\"col\">Action</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let item of items; let i = index\">\r\n            <th scope=\"row\">{{i+1}}</th>\r\n            <td>{{item.content}}</td>\r\n            <td>{{item.create_date}}</td>\r\n            <td>{{item.status}}</td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"edit()\">\r\n                <fa-icon [icon]=\"faPenSquare\"></fa-icon>\r\n              </button>\r\n              <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"delete()\">\r\n                <fa-icon [icon]=\"faTrash\"></fa-icon>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n\r\n    </div>\r\n\r\n    <div class=\"card-footer\">\r\n      <nav aria-label=\"Page navigation\">\r\n        <ul class=\"pagination justify-content-center\">\r\n          <li class=\"page-item disabled\">\r\n            <a class=\"page-link\" href=\"#\" aria-label=\"Previous\">\r\n              <span aria-hidden=\"true\">&laquo;</span>\r\n              <span class=\"sr-only\">Previous</span>\r\n            </a>\r\n          </li>\r\n          <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a></li>\r\n          <li class=\"page-item\"><a class=\"page-link\" href=\"#\">5</a></li>\r\n          <li class=\"page-item\">\r\n            <a class=\"page-link\" href=\"#\" aria-label=\"Next\">\r\n              <span aria-hidden=\"true\">&raquo;</span>\r\n              <span class=\"sr-only\">Next</span>\r\n            </a>\r\n          </li>\r\n        </ul>\r\n      </nav>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -498,6 +498,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _delete_delete_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./delete/delete.component */ "./src/app/admin/services/delete/delete.component.ts");
 /* harmony import */ var _service_rest_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./service-rest.service */ "./src/app/admin/services/service-rest.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -507,6 +508,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -540,9 +542,12 @@ var ServicesComponent = /** @class */ (function () {
         this.inItData();
     };
     ServicesComponent.prototype.inItData = function () {
-        this.items = this.service.getData();
-        console.log(this.items);
-        return this.items;
+        var _this = this;
+        return this.service.getData().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (res) {
+            _this.items = res['data'];
+            _this.pagingObj = res['pagingObj'];
+        })).subscribe(function () {
+        });
     };
     ServicesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
