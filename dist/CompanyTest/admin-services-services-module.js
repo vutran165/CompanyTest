@@ -18,7 +18,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <!-- <p>Hello, {{name}}!</p> -->\r\n  <div class=\"form-group\">\r\n    <label for=\"\">Title</label>\r\n    <input type=\"text\" name=\"\" id=\"\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModal)]=\"item[title]\">\r\n    <small id=\"helpId\" class=\"text-muted\"></small>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"\">Content</label>\r\n    <textarea class=\"form-control\" name=\"content\" id=\"\" rows=\"3\" [(ngModal)]=\"item[content]\"></textarea>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"\">Note</label>\r\n    <input type=\"text\" name=\"\" id=\"\" class=\"form-control\" placeholder=\"...\" [(ngModal)]=\"item[note]\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"\">Status</label>\r\n    <div class=\"col-sm-3 col-md-3\">\r\n      <section class=\"form-control\" [(ngModal)]=\"item[status]\">\r\n        <option *ngFor=\"let option of options\" [(ngValue)]=\"option[value]\">{{option.label}}</option>\r\n      </section>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"save()\">Save</button>\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
+module.exports = "<div [hidden]='submitted'>\n  <form action=\"\" (ngSubmit)=\"onSubmit()\" #crform=\"ngForm\">\n    <div class=\"modal-header\">\n      <h4 class=\"modal-title\">{{title}}</h4>\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n        <span aria-hidden=\"true\">&times;</span>\n      </button>\n    </div>\n    <div class=\"modal-body\">\n   \n      <div class=\"form-group\">\n        <label for=\"\">Title</label>\n        <input type=\"text\"  id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\" #name=\"ngModel\" name=\"title\">\n        <small id=\"helpId\" class=\"text-muted\"></small>\n        <div [hidden]=\"title.valid || title.pristine\" class=\"alert alert-danger\">\n            Title is required\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"\">Content</label>\n        <textarea class=\"form-control\" name=\"content\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #name=\"ngModel\" name=\"content\"></textarea>\n        <div [hidden]=\"content.valid || content.pristine\" class=\"alert alert-danger\">\n            Title is required\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"\">Note</label>\n        <input type=\"text\" name=\"\" id=\"\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #name=\"ngModel\" name=\"note\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"\">Status</label>\n        <div class=\"col-sm-3 col-md-3\">\n          <section class=\"form-control\" [(ngModel)]=\"item.status\" #name=\"ngModel\" name=\"status\" id=\"status\">\n            <option *ngFor=\"let option of options\" [(ngValue)]=\"option.value\">{{option.label}}</option>\n          </section>\n        </div>\n        <div [hidden]=\"status.valid || status.pristine\" class=\"alert alert-danger\">\n            Title is required\n        </div>\n      </div>\n\n    </div>\n    <div class=\"modal-footer\">\n      <button type=\"button\" class=\"btn btn-outline-dark\" [hidden]=\"!crform.form.valid\" (click)=\"save()\">Save</button>\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -34,7 +34,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateComponent", function() { return CreateComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
-/* harmony import */ var _service_rest_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service-rest.service */ "./src/app/admin/services/service-rest.service.ts");
+/* harmony import */ var _service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service */ "./src/app/admin/services/service.ts");
+/* harmony import */ var _service_rest_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service-rest.service */ "./src/app/admin/services/service-rest.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -47,11 +48,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var CreateComponent = /** @class */ (function () {
     function CreateComponent(activeModal, service) {
         this.activeModal = activeModal;
         this.service = service;
+        // create forms with template-driven forms
+        this.item = new _service__WEBPACK_IMPORTED_MODULE_2__["ServiceEntity"]();
+        this.submitted = false;
     }
+    CreateComponent.prototype.onSubmit = function () {
+        this.submitted = true;
+    };
     CreateComponent.prototype.save = function () {
         return this.service.addItem(this.item);
     };
@@ -63,7 +71,7 @@ var CreateComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./create.component.html */ "./src/app/admin/services/create/create.component.html"),
             styles: [__webpack_require__(/*! ./create.component.css */ "./src/app/admin/services/create/create.component.css")]
         }),
-        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbActiveModal"], _service_rest_service__WEBPACK_IMPORTED_MODULE_2__["ServiceRestService"]])
+        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbActiveModal"], _service_rest_service__WEBPACK_IMPORTED_MODULE_3__["ServiceRestService"]])
     ], CreateComponent);
     return CreateComponent;
 }());
@@ -90,7 +98,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, delete form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, delete form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
 
 /***/ }),
 
@@ -156,7 +164,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, detail form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, detail form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
 
 /***/ }),
 
@@ -222,7 +230,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>Hello, edit form!</p>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n  </div>\r\n  "
+module.exports = "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <p>Hello, edit form!</p>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n  </div>\n  "
 
 /***/ }),
 
@@ -348,14 +356,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServiceEntity", function() { return ServiceEntity; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServiceData", function() { return ServiceData; });
 var ServiceEntity = /** @class */ (function () {
-    function ServiceEntity(id, content, create_date, imagePath, note, status, title) {
-        this.id = id;
-        this.content = content;
-        this.create_date = create_date;
-        this.imagePath = imagePath;
-        this.note = note;
-        this.status = status;
-        this.title = title;
+    function ServiceEntity() {
     }
     return ServiceEntity;
 }());
@@ -586,12 +587,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./detail/detail.component */ "./src/app/admin/services/detail/detail.component.ts");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _service_rest_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./service-rest.service */ "./src/app/admin/services/service-rest.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -612,8 +615,10 @@ var ServicesModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
                 _services_routing_module__WEBPACK_IMPORTED_MODULE_3__["ServicesRoutingModule"],
                 _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_4__["FontAwesomeModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"]
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"]
             ],
+            exports: [_angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"]],
             providers: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbActiveModal"], _service_rest_service__WEBPACK_IMPORTED_MODULE_10__["ServiceRestService"]],
             entryComponents: [_create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"]],
             declarations: [_services_component__WEBPACK_IMPORTED_MODULE_2__["ServicesComponent"], _create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"]]

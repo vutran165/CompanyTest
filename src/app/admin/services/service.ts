@@ -7,17 +7,17 @@ export class ServiceEntity {
     public status: Boolean;
     public title: String;
 
-    constructor(id: String, content: String,
-        create_date: String, imagePath: String,
-        note: String, status: Boolean, title: String) {
-        this.id = id;
-        this.content = content;
-        this.create_date = create_date;
-        this.imagePath = imagePath;
-        this.note = note;
-        this.status = status;
-        this.title = title;
-    }
+    // constructor(id: String, content: String,
+    //     create_date: String, imagePath: String,
+    //     note: String, status: Boolean, title: String) {
+    //     this.id = id;
+    //     this.content = content;
+    //     this.create_date = create_date;
+    //     this.imagePath = imagePath;
+    //     this.note = note;
+    //     this.status = status;
+    //     this.title = title;
+    // }
 }
 
 export const ServiceData: ServiceEntity[] = [

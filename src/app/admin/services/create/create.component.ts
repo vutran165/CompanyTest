@@ -10,23 +10,36 @@ import { formControlBinding } from '@angular/forms/src/directives/reactive_direc
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  obj = new ServiceEntity();
-
-  rfGroup: FormGroup;
-  // item.content: FormControl;
 
 
-  createFormGroup() {
-    return new FormGroup({
-      ServiceEntity: new FormGroup({
-        content: new FormControl(),
-        status: new FormControl(),
-        note: new FormControl(),
-        imagePath: new FormControl(),
-        title: new FormControl()
-      })
-    });
+  // create forms with template-driven forms
+  item = new ServiceEntity();
+
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
   }
+
+  // end
+
+  // create forms with reactive form
+
+  // rfGroup: FormGroup;
+  // item.content: FormControl;
+  // createFormGroup() {
+  //   return new FormGroup({
+  //     ServiceEntity: new FormGroup({
+  //       content: new FormControl(),
+  //       status: new FormControl(),
+  //       note: new FormControl(),
+  //       imagePath: new FormControl(),
+  //       title: new FormControl()
+  //     })
+  //   });
+  // }
+
+  // end
 
   option: [
     {
@@ -42,12 +55,12 @@ export class CreateComponent implements OnInit {
   ];
 
   save() {
-    return this.service.addItem(this.obj);
+    return this.service.addItem(this.item);
   }
 
 
-  constructor(public activeModal: NgbActiveModal, private service: ServiceRestService, private fb: FormBuilder) { 
-    this.rfGroup = this.createFormGroup();
+  constructor(public activeModal: NgbActiveModal, private service: ServiceRestService) {
+
   }
 
   ngOnInit() {
