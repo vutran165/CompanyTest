@@ -18,7 +18,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <!-- <p>Hello, {{name}}!</p> -->\n  <div class=\"form-group\">\n    <label for=\"\">Title</label>\n    <input type=\"text\" name=\"\" id=\"\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModal)]=\"item[title]\">\n    <small id=\"helpId\" class=\"text-muted\"></small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"\">Content</label>\n    <textarea class=\"form-control\" name=\"content\" id=\"\" rows=\"3\" [(ngModal)]=\"item[content]\"></textarea>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"\">Note</label>\n    <input type=\"text\" name=\"\" id=\"\" class=\"form-control\" placeholder=\"...\" [(ngModal)]=\"item[note]\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"\">Status</label>\n    <div class=\"col-sm-3 col-md-3\">\n      <section class=\"form-control\" [(ngModal)]=\"item[status]\">\n        <option *ngFor=\"let option of options\" [(ngValue)]=\"option[value]\">{{option.label}}</option>\n      </section>\n    </div>\n  </div>\n\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"save()\">Save</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <!-- <p>Hello, {{name}}!</p> -->\r\n  <div class=\"form-group\">\r\n    <label for=\"\">Title</label>\r\n    <input type=\"text\" name=\"\" id=\"\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModal)]=\"item[title]\">\r\n    <small id=\"helpId\" class=\"text-muted\"></small>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"\">Content</label>\r\n    <textarea class=\"form-control\" name=\"content\" id=\"\" rows=\"3\" [(ngModal)]=\"item[content]\"></textarea>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"\">Note</label>\r\n    <input type=\"text\" name=\"\" id=\"\" class=\"form-control\" placeholder=\"...\" [(ngModal)]=\"item[note]\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"\">Status</label>\r\n    <div class=\"col-sm-3 col-md-3\">\r\n      <section class=\"form-control\" [(ngModal)]=\"item[status]\">\r\n        <option *ngFor=\"let option of options\" [(ngValue)]=\"option[value]\">{{option.label}}</option>\r\n      </section>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"save()\">Save</button>\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
 
 /***/ }),
 
@@ -90,7 +90,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, delete form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, delete form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
 
 /***/ }),
 
@@ -156,7 +156,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, detail form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, detail form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
 
 /***/ }),
 
@@ -222,7 +222,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <p>Hello, edit form!</p>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n  </div>\n  "
+module.exports = "<div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>Hello, edit form!</p>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n  </div>\r\n  "
 
 /***/ }),
 
