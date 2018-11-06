@@ -20,55 +20,79 @@ export class ServiceEntity {
     }
 }
 
-export const ServiceData: ServiceEntity[] = [
-    {
-        id: 'req.body.id',
-        content: 'req.body.content',
-        create_date: 'req.body.create_date',
-        imagePath: 'req.body.status',
-        note: 'req.body.imagePath',
-        status: true,
-        title: '1212121',
+export class ServiceObject {
+    public id: String;
+    public content: String;
+    public create_date: String;
+    public imagePath: String;
+    public note: String;
+    public status: StateChanged[];
+    public title: String;
 
-    },
-    {
-        id: 'req.body.id5',
-        content: 'req.body.content',
-        create_date: 'req.body.create_date',
-        imagePath: 'req.body.status',
-        note: 'req.body.imagePath',
-        status: true,
-        title: '1212121',
-
-    },
-    {
-        id: 'req.body.id2',
-        content: 'req.body.content',
-        create_date: 'req.body.create_date',
-        imagePath: 'req.body.status',
-        note: 'req.body.imagePath',
-        status: true,
-        title: '1212121',
-
-    },
-    {
-        id: 'req.body.id3',
-        content: 'req.body.content',
-        create_date: 'req.body.create_date',
-        imagePath: 'req.body.status',
-        note: 'req.body.imagePath',
-        status: true,
-        title: '1212121',
-
-    },
-    {
-        id: 'req.body.id4',
-        content: 'req.body.content',
-        create_date: 'req.body.create_date',
-        imagePath: 'req.body.status',
-        note: 'req.body.imagePath',
-        status: true,
-        title: '1212121',
+    constructor() {
 
     }
-];
+}
+
+export class StateChanged {
+    constructor(public stateId: number, public state: Boolean, public value: String) {
+
+    }
+}
+
+
+
+
+
+// export const ServiceData: ServiceEntity[] = [
+//     {
+//         id: 'req.body.id',
+//         content: 'req.body.content',
+//         create_date: 'req.body.create_date',
+//         imagePath: 'req.body.status',
+//         note: 'req.body.imagePath',
+//         status: true,
+//         title: '1212121',
+
+//     },
+//     {
+//         id: 'req.body.id5',
+//         content: 'req.body.content',
+//         create_date: 'req.body.create_date',
+//         imagePath: 'req.body.status',
+//         note: 'req.body.imagePath',
+//         status: true,
+//         title: '1212121',
+
+//     },
+//     {
+//         id: 'req.body.id2',
+//         content: 'req.body.content',
+//         create_date: 'req.body.create_date',
+//         imagePath: 'req.body.status',
+//         note: 'req.body.imagePath',
+//         status: true,
+//         title: '1212121',
+
+//     },
+//     {
+//         id: 'req.body.id3',
+//         content: 'req.body.content',
+//         create_date: 'req.body.create_date',
+//         imagePath: 'req.body.status',
+//         note: 'req.body.imagePath',
+//         status: true,
+//         title: '1212121',
+
+//     },
+//     {
+//         id: 'req.body.id4',
+//         content: 'req.body.content',
+//         create_date: 'req.body.create_date',
+//         imagePath: 'req.body.status',
+//         note: 'req.body.imagePath',
+//         status: true,
+//         title: '1212121',
+
+//     }
+// ];

@@ -1,5 +1,5 @@
 <div [hidden]='submitted'>
-  <form action="" (ngSubmit)="onSubmit()" #crform="ngForm">
+  <form action="" (ngSubmit)="onSubmit(crform)" #crform="ngForm">
     <div class="modal-header">
       <h4 class="modal-title">{{title}}</h4>
       <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
@@ -30,14 +30,13 @@
       <div class="form-group">
         <label for="">Status</label>
         <div class="col-sm-3 col-md-3">
-          <!-- <section class="form-control" [(ngModel)]="item.status" name="status" id="status" #status="ngModel">
-            <option *ngFor="let option of options" [ngValue]="option.value">{{option.label}}</option>
-          </section> -->
-          <section class="form-control">
-            <!-- <option *ngFor="let option of options" [value]="option">{{option.id}}</option> -->
+          <section class="form-control" ngModel name="status" id="status" #status="ngModel">
+            <option *ngFor="let option of options" [ngValue]="option">{{option.label}}</option>
+          </section>
+          <!-- <section class="form-control">
             <option value="1">asdasd</option>
             <option value="2">1212</option>
-          </section>
+          </section> -->
         </div>
         <!-- <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
             Title is required

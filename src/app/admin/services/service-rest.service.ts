@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
-import { ServiceData, ServiceEntity } from './service';
+import { ServiceEntity } from './service';
 import { pagingObject } from 'src/app/shared/service-common/pagingObject';
 import { objTranfer } from 'src/app/shared/service-common/objTranfer';
 
@@ -18,7 +18,6 @@ export class ServiceRestService {
   constructor(private http: HttpClient) { }
 
   items: any;
-  // service = ServiceData[0];
   pagingObj: pagingObject;
   dto: objTranfer;
   objTranfer: any;

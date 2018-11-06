@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { ServiceEntity } from '../service';
+import { ServiceEntity, StateChanged, ServiceObject } from '../service';
 import { ServiceRestService } from '../service-rest.service';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, NgForm } from '@angular/forms';
 import { formControlBinding } from '@angular/forms/src/directives/reactive_directives/form_control_directive';
+import { ServiceAdminService } from '../../_service-admin/service-admin.service';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -13,64 +14,54 @@ export class CreateComponent implements OnInit {
 
 
   // create forms with template-driven forms
-  item: ServiceEntity = new ServiceEntity('', '', '', '', '', true, '');
-  status: any;
+  // item: ServiceEntity = new ServiceEntity('', '', '', '', '', true, '');
+  status: StateChanged[];
   data: any;
+  item = new ServiceObject();
 
   submitted = false;
 
-  onSubmit() {
-    this.submitted = true;
+  onSubmit(form: NgForm) {
+    this.submitted = false;
+    if (form.valid) {
+      this.submitted = true;
+    }
+
+    const title = form.controls['title'].value;
+    const content = form.controls['content'].value;
+    const note = form.controls['note'].value;
+    const status: StateChanged[] = form.controls['selectedState'].value;
+
+    const newItem = new ServiceObject();
+    newItem.title = title;
+    newItem.content = content;
+    newItem.note = note;
+    newItem.status = status;
+
+    this.save(newItem);
+
   }
 
-  // end
-
-  // create forms with reactive form
-
-  // rfGroup: FormGroup;
-  // item.content: FormControl;
-  // createFormGroup() {
-  //   return new FormGroup({
-  //     ServiceEntity: new FormGroup({
-  //       content: new FormControl(),
-  //       status: new FormControl(),
-  //       note: new FormControl(),
-  //       imagePath: new FormControl(),
-  //       title: new FormControl()
-  //     })
-  //   });
-  // }
-
-  // end
-
-  // options: [
-  //   {
-  //     id: 1;
-  //     // lable: 'On';
-  //     // value: true;
-  //   },
-  //   {
-  //     id: 2;
-  //     // lable: 'Off';
-  //     // value: false;
-  //   }
-  // ];
-
-  options: string[] = ['ad', '12'];
+  resetForm(form: NgForm) {
+    form.resetForm();
+    this.item.status = this.status;
+    this.item.content = '';
+    this.item.note = '';
+    this.item.title = '';
+  }
 
 
-
-  save() {
+  save(obj: ServiceObject) {
     return this.service.addItem(this.item);
   }
 
 
-  constructor(public activeModal: NgbActiveModal, private service: ServiceRestService) {
+  constructor(public activeModal: NgbActiveModal, private service: ServiceRestService, private srAdmin: ServiceAdminService) {
 
   }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
+    this.status = this.srAdmin.getState();
   }
 
 }
