@@ -9,8 +9,6 @@ import { DeleteComponent } from './delete/delete.component';
 import { ServiceRestService } from './service-rest.service';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ServiceData } from './service';
-import { objTranfer } from 'src/app/shared/service-common/objTranfer';
 import { map } from 'rxjs/operators';
 
 

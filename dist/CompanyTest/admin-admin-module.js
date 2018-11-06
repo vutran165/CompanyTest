@@ -138,14 +138,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -170,7 +168,6 @@ var AdminModule = /** @class */ (function () {
                 _admin_routing_module__WEBPACK_IMPORTED_MODULE_2__["AdminRoutingModule"],
                 _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_6__["NgbDropdownModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"]
             ],
             exports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"],
@@ -204,7 +201,7 @@ module.exports = ".navbar .navbar-brand {\r\n    color: #ffffff;\r\n}\r\n\r\n.na
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">\n\n\n    <a class=\"navbar-brand\" routeLink=\"/admin\">Admin</a>\n    <button class=\"navbar-toggler hidden-lg-up\" type=\"button\" data-toggle=\"collapse\" (click)=\"toggleSidebar()\"\n        aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <fa-icon [icon]=\"faAlignJustify\"></fa-icon>\n    </button>\n\n\n\n    <div class=\"collapse navbar-collapse\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0 \">\n            <li class=\"nav-item dropdown\" ngbDropdown placement=\"bottom-right\">\n                <a href=\"javascript:void(0)\" class=\"nav-link\" ngbDropdownToggle>\n                    <fa-icon [icon]=\"faUser\"></fa-icon>\n                </a>\n                <div class=\"dropdown-menu dropdown-menu-right\" ngbDropdownMenu>\n                    <a href=\"javascript:void(0)\" class=\"dropdown-item\">\n                        <fa-icon [icon]=\"faClipboard\"></fa-icon>&nbsp;&nbsp;Profile\n                    </a>\n                    <a href=\"javascript:void(0)\" class=\"dropdown-item\">\n                        <fa-icon [icon]=\"faEnvelope\"></fa-icon>&nbsp;&nbsp;Inbox\n                    </a>\n                    <a href=\"javascript:void(0)\" class=\"dropdown-item\">\n                        <fa-icon [icon]=\"faCog\"></fa-icon>&nbsp;&nbsp;Settings\n                    </a>\n                    <a href=\"javascript:void(0)\" class=\"dropdown-item\">\n                        <fa-icon [icon]=\"faSignOutAlt\"></fa-icon>&nbsp;&nbsp;Log Out\n                    </a>\n                </div>\n            </li>\n        </ul>\n    </div>\n\n\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">\r\n\r\n\r\n    <a class=\"navbar-brand\" routeLink=\"/admin\">Admin</a>\r\n    <button class=\"navbar-toggler hidden-lg-up\" type=\"button\" data-toggle=\"collapse\" (click)=\"toggleSidebar()\"\r\n        aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <fa-icon [icon]=\"faAlignJustify\"></fa-icon>\r\n    </button>\r\n\r\n\r\n\r\n    <div class=\"collapse navbar-collapse\">\r\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0 \">\r\n            <li class=\"nav-item dropdown\" ngbDropdown placement=\"bottom-right\">\r\n                <a href=\"javascript:void(0)\" class=\"nav-link\" ngbDropdownToggle>\r\n                    <fa-icon [icon]=\"faUser\"></fa-icon>\r\n                </a>\r\n                <div class=\"dropdown-menu dropdown-menu-right\" ngbDropdownMenu>\r\n                    <a href=\"javascript:void(0)\" class=\"dropdown-item\">\r\n                        <fa-icon [icon]=\"faClipboard\"></fa-icon>&nbsp;&nbsp;Profile\r\n                    </a>\r\n                    <a href=\"javascript:void(0)\" class=\"dropdown-item\">\r\n                        <fa-icon [icon]=\"faEnvelope\"></fa-icon>&nbsp;&nbsp;Inbox\r\n                    </a>\r\n                    <a href=\"javascript:void(0)\" class=\"dropdown-item\">\r\n                        <fa-icon [icon]=\"faCog\"></fa-icon>&nbsp;&nbsp;Settings\r\n                    </a>\r\n                    <a href=\"javascript:void(0)\" class=\"dropdown-item\">\r\n                        <fa-icon [icon]=\"faSignOutAlt\"></fa-icon>&nbsp;&nbsp;Log Out\r\n                    </a>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n\r\n\r\n</nav>"
 
 /***/ }),
 

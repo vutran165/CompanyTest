@@ -10,33 +10,38 @@
    
       <div class="form-group">
         <label for="">Title</label>
-        <input type="text"  id="title" class="form-control" placeholder="..." aria-describedby="helpId" [(ngModel)]="item.title" #name="ngModel" name="title">
+        <input type="text"  id="title" class="form-control" placeholder="..." aria-describedby="helpId" [(ngModel)]="item.title" #title="ngModel" name="title">
         <small id="helpId" class="text-muted"></small>
-        <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
+        <!-- <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
             Title is required
-        </div>
+        </div> -->
       </div>
       <div class="form-group">
         <label for="">Content</label>
-        <textarea class="form-control" name="content" id="content" rows="3" [(ngModel)]="item.content" #name="ngModel" name="content"></textarea>
-        <div [hidden]="content.valid || content.pristine" class="alert alert-danger">
+        <textarea class="form-control" id="content" rows="3" [(ngModel)]="item.content" #content="ngModel" name="content"></textarea>
+        <!-- <div [hidden]="content.valid || content.pristine" class="alert alert-danger">
             Title is required
-        </div>
+        </div> -->
       </div>
       <div class="form-group">
         <label for="">Note</label>
-        <input type="text" name="" id="" class="form-control" placeholder="..." [(ngModel)]="item.note" #name="ngModel" name="note">
+        <input type="text" id="note" class="form-control" placeholder="..." [(ngModel)]="item.note" #note="ngModel" name="note">
       </div>
       <div class="form-group">
         <label for="">Status</label>
         <div class="col-sm-3 col-md-3">
-          <section class="form-control" [(ngModel)]="item.status" #name="ngModel" name="status" id="status">
-            <option *ngFor="let option of options" [(ngValue)]="option.value">{{option.label}}</option>
+          <!-- <section class="form-control" [(ngModel)]="item.status" name="status" id="status" #status="ngModel">
+            <option *ngFor="let option of options" [ngValue]="option.value">{{option.label}}</option>
+          </section> -->
+          <section class="form-control">
+            <!-- <option *ngFor="let option of options" [value]="option">{{option.id}}</option> -->
+            <option value="1">asdasd</option>
+            <option value="2">1212</option>
           </section>
         </div>
-        <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
+        <!-- <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
             Title is required
-        </div>
+        </div> -->
       </div>
 
     </div>

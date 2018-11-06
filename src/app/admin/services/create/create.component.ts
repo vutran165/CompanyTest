@@ -13,7 +13,9 @@ export class CreateComponent implements OnInit {
 
 
   // create forms with template-driven forms
-  item = new ServiceEntity();
+  item: ServiceEntity = new ServiceEntity('', '', '', '', '', true, '');
+  status: any;
+  data: any;
 
   submitted = false;
 
@@ -41,18 +43,22 @@ export class CreateComponent implements OnInit {
 
   // end
 
-  option: [
-    {
-      id: 1;
-      lable: 'On';
-      value: true;
-    },
-    {
-      id: 1;
-      lable: 'Off';
-      value: false;
-    }
-  ];
+  // options: [
+  //   {
+  //     id: 1;
+  //     // lable: 'On';
+  //     // value: true;
+  //   },
+  //   {
+  //     id: 2;
+  //     // lable: 'Off';
+  //     // value: false;
+  //   }
+  // ];
+
+  options: string[] = ['ad', '12'];
+
+
 
   save() {
     return this.service.addItem(this.item);
@@ -64,6 +70,7 @@ export class CreateComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

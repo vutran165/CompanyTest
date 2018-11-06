@@ -18,7 +18,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [hidden]='submitted'>\n  <form action=\"\" (ngSubmit)=\"onSubmit()\" #crform=\"ngForm\">\n    <div class=\"modal-header\">\n      <h4 class=\"modal-title\">{{title}}</h4>\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n        <span aria-hidden=\"true\">&times;</span>\n      </button>\n    </div>\n    <div class=\"modal-body\">\n   \n      <div class=\"form-group\">\n        <label for=\"\">Title</label>\n        <input type=\"text\"  id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\" #name=\"ngModel\" name=\"title\">\n        <small id=\"helpId\" class=\"text-muted\"></small>\n        <div [hidden]=\"title.valid || title.pristine\" class=\"alert alert-danger\">\n            Title is required\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"\">Content</label>\n        <textarea class=\"form-control\" name=\"content\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #name=\"ngModel\" name=\"content\"></textarea>\n        <div [hidden]=\"content.valid || content.pristine\" class=\"alert alert-danger\">\n            Title is required\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"\">Note</label>\n        <input type=\"text\" name=\"\" id=\"\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #name=\"ngModel\" name=\"note\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"\">Status</label>\n        <div class=\"col-sm-3 col-md-3\">\n          <section class=\"form-control\" [(ngModel)]=\"item.status\" #name=\"ngModel\" name=\"status\" id=\"status\">\n            <option *ngFor=\"let option of options\" [(ngValue)]=\"option.value\">{{option.label}}</option>\n          </section>\n        </div>\n        <div [hidden]=\"status.valid || status.pristine\" class=\"alert alert-danger\">\n            Title is required\n        </div>\n      </div>\n\n    </div>\n    <div class=\"modal-footer\">\n      <button type=\"button\" class=\"btn btn-outline-dark\" [hidden]=\"!crform.form.valid\" (click)=\"save()\">Save</button>\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n    </div>\n  </form>\n</div>"
+module.exports = "<div [hidden]='submitted'>\r\n  <form action=\"\" (ngSubmit)=\"onSubmit()\" #crform=\"ngForm\">\r\n    <div class=\"modal-header\">\r\n      <h4 class=\"modal-title\">{{title}}</h4>\r\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n      </button>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n   \r\n      <div class=\"form-group\">\r\n        <label for=\"\">Title</label>\r\n        <input type=\"text\"  id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\" #title=\"ngModel\" name=\"title\">\r\n        <small id=\"helpId\" class=\"text-muted\"></small>\r\n        <!-- <div [hidden]=\"title.valid || title.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Content</label>\r\n        <textarea class=\"form-control\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #content=\"ngModel\" name=\"content\"></textarea>\r\n        <!-- <div [hidden]=\"content.valid || content.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Note</label>\r\n        <input type=\"text\" id=\"note\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #note=\"ngModel\" name=\"note\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Status</label>\r\n        <div class=\"col-sm-3 col-md-3\">\r\n          <!-- <section class=\"form-control\" [(ngModel)]=\"item.status\" name=\"status\" id=\"status\" #status=\"ngModel\">\r\n            <option *ngFor=\"let option of options\" [ngValue]=\"option.value\">{{option.label}}</option>\r\n          </section> -->\r\n          <section class=\"form-control\">\r\n            <!-- <option *ngFor=\"let option of options\" [value]=\"option\">{{option.id}}</option> -->\r\n            <option value=\"1\">asdasd</option>\r\n            <option value=\"2\">1212</option>\r\n          </section>\r\n        </div>\r\n        <!-- <div [hidden]=\"status.valid || status.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" [hidden]=\"!crform.form.valid\" (click)=\"save()\">Save</button>\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n    </div>\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -54,8 +54,37 @@ var CreateComponent = /** @class */ (function () {
         this.activeModal = activeModal;
         this.service = service;
         // create forms with template-driven forms
-        this.item = new _service__WEBPACK_IMPORTED_MODULE_2__["ServiceEntity"]();
+        this.item = new _service__WEBPACK_IMPORTED_MODULE_2__["ServiceEntity"]('', '', '', '', '', true, '');
         this.submitted = false;
+        // end
+        // create forms with reactive form
+        // rfGroup: FormGroup;
+        // item.content: FormControl;
+        // createFormGroup() {
+        //   return new FormGroup({
+        //     ServiceEntity: new FormGroup({
+        //       content: new FormControl(),
+        //       status: new FormControl(),
+        //       note: new FormControl(),
+        //       imagePath: new FormControl(),
+        //       title: new FormControl()
+        //     })
+        //   });
+        // }
+        // end
+        // options: [
+        //   {
+        //     id: 1;
+        //     // lable: 'On';
+        //     // value: true;
+        //   },
+        //   {
+        //     id: 2;
+        //     // lable: 'Off';
+        //     // value: false;
+        //   }
+        // ];
+        this.options = ['ad', '12'];
     }
     CreateComponent.prototype.onSubmit = function () {
         this.submitted = true;
@@ -98,7 +127,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, delete form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, delete form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
 
 /***/ }),
 
@@ -164,7 +193,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, detail form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, detail form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
 
 /***/ }),
 
@@ -230,7 +259,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <p>Hello, edit form!</p>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n  </div>\n  "
+module.exports = "<div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>Hello, edit form!</p>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -291,7 +320,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./service */ "./src/app/admin/services/service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -304,12 +332,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var endpoint = 'http://localhost:8585';
 var ServiceRestService = /** @class */ (function () {
     function ServiceRestService(http) {
         this.http = http;
-        this.service = _service__WEBPACK_IMPORTED_MODULE_3__["ServiceData"][0];
     }
     ServiceRestService.prototype.extractData = function (res) {
         var body = res;
@@ -321,11 +347,13 @@ var ServiceRestService = /** @class */ (function () {
     ServiceRestService.prototype.getServiceById = function (id) {
         return this.http.get(endpoint + '/service/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(this.extractData));
     };
-    ServiceRestService.prototype.addService = function (service) {
-        return this.http.post(endpoint + '/service/', service).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(this.extractData));
-    };
-    ServiceRestService.prototype.addItem = function (service) {
-        return this.http.post(endpoint + '/service', service).subscribe(function (res) {
+    // public addService(service): Observable<any> {
+    //   return this.http.post(endpoint + '/service/', service).pipe(
+    //     map(this.extractData)
+    //   );
+    // }
+    ServiceRestService.prototype.addItem = function (d) {
+        return this.http.post(endpoint + '/service', d).subscribe(function (res) {
             console.log(res);
         }, function (err) {
             console.log(err.message);
@@ -356,7 +384,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServiceEntity", function() { return ServiceEntity; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServiceData", function() { return ServiceData; });
 var ServiceEntity = /** @class */ (function () {
-    function ServiceEntity() {
+    function ServiceEntity(id, content, create_date, imagePath, note, status, title) {
+        this.id = id;
+        this.content = content;
+        this.create_date = create_date;
+        this.imagePath = imagePath;
+        this.note = note;
+        this.status = status;
+        this.title = title;
     }
     return ServiceEntity;
 }());
@@ -369,7 +404,7 @@ var ServiceData = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
-        title: '1212121'
+        title: '1212121',
     },
     {
         id: 'req.body.id5',
@@ -378,7 +413,7 @@ var ServiceData = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
-        title: '1212121'
+        title: '1212121',
     },
     {
         id: 'req.body.id2',
@@ -387,7 +422,7 @@ var ServiceData = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
-        title: '1212121'
+        title: '1212121',
     },
     {
         id: 'req.body.id3',
@@ -396,7 +431,7 @@ var ServiceData = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
-        title: '1212121'
+        title: '1212121',
     },
     {
         id: 'req.body.id4',
@@ -405,7 +440,7 @@ var ServiceData = [
         imagePath: 'req.body.status',
         note: 'req.body.imagePath',
         status: true,
-        title: '1212121'
+        title: '1212121',
     }
 ];
 

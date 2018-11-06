@@ -18,7 +18,7 @@ export class ServiceRestService {
   constructor(private http: HttpClient) { }
 
   items: any;
-  service = ServiceData[0];
+  // service = ServiceData[0];
   pagingObj: pagingObject;
   dto: objTranfer;
   objTranfer: any;
@@ -37,14 +37,14 @@ export class ServiceRestService {
       map(this.extractData));
   }
 
-  public addService(service): Observable<any> {
-    return this.http.post(endpoint + '/service/', service).pipe(
-      map(this.extractData)
-    );
-  }
+  // public addService(service): Observable<any> {
+  //   return this.http.post(endpoint + '/service/', service).pipe(
+  //     map(this.extractData)
+  //   );
+  // }
 
-  public addItem(service: ServiceEntity) {
-    return this.http.post(endpoint + '/service', service).subscribe(res => {
+  public addItem(d) {
+    return this.http.post(endpoint + '/service', d).subscribe(res => {
       console.log(res);
     }, err => {
       console.log(err.message);
