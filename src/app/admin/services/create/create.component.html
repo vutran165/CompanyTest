@@ -32,10 +32,13 @@
       <div class="form-group">
         <label for="">Status</label>
         <div class="col-sm-3 col-md-3">
-          <section class="form-control" multiple [(ngModel)]="item.status" [ngModelOptions]="{standalone:true}" name="selectedState"
+          <!-- <section class="form-control" multiple [(ngModel)]="item.status" [ngModelOptions]="{standalone:true}" name="selectedState"
             id="status" #selectedState="ngModel">
             <option *ngFor="let option of options" [ngValue]="option.state">{{option.value}}</option>
-          </section>
+          </section> -->
+
+          <state-selector name="state" [(ngModel)]="item.status" #state="ngModel"></state-selector>
+
         </div>
         <!-- <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
             Title is required

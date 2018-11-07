@@ -43,13 +43,16 @@ export class CreateComponent implements OnInit {
     const title = form.controls['title'].value;
     const content = form.controls['content'].value;
     const note = form.controls['note'].value;
+    const state = form.controls['state'].value;
+
     const options: StateChanged[] = form.controls['selectedState'].value;
 
     const newItem = new ServiceObject();
     newItem.title = title;
     newItem.content = content;
     newItem.note = note;
-    newItem.status = options;
+    // newItem.status = options;
+    newItem.status = state;
 
     this.save(newItem);
 

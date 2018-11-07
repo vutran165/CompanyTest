@@ -29,7 +29,7 @@ var ServiceAdminService = /** @class */ (function () {
     ServiceAdminService.prototype.getState = function () {
         var options = [
             new _services_service__WEBPACK_IMPORTED_MODULE_1__["StateChanged"](1, true, 'On'),
-            new _services_service__WEBPACK_IMPORTED_MODULE_1__["StateChanged"](2, true, 'Off')
+            new _services_service__WEBPACK_IMPORTED_MODULE_1__["StateChanged"](2, false, 'Off')
         ];
         return options;
     };
@@ -64,7 +64,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [hidden]='submitted'>\r\n  <form action=\"\" (ngSubmit)=\"onSubmit(crform)\" #crform=\"ngForm\">\r\n    <div class=\"modal-header\">\r\n      <h4 class=\"modal-title\">{{title}}</h4>\r\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n      </button>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Title</label>\r\n        <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\"\r\n          #title=\"ngModel\" name=\"title\">\r\n        <small id=\"helpId\" class=\"text-muted\"></small>\r\n        <!-- <div [hidden]=\"title.valid || title.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Content</label>\r\n        <textarea class=\"form-control\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #content=\"ngModel\" name=\"content\"></textarea>\r\n        <!-- <div [hidden]=\"content.valid || content.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Note</label>\r\n        <input type=\"text\" id=\"note\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #note=\"ngModel\"\r\n          name=\"note\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Status</label>\r\n        <div class=\"col-sm-3 col-md-3\">\r\n          <section class=\"form-control\" multiple [(ngModel)]=\"item.status\" [ngModelOptions]=\"{standalone:true}\" name=\"selectedState\"\r\n            id=\"status\" #selectedState=\"ngModel\">\r\n            <option *ngFor=\"let option of options\" [ngValue]=\"option.state\">{{option.value}}</option>\r\n          </section>\r\n        </div>\r\n        <!-- <div [hidden]=\"status.valid || status.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" [hidden]=\"!crform.form.valid\" (click)=\"save()\">Save</button>\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n    </div>\r\n  </form>\r\n</div>"
+module.exports = "<div [hidden]='submitted'>\r\n  <form action=\"\" (ngSubmit)=\"onSubmit(crform)\" #crform=\"ngForm\">\r\n    <div class=\"modal-header\">\r\n      <h4 class=\"modal-title\">{{title}}</h4>\r\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n      </button>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Title</label>\r\n        <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\"\r\n          #title=\"ngModel\" name=\"title\">\r\n        <small id=\"helpId\" class=\"text-muted\"></small>\r\n        <!-- <div [hidden]=\"title.valid || title.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Content</label>\r\n        <textarea class=\"form-control\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #content=\"ngModel\" name=\"content\"></textarea>\r\n        <!-- <div [hidden]=\"content.valid || content.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Note</label>\r\n        <input type=\"text\" id=\"note\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #note=\"ngModel\"\r\n          name=\"note\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Status</label>\r\n        <div class=\"col-sm-3 col-md-3\">\r\n          <!-- <section class=\"form-control\" multiple [(ngModel)]=\"item.status\" [ngModelOptions]=\"{standalone:true}\" name=\"selectedState\"\r\n            id=\"status\" #selectedState=\"ngModel\">\r\n            <option *ngFor=\"let option of options\" [ngValue]=\"option.state\">{{option.value}}</option>\r\n          </section> -->\r\n\r\n          <state-selector name=\"state\" [(ngModel)]=\"item.status\" #state=\"ngModel\"></state-selector>\r\n\r\n        </div>\r\n        <!-- <div [hidden]=\"status.valid || status.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" [hidden]=\"!crform.form.valid\" (click)=\"save()\">Save</button>\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n    </div>\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -122,12 +122,14 @@ var CreateComponent = /** @class */ (function () {
         var title = form.controls['title'].value;
         var content = form.controls['content'].value;
         var note = form.controls['note'].value;
+        var state = form.controls['state'].value;
         var options = form.controls['selectedState'].value;
         var newItem = new _service__WEBPACK_IMPORTED_MODULE_2__["ServiceObject"]();
         newItem.title = title;
         newItem.content = content;
         newItem.note = note;
-        newItem.status = options;
+        // newItem.status = options;
+        newItem.status = state;
         this.save(newItem);
     };
     CreateComponent.prototype.resetForm = function (form) {
@@ -197,7 +199,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, delete form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, delete form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
 
 /***/ }),
 
@@ -263,7 +265,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, detail form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, detail form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
 
 /***/ }),
 
@@ -329,7 +331,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>Hello, edit form!</p>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n  </div>\r\n  "
+module.exports = "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <p>Hello, edit form!</p>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n  </div>\n  "
 
 /***/ }),
 
@@ -709,12 +711,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _service_rest_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./service-rest.service */ "./src/app/admin/services/service-rest.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var src_app_shared_component_selector_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/shared/component/selector.component */ "./src/app/shared/component/selector.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -742,11 +746,100 @@ var ServicesModule = /** @class */ (function () {
             ],
             exports: [_angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"]],
             providers: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbActiveModal"], _service_rest_service__WEBPACK_IMPORTED_MODULE_10__["ServiceRestService"]],
-            entryComponents: [_create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"]],
-            declarations: [_services_component__WEBPACK_IMPORTED_MODULE_2__["ServicesComponent"], _create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"]]
+            entryComponents: [_create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"], src_app_shared_component_selector_component__WEBPACK_IMPORTED_MODULE_12__["SelectorComponent"]],
+            declarations: [_services_component__WEBPACK_IMPORTED_MODULE_2__["ServicesComponent"], _create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"], src_app_shared_component_selector_component__WEBPACK_IMPORTED_MODULE_12__["SelectorComponent"]]
         })
     ], ServicesModule);
     return ServicesModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/component/selector.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/shared/component/selector.component.ts ***!
+  \********************************************************/
+/*! exports provided: SelectorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectorComponent", function() { return SelectorComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var src_app_admin_service_admin_service_admin_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/admin/_service-admin/service-admin.service */ "./src/app/admin/_service-admin/service-admin.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SelectorComponent = /** @class */ (function () {
+    // setDisabledState?(isDisabled: boolean): void {
+    // }
+    function SelectorComponent(service) {
+        this.service = service;
+        this.options = this.service.getState();
+        this.onChange = function () { };
+        this.onTouched = function () { };
+    }
+    SelectorComponent_1 = SelectorComponent;
+    SelectorComponent.prototype.writeValue = function (obj) {
+        if (obj) {
+            this.val = obj;
+        }
+    };
+    Object.defineProperty(SelectorComponent.prototype, "value", {
+        get: function () {
+            return this.val;
+        },
+        set: function (val) {
+            this.val = val;
+            this.onChange(val);
+            this.onTouched();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SelectorComponent.prototype.registerOnChange = function (fn) {
+        this.onChange = fn;
+    };
+    SelectorComponent.prototype.registerOnTouched = function (fn) {
+        this.onTouched = fn;
+    };
+    var SelectorComponent_1;
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], SelectorComponent.prototype, "name", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('value'),
+        __metadata("design:type", String)
+    ], SelectorComponent.prototype, "val", void 0);
+    SelectorComponent = SelectorComponent_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            // tslint:disable-next-line:component-selector
+            selector: 'state-selector',
+            template: "\n            <select class=\"form-control\" [name]=\"name\" [(ngModel)]=\"value\">\n            <option *ngFor=\"let option of options\" [value]=\"option.state\"> {{option.value}}</option>\n            </select>\n    ",
+            providers: [
+                {
+                    provide: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NG_VALUE_ACCESSOR"],
+                    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function () { return SelectorComponent_1; }),
+                    multi: true
+                }
+            ]
+        }),
+        __metadata("design:paramtypes", [src_app_admin_service_admin_service_admin_service__WEBPACK_IMPORTED_MODULE_2__["ServiceAdminService"]])
+    ], SelectorComponent);
+    return SelectorComponent;
 }());
 
 
