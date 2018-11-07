@@ -9,7 +9,7 @@ import { DeleteComponent } from './delete/delete.component';
 import { DetailComponent } from './detail/detail.component';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceRestService } from './service-rest.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,9 +18,10 @@ import { FormsModule } from '@angular/forms';
     ServicesRoutingModule,
     FontAwesomeModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  exports: [FormsModule],
+  exports: [FormsModule, ReactiveFormsModule],
   providers: [NgbActiveModal, ServiceRestService],
   entryComponents: [CreateComponent, EditComponent, DeleteComponent, DetailComponent],
   declarations: [ServicesComponent, CreateComponent, EditComponent, DeleteComponent, DetailComponent]

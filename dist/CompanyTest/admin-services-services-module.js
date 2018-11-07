@@ -1,5 +1,51 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["admin-services-services-module"],{
 
+/***/ "./src/app/admin/_service-admin/service-admin.service.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/admin/_service-admin/service-admin.service.ts ***!
+  \***************************************************************/
+/*! exports provided: ServiceAdminService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServiceAdminService", function() { return ServiceAdminService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/service */ "./src/app/admin/services/service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ServiceAdminService = /** @class */ (function () {
+    function ServiceAdminService() {
+    }
+    ServiceAdminService.prototype.getState = function () {
+        var options = [
+            new _services_service__WEBPACK_IMPORTED_MODULE_1__["StateChanged"](1, true, 'On'),
+            new _services_service__WEBPACK_IMPORTED_MODULE_1__["StateChanged"](2, true, 'Off')
+        ];
+        return options;
+    };
+    ServiceAdminService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], ServiceAdminService);
+    return ServiceAdminService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/admin/services/create/create.component.css":
 /*!************************************************************!*\
   !*** ./src/app/admin/services/create/create.component.css ***!
@@ -18,7 +64,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [hidden]='submitted'>\r\n  <form action=\"\" (ngSubmit)=\"onSubmit()\" #crform=\"ngForm\">\r\n    <div class=\"modal-header\">\r\n      <h4 class=\"modal-title\">{{title}}</h4>\r\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n      </button>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n   \r\n      <div class=\"form-group\">\r\n        <label for=\"\">Title</label>\r\n        <input type=\"text\"  id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\" #title=\"ngModel\" name=\"title\">\r\n        <small id=\"helpId\" class=\"text-muted\"></small>\r\n        <!-- <div [hidden]=\"title.valid || title.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Content</label>\r\n        <textarea class=\"form-control\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #content=\"ngModel\" name=\"content\"></textarea>\r\n        <!-- <div [hidden]=\"content.valid || content.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Note</label>\r\n        <input type=\"text\" id=\"note\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #note=\"ngModel\" name=\"note\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Status</label>\r\n        <div class=\"col-sm-3 col-md-3\">\r\n          <section class=\"form-control\" [(ngModel)]=\"item.status\" name=\"status\" id=\"status\" #status=\"ngModel\">\r\n            <option *ngFor=\"let option of options\" [ngValue]=\"option.value\">{{option.label}}</option>\r\n          </section>\r\n          <!-- <section class=\"form-control\">\r\n            <option value=\"1\">asdasd</option>\r\n            <option value=\"2\">1212</option>\r\n          </section> -->\r\n        </div>\r\n        <!-- <div [hidden]=\"status.valid || status.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" [hidden]=\"!crform.form.valid\" (click)=\"save()\">Save</button>\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n    </div>\r\n  </form>\r\n</div>"
+module.exports = "<div [hidden]='submitted'>\r\n  <form action=\"\" (ngSubmit)=\"onSubmit(crform)\" #crform=\"ngForm\">\r\n    <div class=\"modal-header\">\r\n      <h4 class=\"modal-title\">{{title}}</h4>\r\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n      </button>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Title</label>\r\n        <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\"\r\n          #title=\"ngModel\" name=\"title\">\r\n        <small id=\"helpId\" class=\"text-muted\"></small>\r\n        <!-- <div [hidden]=\"title.valid || title.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Content</label>\r\n        <textarea class=\"form-control\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #content=\"ngModel\" name=\"content\"></textarea>\r\n        <!-- <div [hidden]=\"content.valid || content.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Note</label>\r\n        <input type=\"text\" id=\"note\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #note=\"ngModel\"\r\n          name=\"note\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Status</label>\r\n        <div class=\"col-sm-3 col-md-3\">\r\n          <section class=\"form-control\" multiple [(ngModel)]=\"item.status\" [ngModelOptions]=\"{standalone:true}\" name=\"selectedState\"\r\n            id=\"status\" #selectedState=\"ngModel\">\r\n            <option *ngFor=\"let option of options\" [ngValue]=\"option.state\">{{option.value}}</option>\r\n          </section>\r\n        </div>\r\n        <!-- <div [hidden]=\"status.valid || status.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" [hidden]=\"!crform.form.valid\" (click)=\"save()\">Save</button>\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n    </div>\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -26,16 +72,19 @@ module.exports = "<div [hidden]='submitted'>\r\n  <form action=\"\" (ngSubmit)=\
 /*!***********************************************************!*\
   !*** ./src/app/admin/services/create/create.component.ts ***!
   \***********************************************************/
-/*! exports provided: CreateComponent */
+/*! exports provided: SELECT_VALUE_ACCESSOR, CreateComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELECT_VALUE_ACCESSOR", function() { return SELECT_VALUE_ACCESSOR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateComponent", function() { return CreateComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service */ "./src/app/admin/services/service.ts");
 /* harmony import */ var _service_rest_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service-rest.service */ "./src/app/admin/services/service-rest.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _service_admin_service_admin_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../_service-admin/service-admin.service */ "./src/app/admin/_service-admin/service-admin.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -49,69 +98,79 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+var SELECT_VALUE_ACCESSOR = {
+    provide: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NG_VALUE_ACCESSOR"],
+    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function () { return CreateComponent; }),
+    multi: true,
+};
 var CreateComponent = /** @class */ (function () {
-    function CreateComponent(activeModal, service) {
+    function CreateComponent(activeModal, service, srAdmin, renderer) {
         this.activeModal = activeModal;
         this.service = service;
-        // create forms with template-driven forms
-        this.item = new _service__WEBPACK_IMPORTED_MODULE_2__["ServiceEntity"]('', '', '', '', '', true, '');
+        this.srAdmin = srAdmin;
+        this.renderer = renderer;
+        this.item = new _service__WEBPACK_IMPORTED_MODULE_2__["ServiceObject"]();
         this.submitted = false;
-        // end
-        // create forms with reactive form
-        // rfGroup: FormGroup;
-        // item.content: FormControl;
-        // createFormGroup() {
-        //   return new FormGroup({
-        //     ServiceEntity: new FormGroup({
-        //       content: new FormControl(),
-        //       status: new FormControl(),
-        //       note: new FormControl(),
-        //       imagePath: new FormControl(),
-        //       title: new FormControl()
-        //     })
-        //   });
-        // }
-        // end
-        // options: [
-        //   {
-        //     id: 1;
-        //     // lable: 'On';
-        //     // value: true;
-        //   },
-        //   {
-        //     id: 2;
-        //     // lable: 'Off';
-        //     // value: false;
-        //   }
-        // ];
-        this.options = [
-            {
-                id: 1,
-                lable: 'On',
-                value: true,
-            },
-            {
-                id: 2,
-                lable: 'Off',
-                value: false,
-            }
-        ];
     }
-    CreateComponent.prototype.onSubmit = function () {
-        this.submitted = true;
+    CreateComponent.prototype.onSubmit = function (form) {
+        this.submitted = false;
+        if (form.valid) {
+            this.submitted = true;
+        }
+        var title = form.controls['title'].value;
+        var content = form.controls['content'].value;
+        var note = form.controls['note'].value;
+        var options = form.controls['selectedState'].value;
+        var newItem = new _service__WEBPACK_IMPORTED_MODULE_2__["ServiceObject"]();
+        newItem.title = title;
+        newItem.content = content;
+        newItem.note = note;
+        newItem.status = options;
+        this.save(newItem);
     };
-    CreateComponent.prototype.save = function () {
+    CreateComponent.prototype.resetForm = function (form) {
+        form.resetForm();
+        this.item.status = this.options;
+        this.item.content = '';
+        this.item.note = '';
+        this.item.title = '';
+    };
+    CreateComponent.prototype.save = function (obj) {
         return this.service.addItem(this.item);
     };
     CreateComponent.prototype.ngOnInit = function () {
+        this.options = this.srAdmin.getState();
     };
+    // ControlValueAccessor
+    CreateComponent.prototype.writeValue = function (obj) {
+        // const div = this.selectedState.nativeElement;
+        // this.renderer.setProperty(div, 'selectContent', obj);
+        this.value = obj;
+        // if(this.select && obj) {
+        //   this.select.dr
+        // }
+    };
+    CreateComponent.prototype.registerOnChange = function (fn) {
+        this.onChange = fn;
+    };
+    CreateComponent.prototype.change = function ($event) {
+        this.onChange($event.target.selectContent);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('selectedState'),
+        __metadata("design:type", Object)
+    ], CreateComponent.prototype, "selectedState", void 0);
     CreateComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-create',
             template: __webpack_require__(/*! ./create.component.html */ "./src/app/admin/services/create/create.component.html"),
-            styles: [__webpack_require__(/*! ./create.component.css */ "./src/app/admin/services/create/create.component.css")]
+            styles: [__webpack_require__(/*! ./create.component.css */ "./src/app/admin/services/create/create.component.css")],
+            providers: [SELECT_VALUE_ACCESSOR]
         }),
-        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbActiveModal"], _service_rest_service__WEBPACK_IMPORTED_MODULE_3__["ServiceRestService"]])
+        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbActiveModal"],
+            _service_rest_service__WEBPACK_IMPORTED_MODULE_3__["ServiceRestService"], _service_admin_service_admin_service__WEBPACK_IMPORTED_MODULE_5__["ServiceAdminService"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]])
     ], CreateComponent);
     return CreateComponent;
 }());
@@ -138,7 +197,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, delete form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, delete form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
 
 /***/ }),
 
@@ -204,7 +263,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">{{title}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <p>Hello, detail form!</p>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">{{title}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <p>Hello, detail form!</p>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n</div>"
 
 /***/ }),
 
@@ -270,7 +329,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n    <h4 class=\"modal-title\">{{title}}</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <p>Hello, edit form!</p>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n  </div>\n  "
+module.exports = "<div class=\"modal-header\">\r\n    <h4 class=\"modal-title\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>Hello, edit form!</p>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -387,13 +446,14 @@ var ServiceRestService = /** @class */ (function () {
 /*!*******************************************!*\
   !*** ./src/app/admin/services/service.ts ***!
   \*******************************************/
-/*! exports provided: ServiceEntity, ServiceData */
+/*! exports provided: ServiceEntity, ServiceObject, StateChanged */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServiceEntity", function() { return ServiceEntity; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServiceData", function() { return ServiceData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServiceObject", function() { return ServiceObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StateChanged", function() { return StateChanged; });
 var ServiceEntity = /** @class */ (function () {
     function ServiceEntity(id, content, create_date, imagePath, note, status, title) {
         this.id = id;
@@ -407,53 +467,68 @@ var ServiceEntity = /** @class */ (function () {
     return ServiceEntity;
 }());
 
-var ServiceData = [
-    {
-        id: 'req.body.id',
-        content: 'req.body.content',
-        create_date: 'req.body.create_date',
-        imagePath: 'req.body.status',
-        note: 'req.body.imagePath',
-        status: true,
-        title: '1212121',
-    },
-    {
-        id: 'req.body.id5',
-        content: 'req.body.content',
-        create_date: 'req.body.create_date',
-        imagePath: 'req.body.status',
-        note: 'req.body.imagePath',
-        status: true,
-        title: '1212121',
-    },
-    {
-        id: 'req.body.id2',
-        content: 'req.body.content',
-        create_date: 'req.body.create_date',
-        imagePath: 'req.body.status',
-        note: 'req.body.imagePath',
-        status: true,
-        title: '1212121',
-    },
-    {
-        id: 'req.body.id3',
-        content: 'req.body.content',
-        create_date: 'req.body.create_date',
-        imagePath: 'req.body.status',
-        note: 'req.body.imagePath',
-        status: true,
-        title: '1212121',
-    },
-    {
-        id: 'req.body.id4',
-        content: 'req.body.content',
-        create_date: 'req.body.create_date',
-        imagePath: 'req.body.status',
-        note: 'req.body.imagePath',
-        status: true,
-        title: '1212121',
+var ServiceObject = /** @class */ (function () {
+    function ServiceObject() {
     }
-];
+    return ServiceObject;
+}());
+
+var StateChanged = /** @class */ (function () {
+    function StateChanged(stateId, state, value) {
+        this.stateId = stateId;
+        this.state = state;
+        this.value = value;
+    }
+    return StateChanged;
+}());
+
+// export const ServiceData: ServiceEntity[] = [
+//     {
+//         id: 'req.body.id',
+//         content: 'req.body.content',
+//         create_date: 'req.body.create_date',
+//         imagePath: 'req.body.status',
+//         note: 'req.body.imagePath',
+//         status: true,
+//         title: '1212121',
+//     },
+//     {
+//         id: 'req.body.id5',
+//         content: 'req.body.content',
+//         create_date: 'req.body.create_date',
+//         imagePath: 'req.body.status',
+//         note: 'req.body.imagePath',
+//         status: true,
+//         title: '1212121',
+//     },
+//     {
+//         id: 'req.body.id2',
+//         content: 'req.body.content',
+//         create_date: 'req.body.create_date',
+//         imagePath: 'req.body.status',
+//         note: 'req.body.imagePath',
+//         status: true,
+//         title: '1212121',
+//     },
+//     {
+//         id: 'req.body.id3',
+//         content: 'req.body.content',
+//         create_date: 'req.body.create_date',
+//         imagePath: 'req.body.status',
+//         note: 'req.body.imagePath',
+//         status: true,
+//         title: '1212121',
+//     },
+//     {
+//         id: 'req.body.id4',
+//         content: 'req.body.content',
+//         create_date: 'req.body.create_date',
+//         imagePath: 'req.body.status',
+//         note: 'req.body.imagePath',
+//         status: true,
+//         title: '1212121',
+//     }
+// ];
 
 
 /***/ }),
@@ -662,9 +737,10 @@ var ServicesModule = /** @class */ (function () {
                 _services_routing_module__WEBPACK_IMPORTED_MODULE_3__["ServicesRoutingModule"],
                 _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_4__["FontAwesomeModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"]
             ],
-            exports: [_angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"]],
+            exports: [_angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"]],
             providers: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbActiveModal"], _service_rest_service__WEBPACK_IMPORTED_MODULE_10__["ServiceRestService"]],
             entryComponents: [_create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"]],
             declarations: [_services_component__WEBPACK_IMPORTED_MODULE_2__["ServicesComponent"], _create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"]]

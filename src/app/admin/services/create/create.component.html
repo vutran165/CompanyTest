@@ -7,10 +7,11 @@
       </button>
     </div>
     <div class="modal-body">
-   
+
       <div class="form-group">
         <label for="">Title</label>
-        <input type="text"  id="title" class="form-control" placeholder="..." aria-describedby="helpId" [(ngModel)]="item.title" #title="ngModel" name="title">
+        <input type="text" id="title" class="form-control" placeholder="..." aria-describedby="helpId" [(ngModel)]="item.title"
+          #title="ngModel" name="title">
         <small id="helpId" class="text-muted"></small>
         <!-- <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
             Title is required
@@ -25,18 +26,16 @@
       </div>
       <div class="form-group">
         <label for="">Note</label>
-        <input type="text" id="note" class="form-control" placeholder="..." [(ngModel)]="item.note" #note="ngModel" name="note">
+        <input type="text" id="note" class="form-control" placeholder="..." [(ngModel)]="item.note" #note="ngModel"
+          name="note">
       </div>
       <div class="form-group">
         <label for="">Status</label>
         <div class="col-sm-3 col-md-3">
-          <section class="form-control" ngModel name="status" id="status" #status="ngModel">
-            <option *ngFor="let option of options" [ngValue]="option">{{option.label}}</option>
+          <section class="form-control" multiple [(ngModel)]="item.status" [ngModelOptions]="{standalone:true}" name="selectedState"
+            id="status" #selectedState="ngModel">
+            <option *ngFor="let option of options" [ngValue]="option.state">{{option.value}}</option>
           </section>
-          <!-- <section class="form-control">
-            <option value="1">asdasd</option>
-            <option value="2">1212</option>
-          </section> -->
         </div>
         <!-- <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
             Title is required
