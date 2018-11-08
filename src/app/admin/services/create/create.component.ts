@@ -5,6 +5,7 @@ import { ServiceRestService } from '../service-rest.service';
 import { FormGroup, FormControl, FormBuilder, NgForm, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { formControlBinding } from '@angular/forms/src/directives/reactive_directives/form_control_directive';
 import { ServiceAdminService } from '../../_service-admin/service-admin.service';
+import { ok } from 'assert';
 
 
 export const SELECT_VALUE_ACCESSOR: any = {
@@ -21,42 +22,35 @@ export const SELECT_VALUE_ACCESSOR: any = {
 })
 export class CreateComponent implements OnInit {
 
-  @ViewChild('selectedState') selectedState;
-  select;
-  onChange;
-  value;
-
-  // create forms with template-driven forms
-  // item: ServiceEntity = new ServiceEntity('', '', '', '', '', true, '');
-  options: StateChanged[];
+  title: String = 'Add Item';
 
   item = new ServiceObject();
 
+  options = this.srAdmin.getState();
+
   submitted = false;
 
-  onSubmit(form: NgForm) {
-    this.submitted = false;
-    if (form.valid) {
-      this.submitted = true;
-    }
+  // onSubmit(form: NgForm) {
+  //   this.submitted = false;
+  //   if (form.valid) {
+  //     this.submitted = true;
+  //   }
 
-    const title = form.controls['title'].value;
-    const content = form.controls['content'].value;
-    const note = form.controls['note'].value;
-    const state = form.controls['state'].value;
+  //   const title = form.controls['title'].value;
+  //   const content = form.controls['content'].value;
+  //   const note = form.controls['note'].value;
+  //   const state = form.controls['state'].value;
 
-    const options: StateChanged[] = form.controls['selectedState'].value;
+  //   const newItem = new ServiceObject();
+  //   newItem.title = title;
+  //   newItem.content = content;
+  //   newItem.note = note;
+  //   // newItem.status = options;
+  //   newItem.status = state;
 
-    const newItem = new ServiceObject();
-    newItem.title = title;
-    newItem.content = content;
-    newItem.note = note;
-    // newItem.status = options;
-    newItem.status = state;
+  //   this.save(newItem);
 
-    this.save(newItem);
-
-  }
+  // }
 
   resetForm(form: NgForm) {
     form.resetForm();
@@ -67,40 +61,20 @@ export class CreateComponent implements OnInit {
   }
 
 
-  save(obj: ServiceObject) {
-    return this.service.addItem(this.item);
+  save() {
+    console.log(this.item);
+    this.service.addItem(this.item);
+    this.activeModal.close();
   }
 
 
   constructor(public activeModal: NgbActiveModal,
-    private service: ServiceRestService, private srAdmin: ServiceAdminService, private renderer: Renderer2) {
+    private service: ServiceRestService, private srAdmin: ServiceAdminService) {
 
   }
 
   ngOnInit(): void {
-    this.options = this.srAdmin.getState();
-  }
-
-
-  // ControlValueAccessor
-  writeValue(obj: any): void {
-    // const div = this.selectedState.nativeElement;
-    // this.renderer.setProperty(div, 'selectContent', obj);
-    this.value = obj;
-    // if(this.select && obj) {
-    //   this.select.dr
-    // }
 
   }
-
-
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
-
-  change($event) {
-    this.onChange($event.target.selectContent);
-  }
-
 
 }
