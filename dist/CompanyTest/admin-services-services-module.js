@@ -64,7 +64,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [hidden]='submitted'>\r\n  <form action=\"\" (ngSubmit)=\"onSubmit(crform)\" #crform=\"ngForm\">\r\n    <div class=\"modal-header\">\r\n      <h4 class=\"modal-title\">{{title}}</h4>\r\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n      </button>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Title</label>\r\n        <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\"\r\n          #title=\"ngModel\" name=\"title\">\r\n        <small id=\"helpId\" class=\"text-muted\"></small>\r\n        <!-- <div [hidden]=\"title.valid || title.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Content</label>\r\n        <textarea class=\"form-control\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #content=\"ngModel\" name=\"content\"></textarea>\r\n        <!-- <div [hidden]=\"content.valid || content.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Note</label>\r\n        <input type=\"text\" id=\"note\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #note=\"ngModel\"\r\n          name=\"note\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Status</label>\r\n        <div class=\"col-sm-3 col-md-3\">\r\n          <!-- <section class=\"form-control\" multiple [(ngModel)]=\"item.status\" [ngModelOptions]=\"{standalone:true}\" name=\"selectedState\"\r\n            id=\"status\" #selectedState=\"ngModel\">\r\n            <option *ngFor=\"let option of options\" [ngValue]=\"option.state\">{{option.value}}</option>\r\n          </section> -->\r\n\r\n          <state-selector name=\"state\" [(ngModel)]=\"item.status\" #state=\"ngModel\"></state-selector>\r\n\r\n        </div>\r\n        <!-- <div [hidden]=\"status.valid || status.pristine\" class=\"alert alert-danger\">\r\n            Title is required\r\n        </div> -->\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" [hidden]=\"!crform.form.valid\" (click)=\"save()\">Save</button>\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n    </div>\r\n  </form>\r\n</div>"
+module.exports = "<div>\r\n  <form action=\"\" #crform=\"ngForm\">\r\n    <div class=\"modal-header\">\r\n      <h4 class=\"modal-title\">{{title}}</h4>\r\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n      </button>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Title</label>\r\n        <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\"\r\n          #title=\"ngModel\" name=\"title\" required>\r\n        <small id=\"helpId\" class=\"text-muted\"></small>\r\n        <div *ngIf=\"title.valid && (title.dirty || title.touched)\" class=\"alert alert-danger\">\r\n          <div *ngIf=\"title.errors.required\">\r\n            Title is required\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Content</label>\r\n        <textarea class=\"form-control\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #content=\"ngModel\" name=\"content\" required></textarea>\r\n        <div *ngIf=\"content.valid && (content.dirty || content.touched)\" class=\"alert alert-danger\">\r\n          <div *ngIf=\"content.errors.required\">\r\n            Content is required\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Note</label>\r\n        <input type=\"text\" id=\"note\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #note=\"ngModel\"\r\n          name=\"note\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Status</label>\r\n        <div class=\"col-sm-3 col-md-3\">\r\n\r\n          <state-selector name=\"state\" [(ngModel)]=\"item.status\" #state=\"ngModel\"></state-selector>\r\n\r\n        </div>\r\n        <div *ngIf=\"state.valid && (state.dirty || state.touched)\" class=\"alert alert-danger\">\r\n          <div *ngIf=\"state.errors.required\"></div>\r\n          Status is required\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" *ngIf=\"!crform.form.valid && !crform.form.errors\" (click)=\"save()\">Save</button>\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n    </div>\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -106,32 +106,32 @@ var SELECT_VALUE_ACCESSOR = {
     multi: true,
 };
 var CreateComponent = /** @class */ (function () {
-    function CreateComponent(activeModal, service, srAdmin, renderer) {
+    function CreateComponent(activeModal, service, srAdmin) {
         this.activeModal = activeModal;
         this.service = service;
         this.srAdmin = srAdmin;
-        this.renderer = renderer;
+        this.title = 'Add Item';
         this.item = new _service__WEBPACK_IMPORTED_MODULE_2__["ServiceObject"]();
+        this.options = this.srAdmin.getState();
         this.submitted = false;
     }
-    CreateComponent.prototype.onSubmit = function (form) {
-        this.submitted = false;
-        if (form.valid) {
-            this.submitted = true;
-        }
-        var title = form.controls['title'].value;
-        var content = form.controls['content'].value;
-        var note = form.controls['note'].value;
-        var state = form.controls['state'].value;
-        var options = form.controls['selectedState'].value;
-        var newItem = new _service__WEBPACK_IMPORTED_MODULE_2__["ServiceObject"]();
-        newItem.title = title;
-        newItem.content = content;
-        newItem.note = note;
-        // newItem.status = options;
-        newItem.status = state;
-        this.save(newItem);
-    };
+    // onSubmit(form: NgForm) {
+    //   this.submitted = false;
+    //   if (form.valid) {
+    //     this.submitted = true;
+    //   }
+    //   const title = form.controls['title'].value;
+    //   const content = form.controls['content'].value;
+    //   const note = form.controls['note'].value;
+    //   const state = form.controls['state'].value;
+    //   const newItem = new ServiceObject();
+    //   newItem.title = title;
+    //   newItem.content = content;
+    //   newItem.note = note;
+    //   // newItem.status = options;
+    //   newItem.status = state;
+    //   this.save(newItem);
+    // }
     CreateComponent.prototype.resetForm = function (form) {
         form.resetForm();
         this.item.status = this.options;
@@ -139,31 +139,12 @@ var CreateComponent = /** @class */ (function () {
         this.item.note = '';
         this.item.title = '';
     };
-    CreateComponent.prototype.save = function (obj) {
+    CreateComponent.prototype.save = function () {
+        console.log(this.item);
         return this.service.addItem(this.item);
     };
     CreateComponent.prototype.ngOnInit = function () {
-        this.options = this.srAdmin.getState();
     };
-    // ControlValueAccessor
-    CreateComponent.prototype.writeValue = function (obj) {
-        // const div = this.selectedState.nativeElement;
-        // this.renderer.setProperty(div, 'selectContent', obj);
-        this.value = obj;
-        // if(this.select && obj) {
-        //   this.select.dr
-        // }
-    };
-    CreateComponent.prototype.registerOnChange = function (fn) {
-        this.onChange = fn;
-    };
-    CreateComponent.prototype.change = function ($event) {
-        this.onChange($event.target.selectContent);
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('selectedState'),
-        __metadata("design:type", Object)
-    ], CreateComponent.prototype, "selectedState", void 0);
     CreateComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-create',
@@ -172,7 +153,7 @@ var CreateComponent = /** @class */ (function () {
             providers: [SELECT_VALUE_ACCESSOR]
         }),
         __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbActiveModal"],
-            _service_rest_service__WEBPACK_IMPORTED_MODULE_3__["ServiceRestService"], _service_admin_service_admin_service__WEBPACK_IMPORTED_MODULE_5__["ServiceAdminService"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]])
+            _service_rest_service__WEBPACK_IMPORTED_MODULE_3__["ServiceRestService"], _service_admin_service_admin_service__WEBPACK_IMPORTED_MODULE_5__["ServiceAdminService"]])
     ], CreateComponent);
     return CreateComponent;
 }());
@@ -783,8 +764,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var SelectorComponent = /** @class */ (function () {
-    // setDisabledState?(isDisabled: boolean): void {
-    // }
     function SelectorComponent(service) {
         this.service = service;
         this.options = this.service.getState();

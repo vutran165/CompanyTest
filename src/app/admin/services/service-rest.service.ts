@@ -43,7 +43,8 @@ export class ServiceRestService {
   // }
 
   public addItem(d) {
-    return this.http.post(endpoint + '/service', d).subscribe(res => {
+    return this.http.post(endpoint + '/service', d)
+    .subscribe(res => {
       console.log(res);
     }, err => {
       console.log(err.message);

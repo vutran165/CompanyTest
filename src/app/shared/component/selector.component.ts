@@ -56,10 +56,6 @@ export class SelectorComponent implements ControlValueAccessor {
         this.onTouched = fn;
     }
 
-    // setDisabledState?(isDisabled: boolean): void {
-
-    // }
-
     constructor(private service: ServiceAdminService) { }
 
 }

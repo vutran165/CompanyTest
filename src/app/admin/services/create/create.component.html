@@ -1,7 +1,7 @@
-<div [hidden]='submitted'>
-  <form action="" (ngSubmit)="onSubmit(crform)" #crform="ngForm">
+<div>
+  <form action="" #crform="ngForm">
     <div class="modal-header">
-      <h4 class="modal-title">{{title}}</h4>
+      <h4 class="modal-title">Add Item</h4>
       <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -11,18 +11,22 @@
       <div class="form-group">
         <label for="">Title</label>
         <input type="text" id="title" class="form-control" placeholder="..." aria-describedby="helpId" [(ngModel)]="item.title"
-          #title="ngModel" name="title">
+          #title="ngModel" name="title" required>
         <small id="helpId" class="text-muted"></small>
-        <!-- <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
+        <div *ngIf="title.valid && (title.dirty || title.touched)" class="alert alert-danger">
+          <div *ngIf="title.errors.required">
             Title is required
-        </div> -->
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="">Content</label>
-        <textarea class="form-control" id="content" rows="3" [(ngModel)]="item.content" #content="ngModel" name="content"></textarea>
-        <!-- <div [hidden]="content.valid || content.pristine" class="alert alert-danger">
-            Title is required
-        </div> -->
+        <textarea class="form-control" id="content" rows="3" [(ngModel)]="item.content" #content="ngModel" name="content" required></textarea>
+        <div *ngIf="content.valid && (content.dirty || content.touched)" class="alert alert-danger">
+          <div *ngIf="content.errors.required">
+            Content is required
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="">Note</label>
@@ -32,22 +36,19 @@
       <div class="form-group">
         <label for="">Status</label>
         <div class="col-sm-3 col-md-3">
-          <!-- <section class="form-control" multiple [(ngModel)]="item.status" [ngModelOptions]="{standalone:true}" name="selectedState"
-            id="status" #selectedState="ngModel">
-            <option *ngFor="let option of options" [ngValue]="option.state">{{option.value}}</option>
-          </section> -->
 
           <state-selector name="state" [(ngModel)]="item.status" #state="ngModel"></state-selector>
 
         </div>
-        <!-- <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
-            Title is required
-        </div> -->
+        <div *ngIf="state.valid && (state.dirty || state.touched)" class="alert alert-danger">
+          <div *ngIf="state.errors.required"></div>
+          Status is required
+        </div>
       </div>
 
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" [hidden]="!crform.form.valid" (click)="save()">Save</button>
+      <button type="button" class="btn btn-outline-dark" *ngIf="!crform.form.valid && !crform.form.errors" (click)="save()">Save</button>
       <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
     </div>
   </form>
