@@ -8,6 +8,7 @@ import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpErrorHandlerService } from '../shared/error/http-error-handler.service';
 
 const ADMIN_COMPONENT = [
   AdminComponent,
@@ -25,6 +26,7 @@ const ADMIN_COMPONENT = [
     RouterModule,
     FontAwesomeModule
   ],
+  providers: [HttpErrorHandlerService],
   declarations: [ADMIN_COMPONENT]
 })
 export class AdminModule { }

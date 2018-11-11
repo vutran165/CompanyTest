@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { map, catchError, tap } from 'rxjs/operators';
-import { ServiceEntity } from './service';
-import { pagingObject } from 'src/app/shared/service-common/pagingObject';
-import { objTranfer } from 'src/app/shared/service-common/objTranfer';
+import { map, catchError, tap, retry } from 'rxjs/operators';
+import { pagingObject } from 'src/app/shared/common/pagingObject';
+import { objTranfer } from 'src/app/shared/common/objTranfer';
+import { HttpErrorHandlerService, HandlerError } from 'src/app/shared/error/http-error-handler.service';
+import { ServiceObject } from './service';
 
 
 const endpoint = 'http://localhost:8585';
@@ -15,41 +16,30 @@ const endpoint = 'http://localhost:8585';
 
 export class ServiceRestService {
 
-  constructor(private http: HttpClient) { }
+  private handlerError: HandlerError;
 
-  items: any;
-  pagingObj: pagingObject;
-  dto: objTranfer;
-  objTranfer: any;
+  constructor(private http: HttpClient, httpErrorResponse: HttpErrorHandlerService) {
+    this.handlerError = httpErrorResponse.createdHandlerError('ServiceRestService');
+  }
 
   private extractData(res: Response) {
     const body = res;
     return body || {};
   }
 
-  public getData(): Observable<any> {
+  getData(): Observable<any> {
     return this.http.get(endpoint + '/service');
   }
 
-  public getServiceById(id): Observable<any> {
+  getServiceById(id): Observable<any> {
     return this.http.get(endpoint + '/service/' + id).pipe(
       map(this.extractData));
   }
 
-  // public addService(service): Observable<any> {
-  //   return this.http.post(endpoint + '/service/', service).pipe(
-  //     map(this.extractData)
-  //   );
-  // }
-
-  public addItem(d) {
-    return this.http.post(endpoint + '/service', d)
-    .subscribe(res => {
-      console.log(res);
-    }, err => {
-      console.log(err.message);
-    }, () => {
-      console.log('done!!!');
-    });
+  addItem(d: ServiceObject): Observable<ServiceObject> {
+    return this.http.post<ServiceObject>(endpoint + '/service', d).
+      pipe(retry(3), catchError(this.handlerError('addItem', d)));
   }
+
+
 }
