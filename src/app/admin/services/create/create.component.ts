@@ -6,6 +6,7 @@ import { FormGroup, FormControl, FormBuilder, NgForm, NG_VALUE_ACCESSOR } from '
 import { formControlBinding } from '@angular/forms/src/directives/reactive_directives/form_control_directive';
 import { ServiceAdminService } from '../../_service-admin/service-admin.service';
 import { ok } from 'assert';
+import { AlertService } from 'src/app/shared/alert/alert.service';
 
 
 export const SELECT_VALUE_ACCESSOR: any = {
@@ -68,8 +69,19 @@ export class CreateComponent implements OnInit {
   }
 
 
+  triggerAlert() {
+    this.alertService.create(
+      'title',
+      200,
+      'ok',
+      'error',
+      5000
+    );
+  }
+
   constructor(public activeModal: NgbActiveModal,
-    private service: ServiceRestService, private srAdmin: ServiceAdminService) {
+    private service: ServiceRestService, private srAdmin: ServiceAdminService,
+    private alertService: AlertService) {
 
   }
 

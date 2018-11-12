@@ -255,7 +255,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"alert alert-light\" role=\"alert\">\r\n  <h3>{{errorService.errorMessage}}</h3>\r\n</div> -->\r\n\r\n<p>\r\n  <ngb-alert [dismissible]=\"false\">\r\n    <strong>{{errorService.errorMessage}}</strong>\r\n  </ngb-alert>\r\n</p>"
+module.exports = "<!-- <div class=\"alert alert-light\" role=\"alert\">\n  <h3>{{errorService.errorMessage}}</h3>\n</div> -->\n\n<p>\n  <ngb-alert [dismissible]=\"false\">\n    <strong>{{errorService.errorMessage}}</strong>\n  </ngb-alert>\n</p>"
 
 /***/ }),
 
@@ -285,12 +285,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var ErrorComponent = /** @class */ (function () {
-    function ErrorComponent(errorSerive, alert) {
+    function ErrorComponent(errorSerive, alertConfig) {
         this.errorSerive = errorSerive;
-        this.alert = alert;
+        this.alertConfig = alertConfig;
+        this.alerts = [];
+        alertConfig.type = 'success';
+        alertConfig.dismissible = false;
     }
     ErrorComponent.prototype.ngOnInit = function () {
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Array)
+    ], ErrorComponent.prototype, "alerts", void 0);
     ErrorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-error',
@@ -406,7 +413,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\TRANTUANVU\Desktop\CompanyTest\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\JACKYTRAN\Desktop\CompanyTest\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ErrorService } from './error.service';
 import { NgbAlertConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-error',
@@ -10,12 +11,15 @@ import { NgbAlertConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ErrorComponent implements OnInit {
 
-	
-  @Input() public alerts: Array<string> = [];	
+  private _success = new Subject<string>();
+
+  color: string;
+
+  @Input() public alerts: Array<string> = [];
 
   constructor(private errorSerive: ErrorService, public alertConfig: NgbAlertConfig) {
-	alertConfig.type = 'success';
-	alertConfig.dismissible = false;
+    alertConfig.type = 'success';
+    alertConfig.dismissible = false;
   }
 
   ngOnInit() {

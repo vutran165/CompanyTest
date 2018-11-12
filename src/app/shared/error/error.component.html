@@ -1,9 +1,17 @@
 <!-- <div class="alert alert-light" role="alert">
   <h3>{{errorService.errorMessage}}</h3>
 </div> -->
+<p>
+  Static self-closing alert that disappears after 20 seconds (refresh the page if it has already disappeared)
+</p>
+<ngb-alert *ngIf="!staticAlertClosed" (close)="staticAlertClosed = true">Check out our awesome new features!</ngb-alert>
+
+<hr/>
 
 <p>
-  <ngb-alert [dismissible]="false">
-    <strong>{{errorService.errorMessage}}</strong>
-  </ngb-alert>
+  Show a self-closing success message that disappears after 5 seconds.
+</p>
+<ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ errorMessage.message }}</ngb-alert>
+<p>
+  <button class="btn btn-primary" (click)="changeSuccessMessage()">Change message</button>
 </p>
