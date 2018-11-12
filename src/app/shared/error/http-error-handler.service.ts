@@ -12,7 +12,6 @@ export type HandlerError = <T> (operation?: string, result?: T) => (error: HttpE
 })
 export class HttpErrorHandlerService {
 
-
   constructor(private errorService: ErrorService) { }
 
 

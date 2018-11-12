@@ -10,9 +10,13 @@ import { NgbAlertConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ErrorComponent implements OnInit {
 
+	
+  @Input() public alerts: Array<string> = [];	
 
-
-  constructor(private errorSerive: ErrorService, public alert: NgbAlertConfig) { }
+  constructor(private errorSerive: ErrorService, public alertConfig: NgbAlertConfig) {
+	alertConfig.type = 'success';
+	alertConfig.dismissible = false;
+  }
 
   ngOnInit() {
   }
