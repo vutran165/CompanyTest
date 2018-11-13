@@ -29,8 +29,9 @@ export class HttpErrorHandlerService {
       console.error(error);
       const message = (error.error instanceof ErrorEvent) ?
         error.error.message : `{error code: ${error.status}, body: "${error.message}"}`;
+
       // todo-> transforming error for user consumption
-      this.errorService.errorMessage = `${serviceName} ->${operation}`;
+      this.errorService.errorMessage.message = `${serviceName} ->${operation}`;
       // return a safe result
       return of(result);
     };

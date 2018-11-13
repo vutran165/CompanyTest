@@ -1,12 +1,7 @@
-export class StatusCode {
-    public successful: StatusCodeObject;
-    public redirection: StatusCodeObject;
-    public client: StatusCodeObject;
-    public server: StatusCodeObject;
-}
-
-class StatusCodeObject {
-    public id: String;
-    public value: String;
+export interface StatusCodeObject {
+    title: string;
+    status: number;
+    message: string;
+    error: string;
 }
 
