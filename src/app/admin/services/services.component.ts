@@ -10,6 +10,8 @@ import { ServiceRestService } from './service-rest.service';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { error } from 'util';
+import { DetailComponent } from './detail/detail.component';
 
 
 @Component({
@@ -35,8 +37,13 @@ export class ServicesComponent implements OnInit {
     modalRef.componentInstance.name = 'World';
   }
 
-  edit() {
+  edit(id: string) {
     this.modalService.open(EditComponent, { size: 'lg' });
+  }
+
+
+  detail(id: string) {
+    this.modalService.open(DetailComponent, { size: 'lg' });
   }
 
   delete() {
@@ -49,10 +56,15 @@ export class ServicesComponent implements OnInit {
   }
 
   inItData() {
-    return this.service.getData().pipe(map(res => {
+    // return this.service.getData().pipe(map(res => {
+    //   this.items = res['data'];
+    //   this.pagingObj = res['pagingObj'];
+    // })).subscribe(() => {
+    // });
+    return this.service.getData().subscribe((res) => {
+      console.log(res);
       this.items = res['data'];
       this.pagingObj = res['pagingObj'];
-    })).subscribe(() => {
     });
   }
 }

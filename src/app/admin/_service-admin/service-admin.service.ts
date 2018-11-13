@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { StateChanged } from '../services/service';
-import { StatusCode } from 'src/app/shared/error/status-code';
 
 @Injectable({
   providedIn: 'root'

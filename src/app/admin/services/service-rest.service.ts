@@ -27,18 +27,18 @@ export class ServiceRestService {
     return body || {};
   }
 
-  getData(): Observable<any> {
-    return this.http.get(endpoint + '/service');
+  getData(): Observable<ServiceObject[]> {
+    return this.http.get<ServiceObject[]>(endpoint + '/service').pipe(retry(2), catchError(this.handlerError('getData', [])));
   }
 
-  getServiceById(id): Observable<any> {
-    return this.http.get(endpoint + '/service/' + id).pipe(
-      map(this.extractData));
+  getServiceById(id): Observable<ServiceObject> {
+    return this.http.get<ServiceObject>(endpoint + '/service/' + id)
+      .pipe(retry(2), catchError(this.handlerError('getServiceById', null)));
   }
 
   addItem(d: ServiceObject): Observable<ServiceObject> {
     return this.http.post<ServiceObject>(endpoint + '/service', d).
-      pipe(retry(3), catchError(this.handlerError('addItem', d)));
+      pipe(retry(2), catchError(this.handlerError('addItem', d)));
   }
 
 

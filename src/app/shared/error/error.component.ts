@@ -11,12 +11,9 @@ import { Subject } from 'rxjs';
 })
 export class ErrorComponent implements OnInit {
 
-<<<<<<< HEAD
-=======
   private _success = new Subject<string>();
 
   color: string;
->>>>>>> 514b6e43dcda7162cddb8e87a5274d43e2c3faf9
 
   @Input() public alerts: Array<string> = [];
 

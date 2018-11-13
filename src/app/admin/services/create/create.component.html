@@ -1,5 +1,5 @@
 <div>
-  <app-error></app-error>
+  <!-- <app-error></app-error> -->
   <form action="" #crform="ngForm">
     <div class="modal-header">
       <h4 class="modal-title">Add Item</h4>
@@ -15,7 +15,7 @@
         <input type="text" id="title" class="form-control" placeholder="..." aria-describedby="helpId" [(ngModel)]="item.title"
           #title="ngModel" name="title" required>
         <small id="helpId" class="text-muted"></small>
-        <div *ngIf="title.valid && (title.dirty || title.touched)" class="alert alert-danger">
+        <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
           <div *ngIf="title.errors.required">
             Title is required
           </div>
@@ -25,7 +25,7 @@
         <label for="">Content</label>
         <textarea class="form-control" id="content" rows="3" [(ngModel)]="item.content" #content="ngModel" name="content"
           required></textarea>
-        <div *ngIf="content.valid && (content.dirty || content.touched)" class="alert alert-danger">
+        <div *ngIf="content.invalid && (content.dirty || content.touched)" class="alert alert-danger">
           <div *ngIf="content.errors.required">
             Content is required
           </div>
@@ -43,7 +43,7 @@
           <state-selector name="state" [(ngModel)]="item.status" #state="ngModel"></state-selector>
 
         </div>
-        <div *ngIf="state.valid && (state.dirty || state.touched)" class="alert alert-danger">
+        <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert alert-danger">
           <div *ngIf="state.errors.required"></div>
           Status is required
         </div>
@@ -51,7 +51,7 @@
 
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" *ngIf="!crform.form.valid && !crform.form.errors" (click)="save()">Save</button>
+      <button type="button" class="btn btn-outline-dark" *ngIf="!crform.form.invalid && !crform.form.errors" (click)="save()">Save</button>
       <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
     </div>
   </form>

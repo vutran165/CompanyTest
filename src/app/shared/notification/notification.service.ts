@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { PushNotification } from './push-notification';
 import { Observable } from 'rxjs';
 
-@Injectable()
+// https://dzone.com/articles/browser-push-notification-in-angular-5@Injectable()
 
 export class NotificationService {
 

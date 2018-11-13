@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -8,7 +8,9 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DetailComponent implements OnInit {
 
-  constructor(public activeModal: NgbActiveModal) { }
+  // @Input()
+
+    constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
   }
