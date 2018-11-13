@@ -11,6 +11,7 @@ import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceRestService } from './service-rest.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectorComponent } from 'src/app/shared/component/selector.component';
+import { ErrorComponent } from 'src/app/shared/error/error.component';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { SelectorComponent } from 'src/app/shared/component/selector.component';
   exports: [FormsModule, ReactiveFormsModule],
   providers: [NgbActiveModal, ServiceRestService],
   entryComponents: [CreateComponent, EditComponent, DeleteComponent, DetailComponent, SelectorComponent],
-  declarations: [ServicesComponent, CreateComponent, EditComponent, DeleteComponent, DetailComponent, SelectorComponent]
+  declarations: [ServicesComponent, CreateComponent, EditComponent, DeleteComponent, DetailComponent, SelectorComponent, ErrorComponent]
 })
 
 export class ServicesModule { }

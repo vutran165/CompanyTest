@@ -1,7 +1,9 @@
 <div>
+  <app-error></app-error>
   <form action="" #crform="ngForm">
     <div class="modal-header">
       <h4 class="modal-title">Add Item</h4>
+
       <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -21,7 +23,8 @@
       </div>
       <div class="form-group">
         <label for="">Content</label>
-        <textarea class="form-control" id="content" rows="3" [(ngModel)]="item.content" #content="ngModel" name="content" required></textarea>
+        <textarea class="form-control" id="content" rows="3" [(ngModel)]="item.content" #content="ngModel" name="content"
+          required></textarea>
         <div *ngIf="content.valid && (content.dirty || content.touched)" class="alert alert-danger">
           <div *ngIf="content.errors.required">
             Content is required

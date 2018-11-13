@@ -69,7 +69,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <form action=\"\" #crform=\"ngForm\">\r\n    <div class=\"modal-header\">\r\n      <h4 class=\"modal-title\">Add Item</h4>\r\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n      </button>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Title</label>\r\n        <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\"\r\n          #title=\"ngModel\" name=\"title\" required>\r\n        <small id=\"helpId\" class=\"text-muted\"></small>\r\n        <div *ngIf=\"title.valid && (title.dirty || title.touched)\" class=\"alert alert-danger\">\r\n          <div *ngIf=\"title.errors.required\">\r\n            Title is required\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Content</label>\r\n        <textarea class=\"form-control\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #content=\"ngModel\" name=\"content\" required></textarea>\r\n        <div *ngIf=\"content.valid && (content.dirty || content.touched)\" class=\"alert alert-danger\">\r\n          <div *ngIf=\"content.errors.required\">\r\n            Content is required\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Note</label>\r\n        <input type=\"text\" id=\"note\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #note=\"ngModel\"\r\n          name=\"note\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Status</label>\r\n        <div class=\"col-sm-3 col-md-3\">\r\n\r\n          <state-selector name=\"state\" [(ngModel)]=\"item.status\" #state=\"ngModel\"></state-selector>\r\n\r\n        </div>\r\n        <div *ngIf=\"state.valid && (state.dirty || state.touched)\" class=\"alert alert-danger\">\r\n          <div *ngIf=\"state.errors.required\"></div>\r\n          Status is required\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" *ngIf=\"!crform.form.valid && !crform.form.errors\" (click)=\"save()\">Save</button>\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n    </div>\r\n  </form>\r\n</div>"
+module.exports = "<div>\r\n  <app-error></app-error>\r\n  <form action=\"\" #crform=\"ngForm\">\r\n    <div class=\"modal-header\">\r\n      <h4 class=\"modal-title\">Add Item</h4>\r\n\r\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n      </button>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Title</label>\r\n        <input type=\"text\" id=\"title\" class=\"form-control\" placeholder=\"...\" aria-describedby=\"helpId\" [(ngModel)]=\"item.title\"\r\n          #title=\"ngModel\" name=\"title\" required>\r\n        <small id=\"helpId\" class=\"text-muted\"></small>\r\n        <div *ngIf=\"title.valid && (title.dirty || title.touched)\" class=\"alert alert-danger\">\r\n          <div *ngIf=\"title.errors.required\">\r\n            Title is required\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Content</label>\r\n        <textarea class=\"form-control\" id=\"content\" rows=\"3\" [(ngModel)]=\"item.content\" #content=\"ngModel\" name=\"content\"\r\n          required></textarea>\r\n        <div *ngIf=\"content.valid && (content.dirty || content.touched)\" class=\"alert alert-danger\">\r\n          <div *ngIf=\"content.errors.required\">\r\n            Content is required\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Note</label>\r\n        <input type=\"text\" id=\"note\" class=\"form-control\" placeholder=\"...\" [(ngModel)]=\"item.note\" #note=\"ngModel\"\r\n          name=\"note\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"\">Status</label>\r\n        <div class=\"col-sm-3 col-md-3\">\r\n\r\n          <state-selector name=\"state\" [(ngModel)]=\"item.status\" #state=\"ngModel\"></state-selector>\r\n\r\n        </div>\r\n        <div *ngIf=\"state.valid && (state.dirty || state.touched)\" class=\"alert alert-danger\">\r\n          <div *ngIf=\"state.errors.required\"></div>\r\n          Status is required\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" *ngIf=\"!crform.form.valid && !crform.form.errors\" (click)=\"save()\">Save</button>\r\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\r\n    </div>\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -692,12 +692,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_rest_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./service-rest.service */ "./src/app/admin/services/service-rest.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var src_app_shared_component_selector_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/shared/component/selector.component */ "./src/app/shared/component/selector.component.ts");
+/* harmony import */ var src_app_shared_error_error_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! src/app/shared/error/error.component */ "./src/app/shared/error/error.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -727,7 +729,7 @@ var ServicesModule = /** @class */ (function () {
             exports: [_angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ReactiveFormsModule"]],
             providers: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbActiveModal"], _service_rest_service__WEBPACK_IMPORTED_MODULE_10__["ServiceRestService"]],
             entryComponents: [_create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"], src_app_shared_component_selector_component__WEBPACK_IMPORTED_MODULE_12__["SelectorComponent"]],
-            declarations: [_services_component__WEBPACK_IMPORTED_MODULE_2__["ServicesComponent"], _create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"], src_app_shared_component_selector_component__WEBPACK_IMPORTED_MODULE_12__["SelectorComponent"]]
+            declarations: [_services_component__WEBPACK_IMPORTED_MODULE_2__["ServicesComponent"], _create_create_component__WEBPACK_IMPORTED_MODULE_5__["CreateComponent"], _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"], _delete_delete_component__WEBPACK_IMPORTED_MODULE_7__["DeleteComponent"], _detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"], src_app_shared_component_selector_component__WEBPACK_IMPORTED_MODULE_12__["SelectorComponent"], src_app_shared_error_error_component__WEBPACK_IMPORTED_MODULE_13__["ErrorComponent"]]
         })
     ], ServicesModule);
     return ServicesModule;
@@ -818,6 +820,83 @@ var SelectorComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [src_app_admin_service_admin_service_admin_service__WEBPACK_IMPORTED_MODULE_2__["ServiceAdminService"]])
     ], SelectorComponent);
     return SelectorComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/error/error.component.css":
+/*!**************************************************!*\
+  !*** ./src/app/shared/error/error.component.css ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/shared/error/error.component.html":
+/*!***************************************************!*\
+  !*** ./src/app/shared/error/error.component.html ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <div class=\"alert alert-light\" role=\"alert\">\r\n  <h3>{{errorService.errorMessage}}</h3>\r\n</div> -->\r\n\r\n<!-- <p>\r\n  <ngb-alert [dismissible]=\"false\">\r\n    <strong>{{errorService.errorMessage}}</strong>\r\n  </ngb-alert>\r\n</p> -->\r\n\r\n<p>\r\n  <ngb-alert>\r\n    This alert's type is success and it's not dismissible because the config has been customized\r\n  </ngb-alert>\r\n</p>"
+
+/***/ }),
+
+/***/ "./src/app/shared/error/error.component.ts":
+/*!*************************************************!*\
+  !*** ./src/app/shared/error/error.component.ts ***!
+  \*************************************************/
+/*! exports provided: ErrorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ErrorComponent", function() { return ErrorComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _error_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./error.service */ "./src/app/shared/error/error.service.ts");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ErrorComponent = /** @class */ (function () {
+    function ErrorComponent(errorSerive, alertConfig) {
+        this.errorSerive = errorSerive;
+        this.alertConfig = alertConfig;
+        this.alerts = [];
+        alertConfig.type = 'success';
+        alertConfig.dismissible = false;
+    }
+    ErrorComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Array)
+    ], ErrorComponent.prototype, "alerts", void 0);
+    ErrorComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-error',
+            template: __webpack_require__(/*! ./error.component.html */ "./src/app/shared/error/error.component.html"),
+            styles: [__webpack_require__(/*! ./error.component.css */ "./src/app/shared/error/error.component.css")],
+            providers: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbAlertConfig"]]
+        }),
+        __metadata("design:paramtypes", [_error_service__WEBPACK_IMPORTED_MODULE_1__["ErrorService"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbAlertConfig"]])
+    ], ErrorComponent);
+    return ErrorComponent;
 }());
 
 
