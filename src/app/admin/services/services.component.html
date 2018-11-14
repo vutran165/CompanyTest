@@ -34,10 +34,10 @@
             <td>{{item.create_date}}</td>
             <td>{{item.status}}</td>
             <td>
-              <button type="button" class="btn btn-outline-primary" (click)="edit(item._id)">
+              <button type="button" class="btn btn-outline-primary" (click)="edit(item)">
                 <fa-icon [icon]="faPenSquare"></fa-icon>
               </button>
-              <button type="button" class="btn btn-outline-primary" (click)="detail(item._id)">
+              <button type="button" class="btn btn-outline-primary" (click)="detail(item)">
                 <fa-icon [icon]="faPenSquare"></fa-icon>
               </button>
               <button type="button" class="btn btn-outline-primary" (click)="delete()">

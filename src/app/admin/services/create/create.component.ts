@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, Renderer2, forwardRef } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { ServiceEntity, StateChanged, ServiceObject } from '../service';
+import { StateChanged, ServiceObject } from '../service';
 import { ServiceRestService } from '../service-rest.service';
 import { FormGroup, FormControl, FormBuilder, NgForm, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { formControlBinding } from '@angular/forms/src/directives/reactive_directives/form_control_directive';
@@ -30,28 +30,6 @@ export class CreateComponent implements OnInit {
   options = this.srAdmin.getState();
 
   submitted = false;
-
-  // onSubmit(form: NgForm) {
-  //   this.submitted = false;
-  //   if (form.valid) {
-  //     this.submitted = true;
-  //   }
-
-  //   const title = form.controls['title'].value;
-  //   const content = form.controls['content'].value;
-  //   const note = form.controls['note'].value;
-  //   const state = form.controls['state'].value;
-
-  //   const newItem = new ServiceObject();
-  //   newItem.title = title;
-  //   newItem.content = content;
-  //   newItem.note = note;
-  //   // newItem.status = options;
-  //   newItem.status = state;
-
-  //   this.save(newItem);
-
-  // }
 
   resetForm(form: NgForm) {
     form.resetForm();

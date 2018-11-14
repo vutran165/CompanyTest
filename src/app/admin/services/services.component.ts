@@ -29,7 +29,6 @@ export class ServicesComponent implements OnInit {
   faPenSquare = faPenSquare;
   faTrash = faTrash;
   items: any;
-  data: any;
   pagingObj: any;
 
   add() {
@@ -37,17 +36,21 @@ export class ServicesComponent implements OnInit {
     modalRef.componentInstance.name = 'World';
   }
 
-  edit(id: string) {
-    this.modalService.open(EditComponent, { size: 'lg' });
+  edit(item) {
+    const modalRef = this.modalService.open(EditComponent, { size: 'lg' });
+    modalRef.componentInstance.item = item;
   }
 
 
-  detail(id: string) {
-    this.modalService.open(DetailComponent, { size: 'lg' });
+  detail(item) {
+    console.log(item);
+    const modelRef = this.modalService.open(DetailComponent, { size: 'lg' });
+    modelRef.componentInstance.item = item;
   }
 
-  delete() {
-    this.modalService.open(DeleteComponent, { size: 'lg' });
+  delete(id: string) {
+    const modelRef = this.modalService.open(DeleteComponent, { size: 'lg' });
+    modelRef.componentInstance.itemId = id;
   }
 
   ngOnInit() {
@@ -56,11 +59,6 @@ export class ServicesComponent implements OnInit {
   }
 
   inItData() {
-    // return this.service.getData().pipe(map(res => {
-    //   this.items = res['data'];
-    //   this.pagingObj = res['pagingObj'];
-    // })).subscribe(() => {
-    // });
     return this.service.getData().subscribe((res) => {
       console.log(res);
       this.items = res['data'];
