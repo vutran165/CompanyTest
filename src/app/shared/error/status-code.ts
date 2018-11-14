@@ -5,3 +5,7 @@ export interface StatusCodeObject {
     error: string;
 }
 
+export class HttpResponseObject {
+    constructor(private title: string, message: string, error: string, private statusCode: number) { }
+}
+

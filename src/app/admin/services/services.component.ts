@@ -33,7 +33,6 @@ export class ServicesComponent implements OnInit {
 
   add() {
     const modalRef = this.modalService.open(CreateComponent, { size: 'lg' });
-    modalRef.componentInstance.name = 'World';
   }
 
   edit(item) {

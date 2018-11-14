@@ -42,7 +42,9 @@ export class CreateComponent implements OnInit {
 
   save() {
     console.log(this.item);
-    this.service.addItem(this.item);
+    this.service.addItem(this.item).subscribe(res => {
+      console.log(res);
+    });
     this.activeModal.close();
   }
 

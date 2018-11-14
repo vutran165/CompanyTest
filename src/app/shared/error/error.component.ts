@@ -17,7 +17,7 @@ export class ErrorComponent implements OnInit {
 
   @Input() public alerts: Array<string> = [];
 
-  constructor(private errorSerive: ErrorService, public alertConfig: NgbAlertConfig) {
+  constructor(public errorSerive: ErrorService, public alertConfig: NgbAlertConfig) {
     alertConfig.type = 'success';
     alertConfig.dismissible = false;
   }

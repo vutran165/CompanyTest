@@ -14,12 +14,5 @@ export class ServiceAdminService {
     return options;
   }
 
-  // getStatusCode(): StatusCode[] {
-  //   const data = [
-  //     new StatusCode(200, )
-  //   ]
-  // }
-
-
   constructor() { }
 }

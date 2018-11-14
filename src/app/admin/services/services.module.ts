@@ -26,7 +26,7 @@ import { ErrorComponent } from 'src/app/shared/error/error.component';
   exports: [FormsModule, ReactiveFormsModule],
   providers: [NgbActiveModal, ServiceRestService],
   entryComponents: [CreateComponent, EditComponent, DeleteComponent, DetailComponent, SelectorComponent],
-  declarations: [ServicesComponent, CreateComponent, EditComponent, DeleteComponent, DetailComponent, SelectorComponent, ErrorComponent]
+  declarations: [ServicesComponent, CreateComponent, EditComponent, DeleteComponent, DetailComponent, SelectorComponent]
 })
 
 export class ServicesModule { }

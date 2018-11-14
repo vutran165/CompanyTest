@@ -9,11 +9,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpErrorHandlerService } from '../shared/error/http-error-handler.service';
+import { ErrorComponent } from '../shared/error/error.component';
 
 const ADMIN_COMPONENT = [
   AdminComponent,
   MenuAdminComponent,
-  SidebarComponent
+  SidebarComponent,
+  ErrorComponent
 ];
 @NgModule({
   imports: [

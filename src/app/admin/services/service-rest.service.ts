@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap, retry } from 'rxjs/operators';
 import { pagingObject } from 'src/app/shared/common/pagingObject';
 import { objTranfer } from 'src/app/shared/common/objTranfer';
 import { HttpErrorHandlerService, HandlerError } from 'src/app/shared/error/http-error-handler.service';
 import { ServiceObject } from './service';
+import { ExpansionCase } from '@angular/compiler';
 
 
 const endpoint = 'http://localhost:8585';
@@ -36,9 +37,9 @@ export class ServiceRestService {
       .pipe(retry(2), catchError(this.handlerError('getServiceById', null)));
   }
 
-  addItem(d: ServiceObject): Observable<ServiceObject> {
+  addItem(d: ServiceObject): Observable<any> {
     return this.http.post<ServiceObject>(endpoint + '/service', d).
-      pipe(retry(2), catchError(this.handlerError('addItem', d)));
+      pipe(retry(2), catchError(this.handlerError('addItem', {})));
   }
 
 
