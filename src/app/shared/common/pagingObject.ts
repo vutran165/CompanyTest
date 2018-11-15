@@ -6,14 +6,17 @@ export class pagingObject {
     public pageNo: number;
     public pageSize: number;
 
-    constructor(pageCount, start, previous,
-        last, pageNo, pageSize) {
-        this.pageCount = pageCount;
-        this.start = start;
-        this.previous = previous;
-        this.last = last;
-        this.pageNo = pageNo;
-        this.pageSize = pageSize;
+    // constructor(pageCount?, start?, previous?,
+    //     last?, pageNo?, pageSize?) {
+    //     this.pageCount = pageCount;
+    //     this.start = start;
+    //     this.previous = previous;
+    //     this.last = last;
+    //     this.pageNo = pageNo;
+    //     this.pageSize = pageSize;
+    // }
+    constructor() {
+
     }
 }
 

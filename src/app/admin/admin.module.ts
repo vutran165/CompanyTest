@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpErrorHandlerService } from '../shared/error/http-error-handler.service';
 import { ErrorComponent } from '../shared/error/error.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 const ADMIN_COMPONENT = [
   AdminComponent,
@@ -29,6 +30,6 @@ const ADMIN_COMPONENT = [
     FontAwesomeModule
   ],
   providers: [HttpErrorHandlerService],
-  declarations: [ADMIN_COMPONENT]
+  declarations: [ADMIN_COMPONENT, PaginationComponent]
 })
 export class AdminModule { }

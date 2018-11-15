@@ -29,7 +29,7 @@ export class ServiceRestService {
   }
 
   getData(): Observable<ServiceObject[]> {
-    return this.http.get<ServiceObject[]>(endpoint + '/service').pipe(retry(2), catchError(this.handlerError('getData', [])));
+    return this.http.get<ServiceObject[]>(endpoint + '/service', {params:}).pipe(retry(2), catchError(this.handlerError('getData', [])));
   }
 
   getServiceById(id): Observable<ServiceObject> {
@@ -41,6 +41,4 @@ export class ServiceRestService {
     return this.http.post<ServiceObject>(endpoint + '/service', d).
       pipe(retry(2), catchError(this.handlerError('addItem', {})));
   }
-
-
 }
