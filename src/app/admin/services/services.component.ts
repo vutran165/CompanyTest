@@ -55,11 +55,12 @@ export class ServicesComponent implements OnInit {
     this.inItData();
   }
 
-  inItData() {
-    return this.service.getData().subscribe((res) => {
+  inItData(page?: number) {
+    return this.service.getData(6).subscribe((res) => {
       console.log(res);
       this.items = res['data'];
       this.pagingObj = res['pagingObj'];
     });
   }
+
 }

@@ -28,8 +28,12 @@ export class ServiceRestService {
     return body || {};
   }
 
-  getData(): Observable<ServiceObject[]> {
-    return this.http.get<ServiceObject[]>(endpoint + '/service', {params:}).pipe(retry(2), catchError(this.handlerError('getData', [])));
+  getData(pageNo?): Observable<ServiceObject[]> {
+    return this.http.get<ServiceObject[]>(endpoint + '/service', {
+      params: {
+        pageNo: pageNo
+      }
+    }).pipe(retry(2), catchError(this.handlerError('getData', [])));
   }
 
   getServiceById(id): Observable<ServiceObject> {
