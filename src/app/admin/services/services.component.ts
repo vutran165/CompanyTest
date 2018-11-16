@@ -18,6 +18,7 @@ import { DetailComponent } from './detail/detail.component';
   styleUrls: ['./services.component.css'],
   providers: [ServiceRestService]
 })
+
 export class ServicesComponent implements OnInit {
 
   constructor(private modalService: NgbModal, private service: ServiceRestService, private http: HttpClient) { }
@@ -52,14 +53,25 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {
     console.log('done');
-    this.inItData();
+    // this.inItData();
+    this.setPage();
   }
 
-  inItData(page?: number) {
-    return this.service.getData(6).subscribe((res) => {
+  inItData(page?) {
+    return this.service.getData(page).subscribe((res) => {
       console.log(res);
       this.items = res['data'];
       this.pagingObj = res['pagingObj'];
+      console.log(this.pagingObj);
+    });
+  }
+
+  setPage(page?) {
+    return this.service.getData(page).subscribe((res) => {
+      console.log(res);
+      this.items = res['data'];
+      this.pagingObj = res['pagingObj'];
+      console.log(this.pagingObj);
     });
   }
 

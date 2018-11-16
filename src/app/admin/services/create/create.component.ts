@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, Renderer2, forwardRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Renderer2, forwardRef, Output } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { StateChanged, ServiceObject } from '../service';
 import { ServiceRestService } from '../service-rest.service';
@@ -25,6 +25,10 @@ export class CreateComponent implements OnInit {
 
   title: String = 'Add Item';
 
+  // tslint:disable-next-line:no-input-rename
+  @Input('test') test: any;
+  data: any;
+
   item = new ServiceObject();
 
   options = this.srAdmin.getState();
@@ -44,6 +48,7 @@ export class CreateComponent implements OnInit {
     console.log(this.item);
     this.service.addItem(this.item).subscribe(res => {
       console.log(res);
+      this.data = res;
     });
     this.activeModal.close();
   }

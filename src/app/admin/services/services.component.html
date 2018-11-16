@@ -54,13 +54,20 @@
     <div class="card-footer">
       <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center" *ngIf="pagingObj.pages && pagingObj.pages.length">
-          <li [ngClass]="{disabled: pagingObj.pageNo === 1}">First</li>
-          <li [ngClass]="{disabled: pagingObj.pageNo === 1}"><a (click)="setPage(pagingObj.pageNo - 1)">Previous</a></li>
-          <li *ngFor="let item of pagingObj.pages" [ngClass]="{active:pagingObj.pageNo === page }"><a (click)="setPage(page)">{{item}}</a></li>
-          <li [ngClass]="{disabled: pagingObj.pageNo === 1}"><a (click)="setPage(pagingObj.pageNo + 1)">Next</a></li>
+          <li [ngClass]="{disabled: pagingObj.pageNo === 1}"><a (click)="setPage(1)" class="page-link">First</a></li>
+          <li [ngClass]="{disabled: pagingObj.pageNo === 1}"><a (click)="setPage(pagingObj.pageNo - 1)" class="page-link"
+              aria-label="Previous"><span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span></a></li>
+          <li class="page-item" *ngFor="let page of pagingObj.pages" [ngClass]="{active:pagingObj.pageNo === page }"><a
+              (click)="setPage(page)">{{item}}</a></li>
+          <li [ngClass]="{disabled: pagingObj.pageNo === 1}"><a (click)="setPage(pagingObj.pageNo + 1)" class="page-link"
+              aria-label="Next"><span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span></a></li>
+          <li [ngClass]="{disabled: pagingObj.pageNo === 1}"><a (click)="setPage(pagingObj.pageCount)" class="page-link">
+              Last</a></li>
         </ul>
       </nav>
-
+      {{test}}
     </div>
 
 
