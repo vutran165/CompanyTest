@@ -10,6 +10,8 @@ import { ServiceRestService } from './service-rest.service';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
+import { pagingObject, IpagingObject } from 'src/app/shared/common/pagingObject';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -28,7 +30,9 @@ export class ServicesComponent implements OnInit {
   faPenSquare = faPenSquare;
   faTrash = faTrash;
   items: any;
+  // pagingObj: IpagingObject;
   pagingObj: any;
+  data: any;
 
   add() {
     const modalRef = this.modalService.open(CreateComponent, { size: 'lg' });
@@ -58,12 +62,7 @@ export class ServicesComponent implements OnInit {
   }
 
   inItData(page?) {
-    return this.service.getData(page).subscribe((res) => {
-      console.log(res);
-      this.items = res['data'];
-      this.pagingObj = res['pagingObj'];
-      console.log(this.pagingObj);
-    });
+    // return this.service.getData(page).pipe(map(d => ));
   }
 
   setPage(page?) {
@@ -71,8 +70,17 @@ export class ServicesComponent implements OnInit {
       console.log(res);
       this.items = res['data'];
       this.pagingObj = res['pagingObj'];
-      console.log(this.pagingObj);
+      // this.data = this.pagingObj.pages;
     });
   }
+
+  // mapProperties(obj: Object[]) {
+  //   if (obj.length = 0) {
+  //     console.log('faild mapping');
+  //   }
+  //   obj.forEach(element => {
+
+  //   });
+  // }
 
 }

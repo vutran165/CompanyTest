@@ -1,22 +1,24 @@
 export class pagingObject {
     public pageCount: number;
+    public startPage: number;
     public start: number;
     public previous: number;
-    public last: number;
+    public lastPage: number;
     public pageNo: number;
     public pageSize: number;
-
-    // constructor(pageCount?, start?, previous?,
-    //     last?, pageNo?, pageSize?) {
-    //     this.pageCount = pageCount;
-    //     this.start = start;
-    //     this.previous = previous;
-    //     this.last = last;
-    //     this.pageNo = pageNo;
-    //     this.pageSize = pageSize;
-    // }
+    public pages: any;
     constructor() {
 
     }
 }
 
+export interface IpagingObject {
+    pageCount: number;
+    startPage: number;
+    start: number;
+    previous: number;
+    lastPage: number;
+    pageNo: number;
+    pageSize: number;
+    pages: any;
+}
