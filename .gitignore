@@ -6,6 +6,9 @@
 /out-tsc
 /save
 
+# some the other files
+package.json
+
 # dependencies
 /node_modules
 
@@ -38,4 +41,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
 
