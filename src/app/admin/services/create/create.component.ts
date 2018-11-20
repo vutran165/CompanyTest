@@ -26,7 +26,6 @@ export class CreateComponent implements OnInit {
   title: String = 'Add Item';
 
   // tslint:disable-next-line:no-input-rename
-  @Input('test') test: any;
   data: any;
 
   item = new ServiceObject();

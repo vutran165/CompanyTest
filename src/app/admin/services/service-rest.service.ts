@@ -6,7 +6,7 @@ import { pagingObject } from 'src/app/shared/common/pagingObject';
 import { objTranfer } from 'src/app/shared/common/objTranfer';
 import { HttpErrorHandlerService, HandlerError } from 'src/app/shared/error/http-error-handler.service';
 import { ServiceObject } from './service';
-import { ExpansionCase } from '@angular/compiler';
+
 
 
 const endpoint = 'http://localhost:8585';
@@ -45,4 +45,15 @@ export class ServiceRestService {
     return this.http.post<ServiceObject>(endpoint + '/service', d).
       pipe(retry(2), catchError(this.handlerError('addItem', {})));
   }
+
+  editItem(d: ServiceObject): Observable<ServiceObject> {
+    return this.http.put<ServiceObject>(endpoint + '/service/' + d._id, d).
+      pipe(retry(2), catchError(this.handlerError('editItem', null)));
+  }
+
+  delete(id) {
+    return this.http.delete(endpoint + '/service/' + id).pipe(retry(2), catchError(this.handlerError('deleteItem', {})));
+  }
+
+
 }

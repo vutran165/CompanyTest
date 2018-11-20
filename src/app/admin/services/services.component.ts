@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {
   faWrench, faPenSquare, faPlus, faTrash
 } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +12,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
 import { pagingObject, IpagingObject } from 'src/app/shared/common/pagingObject';
 import { map } from 'rxjs/operators';
+import { moduleDef } from '@angular/core/src/view';
 
 
 @Component({
@@ -41,6 +42,11 @@ export class ServicesComponent implements OnInit {
   edit(item) {
     const modalRef = this.modalService.open(EditComponent, { size: 'lg' });
     modalRef.componentInstance.item = item;
+    modalRef.result.then((result) => {
+      console.log(result);
+    }, reason => {
+      console.log(reason);
+    });
   }
 
 
@@ -48,6 +54,7 @@ export class ServicesComponent implements OnInit {
     console.log(item);
     const modelRef = this.modalService.open(DetailComponent, { size: 'lg' });
     modelRef.componentInstance.item = item;
+
   }
 
   delete(id: string) {
