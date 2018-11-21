@@ -51,9 +51,9 @@ export class ServiceRestService {
       pipe(retry(2), catchError(this.handlerError('editItem', null)));
   }
 
-  delete(id) {
+  delete(id): Observable<any> {
     return this.http.delete(endpoint + '/service/' + id).
-    pipe(retry(2), catchError(this.handlerError('deleteItem', {})));
+      pipe(retry(2), catchError(this.handlerError('deleteItem', {})));
   }
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceRestService } from '../service-rest.service';
 import { INTERNAL_BROWSER_PLATFORM_PROVIDERS } from '@angular/platform-browser/src/browser';
@@ -13,7 +13,7 @@ export class DeleteComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal, private service: ServiceRestService) { }
 
-  delete(id) {
+  delete(id = this.itemId) {
     return this.service.delete(id).subscribe(res => {
       console.log(res);
     });

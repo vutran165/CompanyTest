@@ -77,7 +77,7 @@ export class ServicesComponent implements OnInit {
     });
   }
 
-  delete(id: string) {
+  delete(id) {
     const modelRef = this.modalService.open(DeleteComponent, { size: 'lg' });
     modelRef.componentInstance.itemId = id;
     modelRef.result.then(() => {
