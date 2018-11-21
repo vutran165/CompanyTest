@@ -52,7 +52,8 @@ export class ServiceRestService {
   }
 
   delete(id) {
-    return this.http.delete(endpoint + '/service/' + id).pipe(retry(2), catchError(this.handlerError('deleteItem', {})));
+    return this.http.delete(endpoint + '/service/' + id).
+    pipe(retry(2), catchError(this.handlerError('deleteItem', {})));
   }
 
 

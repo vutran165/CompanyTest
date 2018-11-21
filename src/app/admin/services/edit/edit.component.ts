@@ -27,6 +27,7 @@ export class EditComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log(this.item);
   }
 
 }

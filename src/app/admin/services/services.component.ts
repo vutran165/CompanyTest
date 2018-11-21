@@ -13,6 +13,7 @@ import { DetailComponent } from './detail/detail.component';
 import { pagingObject, IpagingObject } from 'src/app/shared/common/pagingObject';
 import { map } from 'rxjs/operators';
 import { moduleDef } from '@angular/core/src/view';
+import { Router, NavigationEnd } from '@angular/router';
 
 
 @Component({
@@ -24,19 +25,34 @@ import { moduleDef } from '@angular/core/src/view';
 
 export class ServicesComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private service: ServiceRestService, private http: HttpClient) { }
+  constructor(private modalService: NgbModal, private service: ServiceRestService, private http: HttpClient, private router: Router) {
+    // override the route reuse strategy
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+
+    this.router.events.subscribe((evt) => {
+      // trick the Router into believing it's last link wasn't previously loaded
+      if (evt instanceof NavigationEnd) {
+        this.router.navigated = false;
+      }
+    });
+  }
 
   faWrench = faWrench;
   faPlus = faPlus;
   faPenSquare = faPenSquare;
   faTrash = faTrash;
   items: any;
-  // pagingObj: IpagingObject;
-  pagingObj: any;
+  pagingObj: IpagingObject;
+  // pagingObj: any;
   data: any;
 
   add() {
     const modalRef = this.modalService.open(CreateComponent, { size: 'lg' });
+    modalRef.result.then((result) => {
+      // this.refreshPage();
+    });
   }
 
   edit(item) {
@@ -44,6 +60,7 @@ export class ServicesComponent implements OnInit {
     modalRef.componentInstance.item = item;
     modalRef.result.then((result) => {
       console.log(result);
+      // this.refreshPage();
     }, reason => {
       console.log(reason);
     });
@@ -51,25 +68,36 @@ export class ServicesComponent implements OnInit {
 
 
   detail(item) {
-    console.log(item);
     const modelRef = this.modalService.open(DetailComponent, { size: 'lg' });
     modelRef.componentInstance.item = item;
-
+    modelRef.result.then(() => {
+      // this.refreshPage();
+    }, reason => {
+      console.log(reason);
+    });
   }
 
   delete(id: string) {
     const modelRef = this.modalService.open(DeleteComponent, { size: 'lg' });
     modelRef.componentInstance.itemId = id;
+    modelRef.result.then(() => {
+      // do something
+    }, reason => {
+      console.log(reason);
+    });
+    // this.refreshPage();
   }
 
   ngOnInit() {
     console.log('done');
-    // this.inItData();
+    // if (this.pagingObj.pageNo !== 0) {
+    //   this.setPage(this.pagingObj.pageNo);
+    // }
     this.setPage();
   }
 
-  inItData(page?) {
-    // return this.service.getData(page).pipe(map(d => ));
+  refreshPage(): void {
+    window.location.reload();
   }
 
   setPage(page?) {
@@ -77,17 +105,7 @@ export class ServicesComponent implements OnInit {
       console.log(res);
       this.items = res['data'];
       this.pagingObj = res['pagingObj'];
-      // this.data = this.pagingObj.pages;
     });
   }
-
-  // mapProperties(obj: Object[]) {
-  //   if (obj.length = 0) {
-  //     console.log('faild mapping');
-  //   }
-  //   obj.forEach(element => {
-
-  //   });
-  // }
 
 }
