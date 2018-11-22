@@ -7,13 +7,11 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { ServiceRestService } from './service-rest.service';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
 import { pagingObject, IpagingObject } from 'src/app/shared/common/pagingObject';
-import { map } from 'rxjs/operators';
-import { moduleDef } from '@angular/core/src/view';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -25,7 +23,10 @@ import { Router, NavigationEnd } from '@angular/router';
 
 export class ServicesComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private service: ServiceRestService, private http: HttpClient, private router: Router) {
+  page: string;
+
+  constructor(private modalService: NgbModal, private service: ServiceRestService, private http: HttpClient
+    , private router: Router, private route: ActivatedRoute, private location: Location) {
     // override the route reuse strategy
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -90,10 +91,8 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {
     console.log('done');
-    // if (this.pagingObj.pageNo !== 0) {
-    //   this.setPage(this.pagingObj.pageNo);
-    // }
     this.setPage();
+    // this.route.queryParams
   }
 
   refreshPage(): void {
