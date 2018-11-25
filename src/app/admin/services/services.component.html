@@ -61,7 +61,7 @@
               aria-label="Previous"><span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span></a></li>
           <li class="page-item" *ngFor="let page of pagingObj.pages" [ngClass]="{active:pagingObj.pageNo === page }"><a
-              class="page-link" (click)="setPage(page)">{{page}}</a></li>
+              [routerLink]='' [queryParams]='{pageNo: page}' class="page-link" (click)="setPage(page)">{{page}}</a></li>
           <li [ngClass]="{disabled: pagingObj.pageNo === 1}"><a (click)="setPage(pagingObj.pageNo + 1)" class="page-link"
               aria-label="Next"><span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span></a></li>

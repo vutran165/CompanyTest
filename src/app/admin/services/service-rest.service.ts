@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap, retry } from 'rxjs/operators';
 import { pagingObject } from 'src/app/shared/common/pagingObject';
@@ -10,7 +10,6 @@ import { ServiceObject } from './service';
 
 
 const endpoint = 'http://localhost:8585';
-
 @Injectable(
 
 )

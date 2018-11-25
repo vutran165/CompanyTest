@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import {
   faWrench, faPenSquare, faPlus, faTrash
 } from '@fortawesome/free-solid-svg-icons';
@@ -10,8 +10,9 @@ import { ServiceRestService } from './service-rest.service';
 import { HttpClient } from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
 import { pagingObject, IpagingObject } from 'src/app/shared/common/pagingObject';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
+import { switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -23,21 +24,11 @@ import { Location } from '@angular/common';
 
 export class ServicesComponent implements OnInit {
 
-  page: string;
+  page: any;
 
-  constructor(private modalService: NgbModal, private service: ServiceRestService, private http: HttpClient
-    , private router: Router, private route: ActivatedRoute, private location: Location) {
-    // override the route reuse strategy
-    this.router.routeReuseStrategy.shouldReuseRoute = function () {
-      return false;
-    };
-
-    this.router.events.subscribe((evt) => {
-      // trick the Router into believing it's last link wasn't previously loaded
-      if (evt instanceof NavigationEnd) {
-        this.router.navigated = false;
-      }
-    });
+  constructor(private modalService: NgbModal, private service: ServiceRestService,
+    private router: Router, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => console.log(params));
   }
 
   faWrench = faWrench;
@@ -52,7 +43,6 @@ export class ServicesComponent implements OnInit {
   add() {
     const modalRef = this.modalService.open(CreateComponent, { size: 'lg' });
     modalRef.result.then((result) => {
-      // this.refreshPage();
     });
   }
 
@@ -61,7 +51,6 @@ export class ServicesComponent implements OnInit {
     modalRef.componentInstance.item = item;
     modalRef.result.then((result) => {
       console.log(result);
-      // this.refreshPage();
     }, reason => {
       console.log(reason);
     });
@@ -72,7 +61,6 @@ export class ServicesComponent implements OnInit {
     const modelRef = this.modalService.open(DetailComponent, { size: 'lg' });
     modelRef.componentInstance.item = item;
     modelRef.result.then(() => {
-      // this.refreshPage();
     }, reason => {
       console.log(reason);
     });
@@ -86,25 +74,38 @@ export class ServicesComponent implements OnInit {
     }, reason => {
       console.log(reason);
     });
-    // this.refreshPage();
+
   }
+
+  // ngOnChanges(changes: SimpleChanges): void {
+
+  // }
 
   ngOnInit() {
-    console.log('done');
-    this.setPage();
-    // this.route.queryParams
-  }
-
-  refreshPage(): void {
-    window.location.reload();
+    // this.page = this.route.snapshot.paramMap.get('pageNo');
+    // console.log(this.page);
+    this.route.queryParams.subscribe(params => {
+      this.page = params['pageNo'];
+    });
+    this.setPage(this.page);
   }
 
   setPage(page?) {
+    // this.page = page;
     return this.service.getData(page).subscribe((res) => {
       console.log(res);
       this.items = res['data'];
       this.pagingObj = res['pagingObj'];
+      this.logging();
     });
+  }
+
+  logging() {
+    this.route.queryParams.subscribe(params => {
+      this.page = params['pageNo'];
+      console.log(this.page);
+    });
+
   }
 
 }
