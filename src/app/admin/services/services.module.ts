@@ -12,6 +12,7 @@ import { ServiceRestService } from './service-rest.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectorComponent } from 'src/app/shared/component/selector.component';
 import { ErrorComponent } from 'src/app/shared/error/error.component';
+import { UploadFileComponent } from 'src/app/shared/upload-file/upload-file.component';
 
 
 @NgModule({
@@ -25,8 +26,9 @@ import { ErrorComponent } from 'src/app/shared/error/error.component';
   ],
   exports: [FormsModule, ReactiveFormsModule],
   providers: [NgbActiveModal, ServiceRestService],
-  entryComponents: [CreateComponent, EditComponent, DeleteComponent, DetailComponent, SelectorComponent],
-  declarations: [ServicesComponent, CreateComponent, EditComponent, DeleteComponent, DetailComponent, SelectorComponent]
+  entryComponents: [CreateComponent, EditComponent, DeleteComponent, DetailComponent, SelectorComponent, UploadFileComponent],
+  declarations: [ServicesComponent, CreateComponent, EditComponent, DeleteComponent, DetailComponent,
+     SelectorComponent, UploadFileComponent]
 })
 
 export class ServicesModule { }
