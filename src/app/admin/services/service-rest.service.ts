@@ -9,7 +9,8 @@ import { ServiceObject } from './service';
 
 
 
-const endpoint = 'http://localhost:8585';
+// const endpoint = 'http://localhost:8585';
+const endpoint = 'https://web-nodejs-api.herokuapp.com';
 @Injectable(
 
 )
