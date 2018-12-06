@@ -415,7 +415,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var endpoint = 'http://localhost:8585';
+// const endpoint = 'http://localhost:8585';
+var endpoint = 'https://web-nodejs-api.herokuapp.com';
 var ServiceRestService = /** @class */ (function () {
     function ServiceRestService(http, httpErrorResponse) {
         this.http = http;
