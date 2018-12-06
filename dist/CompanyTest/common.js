@@ -1,0 +1,114 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
+
+/***/ "./src/app/shared/error/error.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/shared/error/error.service.ts ***!
+  \***********************************************/
+/*! exports provided: ErrorService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ErrorService", function() { return ErrorService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ErrorService = /** @class */ (function () {
+    function ErrorService() {
+        this.errorMessage = '';
+    }
+    ErrorService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], ErrorService);
+    return ErrorService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/error/http-error-handler.service.ts":
+/*!************************************************************!*\
+  !*** ./src/app/shared/error/http-error-handler.service.ts ***!
+  \************************************************************/
+/*! exports provided: HttpErrorHandlerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpErrorHandlerService", function() { return HttpErrorHandlerService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _error_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./error.service */ "./src/app/shared/error/error.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var HttpErrorHandlerService = /** @class */ (function () {
+    function HttpErrorHandlerService(errorService) {
+        var _this = this;
+        this.errorService = errorService;
+        // Create handlerError function that already knows the service name
+        this.createdHandlerError = function (serviceName) {
+            if (serviceName === void 0) { serviceName = ''; }
+            return function (operation, result) {
+                if (operation === void 0) { operation = 'operation'; }
+                if (result === void 0) { result = {}; }
+                return _this.handlerError(serviceName, operation, result);
+            };
+        };
+    }
+    // @param serviceName: name of the data service
+    // @param operation: name of the failed operation
+    // @param result: optional value to return as the observable result
+    HttpErrorHandlerService.prototype.handlerError = function (serviceName, operation, result) {
+        var _this = this;
+        if (serviceName === void 0) { serviceName = ''; }
+        if (operation === void 0) { operation = 'operation'; }
+        if (result === void 0) { result = {}; }
+        return function (error) {
+            // todo-> send the error to remote logging infrastructure
+            console.log(error);
+            var message = (error.error instanceof ErrorEvent) ?
+                error.error.message : "{error code: " + error.status + ", body: \"" + error.message + "\"}";
+            // todo-> transforming error for user consumption
+            // this.errorService.errorMessage.message = `${serviceName} ->${operation}`;
+            _this.errorService.errorMessage = serviceName + " ->" + operation;
+            // return a safe result
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(result);
+        };
+    };
+    HttpErrorHandlerService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_error_service__WEBPACK_IMPORTED_MODULE_2__["ErrorService"]])
+    ], HttpErrorHandlerService);
+    return HttpErrorHandlerService;
+}());
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=common.js.map
